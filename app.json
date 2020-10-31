@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/user/index",
     "pages/index/index",
+    "pages/user/index",
+   
     "pages/foryou/index",
     "pages/for-strategy/index"
     

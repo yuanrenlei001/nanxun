@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+  <text>1231231</text>
 <view class="images"><image src="/images/icon2.png"></image></view>
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
