@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/user/index",
+    "pages/index/index",
+    "pages/foryou/index",
+    "pages/for-strategy/index"
+    
+    
+
+    
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#333",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/nav-index.png",
+        "selectedIconPath": "/images/nav-index-active.png",
+        "text": "浔开心"
+      },
+      {
+        "pagePath": "pages/foryou/index",
+        "iconPath": "/images/nav-you.png",
+        "selectedIconPath": "/images/nav-you-active.png",
+        "text": "浔找你"
+      },
+      {
+        "pagePath": "pages/for-strategy/index",
+        "iconPath": "/images/nav-strategy.png",
+        "selectedIconPath": "/images/nav-strategy-active.png",
+        "text": "浔攻略"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "/images/nav-user.png",
+        "selectedIconPath": "/images/nav-user-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
