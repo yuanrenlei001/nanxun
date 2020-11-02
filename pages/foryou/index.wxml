@@ -1,2 +1,7 @@
 <!--pages/foryou/index.wxml-->
-<text>寻找你</text>
+<view class="topBar">
+  <view>1</view>
+  <view>2</view>
+  <view>3</view>
+  <view>5</view>
+</view>
