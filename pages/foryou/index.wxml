@@ -19,7 +19,7 @@
   markers="{{markers}}">
   <view class="mapSelect selectBg">
     <view class="valueStyle">影像地图
-      <image class="downW" src="../../images/map/down.png"></image>
+      <image class="downW" src="/images/map/down.png"></image>
     </view>
     <view>
       <view class="selectList borderB">手绘地图</view>
@@ -27,11 +27,11 @@
     </view>
   </view>
   <view>
-    <image class="periphery" src="../../images/map/periphery.png"></image>
+    <image class="periphery" src="/images/map/periphery.png"></image>
   </view>
-  <image class="timeMap" src="../../images/map/time.png"></image>
-  <image class="positionMap" src="../../images/map/position.png"></image>
-  <image class="refreshMap" src="../../images/map/refresh.png"></image>
+  <image class="timeMap" src="/images/map/time.png"></image>
+  <image class="positionMap" src="/images/map/position.png"></image>
+  <image class="refreshMap" src="/images/map/refresh.png"></image>
 </map>
 <view class="mask">
   <view class="tBg">

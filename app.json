@@ -1,16 +1,14 @@
 {
   "pages": [
     "pages/foryou/index",
-    "pages/user/index",
+    "pages/map/index",
+    "pages/notice/notice",
     "pages/index/index",
-   
-    "pages/for-strategy/index",
-    "pages/map/index"
+    
+    "pages/user/index",
+    "pages/for-strategy/index"
     
     
-
-    
-
   ],
   "window": {
     "backgroundTextStyle": "light",

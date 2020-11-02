@@ -6,7 +6,8 @@ App({
       'index':'浔开心',
       'for_you':'浔找你',
       'for_strategy':'浔攻略',
-      'user':'我的'
+      'user':'我的',
+      'notice':'最新公告'
     },
     // tabbar页面
       tabbar_pages: [

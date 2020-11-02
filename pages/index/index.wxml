@@ -25,7 +25,7 @@
 <!-- 外部容器 -->
 <view class="main">
   <!-- 最新公告 -->
-  <view class="news">
+  <view class="news" bindtap="goNotice">
     <image src="/images/index/iconNews.png"></image> 最新公告： <text>柯桥部分景区维修中,具体景点如柯桥部分景区维修中,具体景点如</text>
   </view>
   <!-- 分类列表 -->
