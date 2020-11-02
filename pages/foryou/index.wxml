@@ -38,6 +38,38 @@
     <view class="topH">
       <image class="close" src="/images/map/x.png"></image>
     </view>
-    <view class="row-h"></view>
+    <view class="row-h">
+      <view class="moreBlock textLine bodeR">景点</view>
+      <view class="moreBlock textLine bodeR">美食</view>
+      <view class="moreBlock dobleText">
+        <view>酒店</view>
+        <view>民宿</view>
+      </view>
+    </view>
+    <view class="row-h">
+      <view class="moreBlock dobleText bodeR">
+        <view>语音</view>
+        <view>导航</view>
+      </view>
+      <view class="moreBlock textLine bodeR">演出点</view>
+      <view class="moreBlock dobleText">
+        <view>游船</view>
+        <view>码头</view>
+      </view>
+    </view>
+    <view class="row-h">
+      <view class="moreBlock textLine bodeR">厕所</view>
+      <view class="moreBlock textLine bodeR">停车场</view>
+      <view class="moreBlock textLine ">游客休息点</view>
+    </view>
+    <view class="row-h">
+      <view class="moreBlock textLine bodeR">报警柱</view>
+      <view class="moreBlock textLine bodeR">AED急救</view>
+      <view class="moreBlock dobleText">
+        <view>游客</view>
+        <view>中心</view>
+      </view>
+    </view>
+    <view class="lastD bodeR">志愿服务站</view>
   </view>
 </view>

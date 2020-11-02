@@ -124,15 +124,43 @@
   height: 66rpx;
   width: 100%;
   position: relative;
+  border-bottom: 2px solid rgba(221, 221, 221, 0.36);
 }
 .close{
   width: 28rpx;
   height: 28rpx;
   position: absolute;
-  right:0;
+  right: 38rpx;
   top: 20rpx;
 }
 .row-h{
   height: 156rpx;
   border-bottom: 2px solid rgba(221, 221, 221, 0.36);
+  display: flex;
+}
+.textLine{
+  line-height: 156rpx;
+}
+.bodeR{
+  border-right: 2px solid rgba(221, 221, 221, 0.36);
+}
+.moreBlock{
+  width: 250rpx;
+  height: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 500;
+}
+.dobleText{
+  padding-top: 28rpx;
+}
+.lastD{
+  width: 376rpx;
+  height: 136rpx;
+  line-height: 136rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 500;
 }
