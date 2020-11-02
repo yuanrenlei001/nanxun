@@ -1,1 +1,8 @@
 /* pages/foryou/index.wxss */
+.topBar{
+  height: 43px;
+  width: 100%;
+  background: #FFC645;
+  display: flex;
+  
+}

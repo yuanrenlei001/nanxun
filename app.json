@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/user/index",
-   
     "pages/foryou/index",
-    "pages/for-strategy/index"
+    "pages/user/index",
+    "pages/index/index",
+   
+    "pages/for-strategy/index",
+    "pages/map/index"
     
     
 
@@ -13,7 +14,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#FFC645",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
