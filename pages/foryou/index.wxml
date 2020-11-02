@@ -1,7 +1,42 @@
 <!--pages/foryou/index.wxml-->
 <view class="topBar">
-  <view>1</view>
-  <view>2</view>
-  <view>3</view>
-  <view>5</view>
+  <view>
+    <image class="imgW leftImg" src="../../images/search.png"></image>
+  </view>
+  <view class="topText ml32 active">景点</view>
+  <view class="topText ml30">美食</view>
+  <view class="topText ml30">住宿</view>
+  <view class="topText ml30">服务</view>
+  <view class="topText ml30">停车</view>
+  <view bindtap="changeName">
+    <image class="imgW rightImg" src="../../images/more.png"></image>
+  </view>
+</view>
+<map class="mapW" id="map" 
+  longitude="{{longitude}}"
+  latitude="{{latitude}}"
+  scale="{{scale}}"
+  markers="{{markers}}">
+  <view class="mapSelect selectBg">
+    <view class="valueStyle">影像地图
+      <image class="downW" src="../../images/map/down.png"></image>
+    </view>
+    <view>
+      <view class="selectList borderB">手绘地图</view>
+      <view class="selectList">电子地图</view>
+    </view>
+  </view>
+  <view>
+    <image class="periphery" src="../../images/map/periphery.png"></image>
+  </view>
+  <image class="timeMap" src="../../images/map/time.png"></image>
+  <image class="positionMap" src="../../images/map/position.png"></image>
+  <image class="refreshMap" src="../../images/map/refresh.png"></image>
+</map>
+<view class="mask">
+  <view class="tBg">
+    <view class="topH">
+      <image class="close" src="/images/map/x.png"></image>
+    </view>
+  </view>
 </view>

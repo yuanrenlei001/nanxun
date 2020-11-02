@@ -6,7 +6,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    longitude: 116.411885,
+    latitude: 39.92392,
+    scale: 16,
+    markers1: [],
+    markers: [
+      {
+        id: 0,
+        iconPath: "../../images/map/hotel.png",
+        longitude: 116.411885,
+        latitude: 39.92492,
+        title: "小何饭店",
+        width: 39,
+        height: 48
+      },
+      {
+        id: 1,
+        iconPath: "../../images/map/hotel.png",
+        longitude: 116.411885,
+        latitude: 39.92392,
+        title: "小何饭店",
+        width: 39,
+        height: 48
+      }
+    ]
   },
 
   /**
@@ -28,6 +51,20 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.for_you});
+    const myMap = wx.createMapContext('map', this);
+    // myMap.addMarkers({
+    //   markers:list
+    // })
+    myMap.getCenterLocation({
+      success: (res)=>{
+        console.log("zhongxindian", res);
+      }
+    })
+    myMap.getScale({
+      success: (res)=>{
+        console.log(res)
+      }
+    })
   },
 
   /**
@@ -63,5 +100,8 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  changeName: (e)=>{
+    console.log('1221312',e)
   }
 })

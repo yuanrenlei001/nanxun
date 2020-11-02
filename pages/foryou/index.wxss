@@ -1,8 +1,133 @@
 /* pages/foryou/index.wxss */
 .topBar{
-  height: 43px;
+  height: 86rpx;
   width: 100%;
   background: #FFC645;
   display: flex;
-  
+  /* line-height: 86rpx; */
+  /* align-items: center; */
+}
+.topText{
+  margin-top: 16rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  line-height: 50rpx;
+  width: 100rpx;
+  height: 50rpx;
+}
+.ml32{
+  margin-left: 32rpx;
+}
+.ml30{
+  margin-left: 20rpx;
+}
+.imgW{
+  width: 32rpx;
+  height: 32rpx;
+}
+.leftImg{
+  margin-left: 32rpx;
+  margin-top: 23rpx;
+}
+.rightImg{
+  margin-top: 23rpx;
+  margin-left: 10rpx;
+}
+.active{
+  background: #FFFFFF;
+  border-radius: 25rpx;
+}
+.mapW{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+}
+.mapSelect{
+  width: 140rpx;
+  height: 144rpx;
+  margin-top: 24rpx;
+  margin-left: 22rpx;
+  border-radius: 18rpx;
+}
+.selectBg{
+  background: rgba(0, 0, 0, 0.4);
+}
+.valueStyle{
+  background: #FFC645;
+  border-radius: 18rpx;
+  font-size: 20rpx;
+  height: 48rpx;
+  color: #333;
+  font-weight: 500;
+  line-height: 48rpx;
+  padding-left: 20rpx;
+}
+.downW{
+  width: 16rpx;
+  height: 16rpx;
+}
+.selectList{
+  font-size: 20rpx;
+  height: 48rpx;
+  font-weight: 500;
+  line-height: 48rpx;
+  text-align: center;
+  color: #fff;
+}
+.borderB{
+  border-bottom: 1px solid #fff;
+}
+.periphery{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  top: 44rpx;
+  right: 48rpx;
+}
+.timeMap{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  top: 122rpx;
+  right: 48rpx;
+}
+.positionMap{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  bottom: 282rpx;
+  right: 48rpx;
+}
+.refreshMap{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  bottom: 192rpx;
+  right: 48rpx;
+}
+.mask{
+  width: 100vh;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 99999;
+}
+.tBg{
+  background: #fff;
+  width: 100vh;
+  height: 846rpx;
+}
+.topH{
+  height: 66rpx;
+  width: 100%;
+}
+.close{
+  width: 28rpx;
+  height: 28rpx;
+  position: relative;
+  left: 684rpx;
+  top: 20rpx;
 }
