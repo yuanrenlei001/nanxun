@@ -38,5 +38,6 @@
     <view class="topH">
       <image class="close" src="/images/map/x.png"></image>
     </view>
+    <view class="row-h"></view>
   </view>
 </view>
