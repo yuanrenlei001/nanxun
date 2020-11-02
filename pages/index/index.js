@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    videoUrl:'http://img1.imgtn.bdimg.com/it/u=1563980539,1672265910&fm=26&gp=0.jpg'
 
   },
 

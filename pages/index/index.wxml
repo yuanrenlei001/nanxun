@@ -1,15 +1,88 @@
-<!--index.wxml-->
-<view class="container">
-  <text>1231231</text>
-<view class="images"><image src="/images/icon2.png"></image></view>
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!-- 头部 -->
+<view class="top">
+  <image src="/images/index/top-address.png" class="address"></image>
+  <text>天气</text>
+  <view class="search">
+    <input type="text" />
+    <image src="/images/index/search.png"></image>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="service"><image src="/images/index/service.png"></image></view>
+</view>
+
+<!-- 视频 -->
+<view class="video">
+  <video 
+      id="myVideo" 
+      src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" 
+      enable-danmu 
+      danmu-btn 
+      controls 
+      object-fit="cover"
+      poster="{{videoUrl}}"
+    ></video>
+</view>
+
+<!-- 外部容器 -->
+<view class="main">
+  <!-- 最新公告 -->
+  <view class="news">
+    <image src="/images/index/iconNews.png"></image> 最新公告： <text>柯桥部分景区维修中,具体景点如柯桥部分景区维修中,具体景点如</text>
+  </view>
+  <!-- 分类列表 -->
+  <view class="indexSort">
+    <view class="sortTop">
+      <text class="sortTop01">乐游南浔</text>
+      <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view>
+    </view>
+    <view class="sort">
+      <view class="sortUl">
+        <navigator class="sortLi"><image src="/images/index/icon01.png"></image> <text>门票商城</text></navigator>
+        <navigator class="sortLi"><image src="/images/index/icon02.png"></image> <text>美景导游</text></navigator>
+        <navigator class="sortLi"><image src="/images/index/icon03.png"></image> <text>美食餐饮</text></navigator>
+        <navigator class="sortLi"><image src="/images/index/icon04.png"></image> <text>南浔特产</text></navigator>
+        <navigator class="sortLi"><image src="/images/index/icon05.png"></image> <text>酒店民宿</text></navigator>
+        <navigator class="sortLi"><image src="/images/index/icon06.png"></image> <text>AR看史</text></navigator>
+        <navigator class="sortLi"><image src="/images/index/icon07.png"></image> <text>VR看景</text></navigator>
+        <navigator class="sortLi"><image src="/images/index/icon08.png"></image> <text>游玩攻略</text></navigator>
+        <navigator class="sortLi"><image src="/images/index/icon09.png"></image> <text>南浔特产</text></navigator>
+        <navigator class="sortLi"><image src="/images/index/icon10.png"></image> <text>更多</text></navigator>
+      </view>
+    </view>  
+  </view>
+
+</view>
+  <!-- 地图导览 -->
+  <navigator class="indexMap">
+    <text>地图导览</text>
+    <image src="/images/index/indexMap.png"></image>
+  </navigator>
+
+<view class="main">
+  <!-- 最新资讯 -->
+  <view class="indexNews">
+    <view class="sortTop">
+      <text class="sortTop01">最新资讯</text>
+      <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view>
+    </view> 
+    <view class="newImg">
+      <image src="/images/index/indexMap.png"></image>
+      <text>南浔新增写生基地</text>
+    </view>
+  </view>
+
+  <!-- 演出列表 -->
+  <view class="indexList">
+    <view class="sortTop">
+      <text class="sortTop01">最新资讯</text>
+      <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view>
+    </view> 
+    <view class="list">
+      <view class="listUl">
+        <navigator class="listLi"><image src="/images/index/icon01.png"></image> <text>水上婚礼</text></navigator>
+        <navigator class="listLi"><image src="/images/index/icon01.png"></image> <text>水上婚礼</text></navigator>
+        <navigator class="listLi"><image src="/images/index/icon01.png"></image> <text>水上婚礼</text></navigator>
+        <navigator class="listLi"><image src="/images/index/icon01.png"></image> <text>水上婚礼</text></navigator>
+      </view>
+    </view>
   </view>
 </view>
