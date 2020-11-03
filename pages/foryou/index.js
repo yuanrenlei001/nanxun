@@ -8,6 +8,8 @@ Page({
   data: {
     longitude: 116.411885,
     latitude: 39.92392,
+    shouAll: false,
+    modelShow: false,
     scale: 16,
     markers1: [],
     markers: [
@@ -16,18 +18,34 @@ Page({
         iconPath: "../../images/map/hotel.png",
         longitude: 116.411885,
         latitude: 39.92492,
-        title: "小何饭店",
-        width: 39,
-        height: 48
+        // title: "小何饭店1",
+        label:{
+          content: '金宅',
+          color: '#333',
+          fontSize: 20,
+          textAlign: "center",
+          // anchorX: -10,
+          anchorY: -70
+        },
+        width: 31,
+        height: 38
       },
       {
         id: 1,
         iconPath: "../../images/map/hotel.png",
         longitude: 116.411885,
         latitude: 39.92392,
-        title: "小何饭店",
-        width: 39,
-        height: 48
+        label:{
+          content: '小何饭店',
+          color: '#333',
+          fontSize: 20,
+          textAlign: "center",
+          // anchorX: -10,
+          anchorY: -70
+        },
+        // title: "小何饭店2",
+        width: 31,
+        height: 38
       }
     ]
   },
@@ -101,7 +119,38 @@ Page({
   onShareAppMessage: function () {
 
   },
-  changeName: (e)=>{
-    console.log('1221312',e)
+  // 展开
+  showAllFun: function(){
+    this.setData({
+      shouAll: true
+    })
+  },
+  // 关闭
+  closeFun: function(){
+    this.setData({
+      shouAll: false
+    })
+  },
+  // markers点击
+  gotohere: function(e){
+    console.log(e)
+    wx.hideTabBar()
+    this.setData({
+      modelShow: true
+    })
+    // wx.showTabBar() modelShow
+  },
+  shouTabBar: function(){
+    wx.showTabBar()
+    this.setData({
+      modelShow: false
+    })
+  },
+  mapclick: function(e){
+    if(!this.data.modelShow) return;
+    wx.showTabBar()
+    this.setData({
+      modelShow: false
+    })
   }
 })
