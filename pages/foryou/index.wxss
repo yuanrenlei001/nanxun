@@ -124,7 +124,7 @@
   height: 66rpx;
   width: 100%;
   position: relative;
-  border-bottom: 2px solid rgba(221, 221, 221, 0.36);
+  border-bottom: 2rpx solid rgba(221, 221, 221, 0.36);
 }
 .close{
   width: 28rpx;
@@ -133,16 +133,19 @@
   right: 38rpx;
   top: 20rpx;
 }
+.flex{
+  display: flex;
+}
 .row-h{
   height: 156rpx;
-  border-bottom: 2px solid rgba(221, 221, 221, 0.36);
+  border-bottom: 2rpx solid rgba(221, 221, 221, 0.36);
   display: flex;
 }
 .textLine{
   line-height: 156rpx;
 }
 .bodeR{
-  border-right: 2px solid rgba(221, 221, 221, 0.36);
+  border-right: 2rpx solid rgba(221, 221, 221, 0.36);
 }
 .moreBlock{
   width: 250rpx;
@@ -166,86 +169,4 @@
 }
 .activeD{
   background: #FFC645;
-}
-/* 底部详情弹框 */
-.modelBottom{
-  width: 714rpx;
-  height: 308rpx;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 12px 0px rgba(51, 51, 51, 0.42);
-  border-radius: 20rpx;
-  position: absolute;
-  bottom: 0;
-  left: 18rpx;
-}
-.onD{
-  padding-top: 32rpx;
-  padding-left: 46rpx;
-}
-.modelTop{
-  display: flex;
-}
-.leftText{
-  color: #000;
-  font-size: 36rpx;
-  font-weight: 500;
-}
-.leftMai{
-  width: 32rpx;
-  height: 32rpx;
-  margin-left: 16rpx;
-  margin-top: 10rpx;
-}
-.flex{
-  display: flex;
-}
-.rightAr{
-  position: absolute;
-  right: 36rpx;
-  display: flex;
-}
-.arImg{
-  width: 40rpx;
-  height: 40rpx;
-  margin-right: 10rpx;
-}
-.arT{
-  font-size: 20rpx;
-  font-weight: 400;
-  color: #000;
-  margin-top: 7rpx;
-}
-.positionT{
-  font-size: 20rpx;
-  font-weight: 500;
-  color: rgba(51, 51, 51, 0.62);
-}
-.textContent{
-  height: 102rpx;
-  margin-top: 10rpx;
-  font-size: 20rpx;
-  font-weight: 500;
-  color: #333;
-  padding-right: 44rpx;
-  line-height: 28rpx;
-}
-.leftImgW{
-  width: 32rpx;
-  height: 32rpx;
-
-}
-.shareText{
-  font-size: 20rpx;
-  font-weight: 400;
-  color: #333 ;
-  margin-left: 16rpx;
-}
-.ml190{
-  margin-left: 190rpx;
-}
-.ml170{
-  margin-left: 170rpx;
-}
-.mt5{
-  margin-top: 5rpx;
 }

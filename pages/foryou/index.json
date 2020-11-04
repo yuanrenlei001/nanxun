@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "hotel": "/compoments/hotel/hotel",
+    "details": "/compoments/details/details"
+  }
 }

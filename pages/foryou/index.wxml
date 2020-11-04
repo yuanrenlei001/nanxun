@@ -1,17 +1,18 @@
-<!--pages/foryou/index.wxml-->
+<!--topbar-->
 <view class="topBar">
   <view>
     <image class="imgW leftImg" src="/images/search.png"></image>
   </view>
-  <view class="topText ml32 active">景点</view>
-  <view class="topText ml30">美食</view>
-  <view class="topText ml30">住宿</view>
-  <view class="topText ml30">服务</view>
-  <view class="topText ml30">停车</view>
+  <view class="topText ml32 {{index==='0'?'active':''}}" bindtap="headerTap" data-index="0">景点</view>
+  <view class="topText ml30 {{index==='1'?'active':''}}" bindtap="headerTap" data-index="1">美食</view>
+  <view class="topText ml30 {{index==='2'?'active':''}}" bindtap="headerTap" data-index="2">住宿</view>
+  <view class="topText ml30 {{index==='3'?'active':''}}" bindtap="headerTap" data-index="3">服务</view>
+  <view class="topText ml30 {{index==='4'?'active':''}}" bindtap="headerTap" data-index="4">停车</view>
   <view bindtap="showAllFun">
     <image class="imgW rightImg" src="/images/more.png"></image>
   </view>
 </view>
+<!-- map -->
 <map class="mapW" id="map" 
   longitude="{{longitude}}"
   latitude="{{latitude}}"
@@ -43,68 +44,43 @@
       <image class="close" bindtap="closeFun" src="/images/map/x.png"></image>
     </view>
     <view class="row-h">
-      <view class="moreBlock textLine bodeR activeD">景点</view>
-      <view class="moreBlock textLine bodeR">美食</view>
-      <view class="moreBlock">
+      <view bindtap="headerTap" data-index="0" class="moreBlock textLine bodeR {{index==='0'?'activeD':''}}">景点</view>
+      <view bindtap="headerTap" data-index="1" class="moreBlock textLine bodeR {{index==='1'?'activeD':''}}">美食</view>
+      <view bindtap="headerTap" data-index="2" class="moreBlock {{index==='2'?'activeD':''}}">
         <view class="dobleText">酒店</view>
         <view>民宿</view>
       </view>
     </view>
     <view class="row-h">
-      <view class="moreBlock bodeR">
+      <view bindtap="headerTap" data-index="5" class="moreBlock bodeR {{index==='5'?'activeD':''}}">
         <view class="dobleText">语音</view>
         <view>导航</view>
       </view>
-      <view class="moreBlock textLine bodeR">演出点</view>
-      <view class="moreBlock">
+      <view bindtap="headerTap" data-index="6" class="moreBlock textLine bodeR {{index==='6'?'activeD':''}}">演出点</view>
+      <view bindtap="headerTap" data-index="7" class="moreBlock {{index==='7'?'activeD':''}}">
         <view class="dobleText">游船</view>
         <view>码头</view>
       </view>
     </view>
     <view class="row-h">
-      <view class="moreBlock textLine bodeR">厕所</view>
-      <view class="moreBlock textLine bodeR">停车场</view>
-      <view class="moreBlock textLine ">游客休息点</view>
+      <view bindtap="headerTap" data-index="8" class="moreBlock textLine bodeR {{index==='8'?'activeD':''}}">厕所</view>
+      <view bindtap="headerTap" data-index="4" class="moreBlock textLine bodeR {{index==='4'?'activeD':''}}">停车场</view>
+      <view bindtap="headerTap" data-index="9" class="moreBlock textLine {{index==='9'?'activeD':''}}">游客休息点</view>
     </view>
     <view class="row-h">
-      <view class="moreBlock textLine bodeR">报警柱</view>
-      <view class="moreBlock textLine bodeR">AED急救</view>
-      <view class="moreBlock">
+      <view bindtap="headerTap" data-index="10" class="moreBlock textLine bodeR {{index==='10'?'activeD':''}}">报警柱</view>
+      <view bindtap="headerTap" data-index="11" class="moreBlock textLine bodeR {{index==='11'?'activeD':''}}">AED急救</view>
+      <view bindtap="headerTap" data-index="12" class="moreBlock {{index==='12'?'activeD':''}}">
         <view class="dobleText">游客</view>
         <view>中心</view>
       </view>
     </view>
-    <view class="lastD bodeR">志愿服务站</view>
+    <view class="flex">
+      <view bindtap="headerTap" data-index="3" class="lastD bodeR {{index==='3'?'activeD':''}}">志愿服务站</view>
+      <view bindtap="headerTap" data-index="13" class="lastD bodeR {{index==='13'?'activeD':''}}">特色商铺</view>
+  </view>
   </view>
 </view>
 <!-- 底部详情弹框 -->
-<view class="modelBottom" wx:if="{{modelShow}}">
-  <view class="onD">
-    <view class="modelTop">
-      <view class="flex">
-        <span class="leftText">金宅</span>
-        <image class="leftMai" src="/images/map/mai.png"></image>
-      </view>
-      <view class="rightAr">
-        <image class="arImg" src="/images/map/ar.png"></image>
-        <view class="arT">VR看景</view>
-      </view>
-    </view>
-    <view class="positionT">200m  |  南浔古镇东大街38号</view>
-    <view class="textContent">南浔金家，位于南浔古镇东大街38号，为南浔近代丝商“八牛”之一，人称小金山</view>
-    <view class="flex">
-      <view class="flex">
-        <image class="leftImgW" src="/images/map/share.png"></image>
-        <view class="shareText">分享</view>
-      </view>
-      <view class="flex ml190">
-        <image class="leftImgW" src="/images/map/star.png"></image>
-        <view class="shareText mt5">收藏</view>
-      </view>
-      <view class="flex ml170">
-        <image class="leftImgW" src="/images/map/nav.png"></image>
-        <view class="shareText">导航</view>
-      </view>
-    </view>
-  </view>
-</view>
+<hotel wx:if="{{hiider}}" data="{{modelInfo}}"></hotel>
+<details wx:if="{{listModel}}" list="{{navList}}" type="{{1}}"></details>
