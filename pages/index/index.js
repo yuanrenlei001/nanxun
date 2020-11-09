@@ -33,5 +33,5 @@ Page({
     wx.navigateTo({
       url: '../show-list/show-list',
     })
-  }
+  },
 })

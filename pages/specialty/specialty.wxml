@@ -1,0 +1,24 @@
+    <view class="top">
+  <view class="search">
+    <input type="text" placeholder="搜索南浔古镇特产"/>
+    <image src="/images/index/search.png"></image>
+    
+</view>
+</view>
+
+
+  <!-- 景点列表 -->
+  <view class="main">
+  <view class="listUl">
+    <navigator class="listLi" url="/pages/specialty-detail/specialty-detail">
+      <image src="/images/xxx.jpg" class="bg"></image>
+      <view class="listText">
+        <view class="title">
+          <text class="titleNname">金宅</text>
+          <image src="/images/collection.png" class="collection"></image>
+        </view>
+      </view>
+    </navigator>
+    
+  </view>
+</view>

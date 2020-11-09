@@ -13,7 +13,18 @@ App({
       'show_list':'演出列表',
       'tourist_guide':'美景导游',
       'tourist_detail':'美景详情',
-      'food':'美食餐饮'
+      'food':'美食餐饮',
+      'food_detail':'美食详情',
+      'specialty':'景区特产',
+      'specialty_detail':'特产详情',
+      'ar':'AR看史',
+      'vr':'VR看景',
+      'voice':'语音导览',
+      'tourist':'游客中心',
+      'address':'写生基地',
+      'address_detail':'写生基地详情',
+      'traffic':'交通出行',
+      'phone':'景区电话'
     },
     // tabbar页面
       tabbar_pages: [

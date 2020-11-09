@@ -1,20 +1,8 @@
-/* pages/tourist-guide/tourist-guide.wxss */
-.map {width: 100%;height:368rpx;position: relative;}
-.goMap {position: absolute;bottom:24rpx;right:14rpx;
-  width: 186rpx;
-  height: 58rpx;
-  background: #45ADDD;
-  border-radius: 29px;
-  text-align: center;
-  line-height: 58rpx;
-  color: #fff;
-  font-size: 28rpx;
-}
 .service {position: relative;height:100%;}
 .service image {width: 52rpx;height:52rpx;vertical-align: middle;}
-.search {width:300rpx;height:54rpx;line-height: 54rpx;position: absolute;left:50%;top:50%;margin-top: -27rpx;
+.search {width:500rpx;height:54rpx;line-height: 54rpx;position: absolute;left:50%;top:50%;margin-top: -27rpx;
   background: #fff;
-  margin-left: -190rpx;
+  margin-left: -290rpx;
   box-shadow: 0px 4px 8px 0px rgba(217, 216, 216, 0.5);
   border-radius: 57px;
   padding-left: 80rpx;
@@ -25,11 +13,11 @@
 .number {position: absolute;top:0;right:30rpx;font-size: 24rpx;}
 .search image {width:30rpx;height:30rpx;position: absolute;top:50%;left:26rpx;margin-top: -15rpx;}
 .search input {line-height: 54rpx;height:54rpx;}
-.top {height: 104rpx;width: 100%;line-height: 104rpx;position: absolute;top:68rpx;left:0;}
+.top {height: 104rpx;width: 100%;line-height: 104rpx;position: relative;}
 
 .main {padding: 20rpx;overflow: hidden;}
 .listUl {position: relative;overflow: hidden;width: 110%;}
-.listLi {float:left;margin-right: 16rpx;width: 350rpx;height:406rpx;
+.listLi {float:left;margin-right: 16rpx;width: 350rpx;height:376rpx;
 
   background: #FFFFFF;
   
@@ -41,11 +29,12 @@ box-shadow: 0px 0px 16px 4px rgba(217, 216, 216, 0.5);
 .bg {width: 100%;height:250rpx;}
 .listText {
   padding: 0 42rpx;
-  height:140rpx;
+  height:108rpx;
   position: relative;
 }
 .title {
- 
+  height:108rpx;
+  line-height: 108rpx;
 }
 .bottom {padding: 0 30rpx;position: absolute;bottom:30rpx;left:0;width: 70%;}
 .userImg {width: 16rpx;height:20rpx;vertical-align: middle;}
@@ -55,12 +44,17 @@ box-shadow: 0px 0px 16px 4px rgba(217, 216, 216, 0.5);
   font-size: 20rpx;
 }
 .zan image {width: 20rpx;height:20rpx;vertical-align: middle;}
-.titleNname {font-size: 24rpx;color: #333330;margin-right: 8rpx;}
+.titleNname {font-size: 24rpx;color: #2D2D28;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow: hidden;
+}
 .titleJuli {
   color: rgba(51, 51, 51, 0.42);
   font-size: 20rpx;
 }
-.collection {width: 32rpx;height:32rpx;position: absolute;top:0;right:34rpx;}
+.collection {width: 32rpx;height:32rpx;position: absolute;top:50%;right:34rpx;margin-top: -16rpx;}
 .type {
   
 

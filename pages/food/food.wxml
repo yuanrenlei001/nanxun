@@ -8,13 +8,19 @@
       show-compass='{{compass}}'
       enable-scroll = '{{scroll}}'
     ></map>
+    <view class="sort">
+      <view>面馆</view>
+      <view class="active">餐饮</view>
+      <view>特产</view>
+      <view>酒吧</view>
+      <view>其他</view>
+    </view>
     <view class="top">
   <view class="search">
     <input type="text" placeholder="搜索景点"/>
     <image src="/images/index/search.png"></image>
     
 </view>
-<view class="number">景点 <text style="color:blue;">10 个</text></view>
 </view>
     <view class="goMap">进入地图</view>
   </view>
@@ -23,7 +29,7 @@
   <!-- 景点列表 -->
   <view class="main">
   <view class="listUl">
-    <navigator class="listLi" url="/pages/tourist-detail/tourist-detail">
+    <navigator class="listLi" url="/pages/food-detail/food-detail">
       <image src="/images/xxx.jpg" class="bg"></image>
       <view class="listText">
         <view class="title">
@@ -33,10 +39,10 @@
         </view>
         <view class="type"><text style="color:#999;">500m</text> 国家级文化保护单位</view>
       <view class="bottom">
-        <image src="/images/xxx.jpg" class="userImg"></image>
+        <image src="/images/address.png" class="userImg"></image>
         <text class="name">南西街78号</text>
         <view class="zan">
-          <image src="/images/xxx.jpg" class="unzan"></image> 浏览数 120
+          <image src="/images/see.png" class="unzan"></image> 浏览数 120
         </view>
       </view>
       </view>
