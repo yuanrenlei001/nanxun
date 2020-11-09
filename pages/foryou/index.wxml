@@ -34,8 +34,9 @@
     <image class="periphery" src="/images/map/periphery.png"></image>
   </view>
   <image class="timeMap" src="/images/map/time.png"></image>
-  <image class="positionMap" src="/images/map/position.png"></image>
-  <image class="refreshMap" src="/images/map/refresh.png"></image>
+  <image wx:if="{{rightImg}}" class="positionMap" src="/images/map/position.png"></image>
+  <image wx:if="{{!rightImg}}" class="positionMapR" src="/images/map/position.png"></image>
+  <image wx:if="{{rightImg}}" class="refreshMap" src="/images/map/refresh.png"></image>
 </map>
 <!-- 遮罩层  -->
 <view class="mask" wx:if="{{shouAll}}">

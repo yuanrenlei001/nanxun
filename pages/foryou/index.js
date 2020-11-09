@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    rightImg: true,
     hiider: false,
     listModel: false,
     index: '0',
@@ -580,6 +581,9 @@ Page({
   // markers点击
   gotohere: function(e){
     wx.hideTabBar()
+    this.setData({
+      rightImg: false
+    })
     if(this.data.index === "0"){
       this.setData({
         modelInfo: {

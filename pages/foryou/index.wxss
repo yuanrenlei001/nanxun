@@ -170,3 +170,17 @@
 .activeD{
   background: #FFC645;
 }
+.positionMapR1{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  bottom: 620rpx;
+  left: 24rpx;
+}
+.positionMapR{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  bottom: 420rpx;
+  left: 24rpx;
+}
