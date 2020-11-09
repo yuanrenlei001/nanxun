@@ -21,5 +21,17 @@ Page({
     wx.navigateTo({
       url: '../notice/notice',
     })
+  },
+  // 跳转资讯列表
+  noticeList:function(){
+    wx.navigateTo({
+      url: '../notice-list/notice-list',
+    })
+  },
+   // 跳转演出列表
+   showList:function(){
+    wx.navigateTo({
+      url: '../show-list/show-list',
+    })
   }
 })

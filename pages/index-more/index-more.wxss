@@ -1,0 +1,5 @@
+/* pages/index-more/index-more.wxss */
+.sort {width: 100%;padding: 0 40rpx;font-size: 20rpx;color: #333;position: relative;overflow: hidden;margin-top: 56rpx;}
+.sort image {width:100rpx;height:100rpx;}
+.sortUl {width: 110%;position: relative;overflow: hidden;}
+.sortLi {display: block;width:100rpx;margin-right: 46rpx;float:left;margin-bottom: 80rpx;text-align: center;}

@@ -1,14 +1,19 @@
 {
   "pages": [
+    "pages/food/food",
+    "pages/index/index",
+    "pages/tourist-detail/tourist-detail",
+    "pages/tourist-guide/tourist-guide",
+    
+    "pages/show-list/show-list",
+    "pages/notice-list/notice-list",
+    "pages/index-more/index-more",
+    "pages/notice/notice",
     "pages/foryou/index",
     "pages/map/index",
-    "pages/notice/notice",
-    "pages/index/index",
-    
     "pages/user/index",
     "pages/for-strategy/index"
-    
-    
+   
   ],
   "window": {
     "backgroundTextStyle": "light",

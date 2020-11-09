@@ -37,8 +37,8 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.13.1",
-  "appid": "wxfe3e97ff758b9dc1",
+  "libVersion": "2.12.1",
+  "appid": "wxffc88450f8f807dc",
   "projectname": "xunkaixin",
   "debugOptions": {
     "hidedInDevtools": []

@@ -9,6 +9,7 @@ background: #FFFFFF;
 box-shadow: 0px 0px 12px 0px rgba(217, 216, 216, 0.5);
 border-radius: 12px;
 margin-bottom: 20rpx;
+position: relative;
 }
 .title {font-size: 28rpx;color: #333;
   white-space:nowrap; 
@@ -24,6 +25,8 @@ margin-bottom: 20rpx;
   font-size: 20rpx;
   text-align: justify;
   line-height: 28rpx;
+  width: 95%;
+  margin-top: 12rpx;
 }
 .showText {
   display: -webkit-box;
@@ -33,3 +36,46 @@ margin-bottom: 20rpx;
     -webkit-box-orient: vertical;
     word-break: break-all;
 }
+.open {position: absolute;bottom: 26rpx;right: 22rpx;width: 24rpx;height:24rpx;}
+
+ .text_box{
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(87,105,123,1);
+  line-height: 48rpx;
+ }
+ .textFour_box{
+  width: 100%;
+  font-size: 20rpx;
+  font-weight: 400;
+  color: rgba(87,105,123,1);
+  text-align: justify;
+ }
+ .toggle-icon {
+  width: 25rpx;
+  height: 25rpx;
+ }
+ .text_toggloe_box{
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10rpx 0;
+ }
+ .text_toggle_text{
+  font-size: 24rpx;
+  color: #333;
+  line-height: 32rpx;
+  margin-right: 10rpx;
+ }
+ .three{
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+ }
+ 

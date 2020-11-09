@@ -7,7 +7,13 @@ App({
       'for_you':'浔找你',
       'for_strategy':'浔攻略',
       'user':'我的',
-      'notice':'最新公告'
+      'notice':'最新公告',
+      'index_more':'首页更多',
+      'notice_list':'资讯列表',
+      'show_list':'演出列表',
+      'tourist_guide':'美景导游',
+      'tourist_detail':'美景详情',
+      'food':'美食餐饮'
     },
     // tabbar页面
       tabbar_pages: [

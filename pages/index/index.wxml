@@ -37,7 +37,7 @@
     <view class="sort">
       <view class="sortUl">
         <navigator class="sortLi"><image src="/images/index/icon01.png"></image> <text>门票商城</text></navigator>
-        <navigator class="sortLi"><image src="/images/index/icon02.png"></image> <text>美景导游</text></navigator>
+        <navigator class="sortLi" url='/pages/tourist-guide/tourist-guide'><image src="/images/index/icon02.png"></image> <text>美景导游</text></navigator>
         <navigator class="sortLi"><image src="/images/index/icon03.png"></image> <text>美食餐饮</text></navigator>
         <navigator class="sortLi"><image src="/images/index/icon04.png"></image> <text>南浔特产</text></navigator>
         <navigator class="sortLi"><image src="/images/index/icon05.png"></image> <text>酒店民宿</text></navigator>
@@ -45,7 +45,7 @@
         <navigator class="sortLi"><image src="/images/index/icon07.png"></image> <text>VR看景</text></navigator>
         <navigator class="sortLi"><image src="/images/index/icon08.png"></image> <text>游玩攻略</text></navigator>
         <navigator class="sortLi"><image src="/images/index/icon09.png"></image> <text>南浔特产</text></navigator>
-        <navigator class="sortLi"><image src="/images/index/icon10.png"></image> <text>更多</text></navigator>
+        <navigator class="sortLi" url="/pages/index-more/index-more"><image src="/images/index/icon10.png"></image> <text>更多</text></navigator>
       </view>
     </view>  
   </view>
@@ -62,7 +62,7 @@
   <view class="indexNews">
     <view class="sortTop">
       <text class="sortTop01">最新资讯</text>
-      <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view>
+      <view class="sortTop02" bindtap="noticeList">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
     <view class="newImg">
       <image src="/images/index/indexMap.png"></image>
@@ -73,15 +73,15 @@
   <!-- 演出列表 -->
   <view class="indexList">
     <view class="sortTop">
-      <text class="sortTop01">最新资讯</text>
-      <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view>
+      <text class="sortTop01">必看演出</text>
+      <view class="sortTop02" bindtap="showList">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
     <view class="list">
       <view class="listUl">
-        <navigator class="listLi"><image src="/images/index/icon01.png"></image> <text>水上婚礼</text></navigator>
-        <navigator class="listLi"><image src="/images/index/icon01.png"></image> <text>水上婚礼</text></navigator>
-        <navigator class="listLi"><image src="/images/index/icon01.png"></image> <text>水上婚礼</text></navigator>
-        <navigator class="listLi"><image src="/images/index/icon01.png"></image> <text>水上婚礼</text></navigator>
+        <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
+        <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
+        <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
+        <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
       </view>
     </view>
   </view>
