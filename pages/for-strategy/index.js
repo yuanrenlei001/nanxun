@@ -6,7 +6,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list:[
+      {
+        name: '推荐路线一',
+        text: '湖笔文化园 - 申浩科技农场',
+        text2: '感受农庄四季美景 品尝江南名肴',
+        starStatus: false
+      },
+      {
+        name: '推荐路线二',
+        text: '湖笔文化园 - 申浩科技农场',
+        text2: '感受农庄四季美景 品尝江南名肴',
+        starStatus: false
+      },
+      {
+        name: '推荐路线三',
+        text: '湖笔文化园 - 申浩科技农场',
+        text2: '感受农庄四季美景 品尝江南名肴',
+        starStatus: false
+      },
+      {
+        name: '推荐路线四',
+        text: '湖笔文化园 - 申浩科技农场',
+        text2: '感受农庄四季美景 品尝江南名肴',
+        starStatus: true
+      }
+    ]
   },
 
   /**
@@ -63,5 +88,26 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  starShow: function(e) {
+    let i = e.currentTarget.dataset.index
+    let text = 'list['+i+'].starStatus'
+    console.log(text)
+    this.setData({
+      [text]: true
+    })
+  },
+  starHidder: function (e) {
+    let i = e.currentTarget.dataset.index
+    let text = 'list['+i+'].starStatus'
+    console.log(text)
+    this.setData({
+      [text]: false
+    })
+  },
+  customizedFun: function(){
+    wx.navigateTo({
+      url: "../customized/customized"
+    })
   }
 })

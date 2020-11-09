@@ -1,14 +1,32 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/phone/phone",
+    "pages/address-detail/address-detail",
+    "pages/traffic/traffic",
+    
+    
+    "pages/address/address",
+    "pages/tourist/tourist",
+    "pages/voice/voice",
+   
+    "pages/ar/ar",
+    "pages/vr/vr",
+    "pages/specialty-detail/specialty-detail",
+    "pages/specialty/specialty",
+    "pages/food/food",
+    "pages/food-detail/food-detail",
+    "pages/tourist-detail/tourist-detail",
+    "pages/tourist-guide/tourist-guide",
+    "pages/show-list/show-list",
+    "pages/notice-list/notice-list",
+    "pages/index-more/index-more",
+    "pages/notice/notice",
     "pages/foryou/index",
     "pages/map/index",
-    "pages/notice/notice",
-    "pages/index/index",
-    
     "pages/user/index",
-    "pages/for-strategy/index"
-    
-    
+    "pages/for-strategy/index",
+    "pages/customized/customized"
   ],
   "window": {
     "backgroundTextStyle": "light",

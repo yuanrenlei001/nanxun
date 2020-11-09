@@ -1,0 +1,10 @@
+/* pages/tourist/tourist.wxss */
+page {background-color: #EDEDED;}
+.main {
+  padding: 36rpx;
+  background: #FFFFFF;
+  border-radius: 8px;
+  margin: 40rpx;
+}
+.title {font-size: 32rpx;color: #333;}
+.text {font-size: 32rpx;color: #999;text-align: justify;}
