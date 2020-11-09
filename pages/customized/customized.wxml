@@ -1,2 +1,50 @@
 <!--pages/customized/customized.wxml-->
-<view>行程定制1</view>
+<view class="bg" hidden="{{mapShow}}">
+  <view class="text1">订制信息</view>
+  <view class="text2 flex">
+    计划游玩
+    <input class="inputL"  placeholder="输入游玩天数"/>
+    天
+  </view>
+  <view class="text3 flex">
+    游玩人数  
+    <input class="inputL"  placeholder="输入游玩人数"/>
+    人
+  </view>
+  <view class="text4">喜好：</view>
+  <view class="likeD">
+    <view class="selsctV {{item.status? 'likeColorActive' : 'likeColor' }}" 
+    wx:for="{{list}}" wx:key="index"
+    bindtap="likeClick"
+    data-index="{{index}}"
+    >
+    {{item.name}}
+  </view>
+  </view>
+  <view class="text5">
+    <switch color="#FFC645" checked="true"></switch>
+  </view>
+  <view class="btn" bindtap="saveFun">
+    生成行程
+  </view>
+</view>
+<view class="mask" hidden="{{loading}}">
+  <image class="loadingImg" src="/images/strategy/loading.png"></image>
+  <view class="maskColorText">正在努力规划行程中……</view>
+</view>
+<view hidden="{{!mapShow}}">
+  <map class="map">
+    <view class="footerBlock">
+      <view style="margin-left: 52rpx;margin-top: 40rpx;">
+        <view class="map_top">小莲庄-嘉业藏书楼-南浔张氏旧宅建筑群</view>
+        <view class="address">3个景点|全程21公里</view>
+        <view class="route"></view>
+        <view class="flex">
+          <view class="introduce">景点介绍</view>
+          <view class="more">更多</view>
+        </view>
+        <view class="footerText">小莲庄是始建于清光绪年间的古典园林建筑。属于南浔首富刘镛（字贯经）的私家园林、家庙及义庄所在……</view>
+      </view>
+    </view>
+  </map>
+</view>

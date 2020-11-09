@@ -5,14 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    loading: true,
+    mapShow: false,
+    list: [
+      {
+        name: '历史人文',
+        status: true
+      },
+      {
+        name: '水乡漫步',
+        status: false
+      },
+      {
+        name: 'AR体验',
+        status: false
+      },
+      {
+        name: '艺术演出',
+        status: false
+      },
+      {
+        name: '文艺写生',
+        status: false
+      },
+      {
+        name: '民风民俗',
+        status: false
+      },
+      {
+        name: '网红打卡',
+        status: false
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({title: '行程订制'});
   },
 
   /**
@@ -62,5 +93,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  likeClick: function (e){
+    let i = e.currentTarget.dataset.index;
+    let key = 'list['+ i + '].status'
+    this.setData({
+      [key]: !this.data.list[i].status
+    })
+  },
+  saveFun: function (){
+    this.setData({
+      loading: false
+    })
+    setTimeout(()=> {
+      this.setData({
+        loading: true,
+        mapShow: true
+      })
+    },1000)
   }
 })

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/customized/customized",
     "pages/phone/phone",
     "pages/address-detail/address-detail",
     "pages/traffic/traffic",
@@ -25,8 +26,7 @@
     "pages/foryou/index",
     "pages/map/index",
     "pages/user/index",
-    "pages/for-strategy/index",
-    "pages/customized/customized"
+    "pages/for-strategy/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
