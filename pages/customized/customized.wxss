@@ -113,6 +113,7 @@
   background: #fff;
   position: absolute;
   bottom: 0;
+  z-index: 999;
   /* padding-left: 52rpx; */
   /* padding-top: 40rpx; */
 }
@@ -152,4 +153,5 @@
   font-weight: 300;
   color: #333333;
   line-height: 28rpx;
+  white-space: normal;
 }

@@ -118,13 +118,16 @@
 .tBg{
   background: #fff;
   width: 100%;
-  height: 846rpx;
+  /* height: 846rpx; */
 }
 .topH{
   height: 66rpx;
   width: 100%;
   position: relative;
-  border-bottom: 2rpx solid rgba(221, 221, 221, 0.36);
+  border: 2rpx solid rgba(221, 221, 221, 0.36);
+}
+.bdSi{
+  border: 2rpx solid rgba(221, 221, 221, 0.36);
 }
 .close{
   width: 28rpx;

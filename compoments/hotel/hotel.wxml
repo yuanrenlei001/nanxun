@@ -1,41 +1,41 @@
 <!--compoments/hotel/hotel.wxml-->
-<view class="tab2Model">
-  <view class="onD">
-    <view class="modelTop">
-      <view class="flex">
-        <span class="leftText">{{data.name}}</span>
-        <view class="tese" wx:if="{{data.lable}}">{{data.lable}}</view>
-        <image wx:if="{{data.type === 0}}" class="leftMai" src="/images/map/mai.png"></image>
-      </view>
-      <view class="rightAr" wx:if="{{data.run}}">
-        <image wx:if="{{data.type === 0}}" class="arImg" src="/images/map/ar.png"></image>
-        <image wx:if="{{data.type === 1}}" class="arImg1" src="/images/map/Unchecked/run.png"></image>
-        <view wx:if="{{data.type === 0}}" class="arT">VR看景</view>
-      </view>
-    </view>
-    <view class="positionT">{{data.address}}</view>
-    <view wx:if="{{data.describe}}" class="textContent">{{data.describe}}</view>
-    <view wx:if="{{data.star}}">
-      <image class="starW" src="/images/map/star1.png"></image>
-      <image class="starW" src="/images/map/star1.png"></image>
-      <image class="starW" src="/images/map/star1.png"></image>
-      <image class="starW" src="/images/map/star1.png"></image>
-      <image class="starW" src="/images/map/star2.png"></image>
-    </view>
-    <view class="flex starBw">
-      <view class="flex">
-        <image class="leftImgW" src="/images/map/share.png"></image>
-        <view class="shareText">分享</view>
-      </view>
-      <view class="flex ml190">
-        <image class="leftImgW" src="/images/map/star.png"></image>
-        <view class="shareText mt5">收藏</view>
-      </view>
-      <view class="flex ml170">
-        <image class="leftImgW" src="/images/map/nav.png"></image>
-        <view class="shareText">导航</view>
-      </view>
-    </view>
-  </view>
-</view>
+<cover-view class="tab2Model">
+  <cover-view class="onD">
+    <cover-view class="modelTop">
+      <cover-view class="flex">
+        <cover-view class="leftText">{{data.name}}</cover-view>
+        <cover-view class="tese" wx:if="{{data.lable}}">{{data.lable}}</cover-view>
+        <cover-image wx:if="{{data.type === 0}}" class="leftMai" src="/images/map/mai.png"></cover-image>
+      </cover-view>
+      <cover-view class="rightAr" wx:if="{{data.run}}">
+        <cover-image wx:if="{{data.type === 0}}" class="arImg" src="/images/map/ar.png"></cover-image>
+        <cover-image wx:if="{{data.type === 1}}" class="arImg1" src="/images/map/Unchecked/run.png"></cover-image>
+        <cover-view wx:if="{{data.type === 0}}" class="arT">VR看景</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="positionT">{{data.address}}</cover-view>
+    <cover-view wx:if="{{data.describe}}" class="textContent">{{data.describe}}</cover-view>
+    <cover-view wx:if="{{data.star}}" style="display: flex;margin-top: 18rpx;">
+      <cover-image class="starW" src="/images/map/star1.png"></cover-image>
+      <cover-image class="starW" src="/images/map/star1.png"></cover-image>
+      <cover-image class="starW" src="/images/map/star1.png"></cover-image>
+      <cover-image class="starW" src="/images/map/star1.png"></cover-image>
+      <cover-image class="starW" src="/images/map/star2.png"></cover-image>
+    </cover-view>
+    <cover-view class="flex starBw">
+      <cover-view class="flex">
+        <cover-image class="leftImgW" src="/images/map/share.png"></cover-image>
+        <cover-view class="shareText">分享</cover-view>
+      </cover-view>
+      <cover-view class="flex ml190">
+        <cover-image class="leftImgW" src="/images/map/star.png"></cover-image>
+        <cover-view class="shareText mt5">收藏</cover-view>
+      </cover-view>
+      <cover-view class="flex ml170">
+        <cover-image class="leftImgW" src="/images/map/nav.png"></cover-image>
+        <cover-view class="shareText">导航</cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>
 

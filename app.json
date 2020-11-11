@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/foryou/index",
     "pages/customized/customized",
+    "pages/index/index",
     "pages/phone/phone",
     "pages/address-detail/address-detail",
     "pages/traffic/traffic",
@@ -23,7 +24,6 @@
     "pages/notice-list/notice-list",
     "pages/index-more/index-more",
     "pages/notice/notice",
-    "pages/foryou/index",
     "pages/map/index",
     "pages/user/index",
     "pages/for-strategy/index"

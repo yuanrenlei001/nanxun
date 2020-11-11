@@ -12,10 +12,18 @@
 .listH{
   width: 100%;
   height: 156rpx;
-  border-bottom: 1px solid #f1f1f1;
+  /* border-bottom: 1px solid #f1f1f1; */
+  position: relative;
+}
+.border_false{
+  width: 100%;
+  height: 1px;
+  background: #f1f1f1;
+  position: absolute;
+  bottom: 0;
 }
 .flex{
-  display: flex;
+  height: 100rpx;
   position: relative;
 }
 .bjStyle{
@@ -46,5 +54,4 @@
   font-weight: 500;
   color: rgba(51, 51, 51, 0.62);
   margin-left: 36rpx;
-  margin-top: 8rpx;
 }

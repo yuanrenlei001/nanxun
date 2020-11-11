@@ -91,6 +91,7 @@
   color: #333;
   padding-right: 44rpx;
   line-height: 28rpx;
+  white-space: normal;
 }
 .leftImgW{
   width: 32rpx;

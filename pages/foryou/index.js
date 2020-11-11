@@ -22,32 +22,22 @@ Page({
         iconPath: "/images/map/Unchecked/scenic_spot.png",
         longitude: 116.411885,
         latitude: 39.92492,
-        // title: "小何饭店1",
+        anchor: {
+          x : 1,
+          y : .5
+        },
         label:{
           content: '金宅',
           color: '#333',
-          fontSize: 20,
+          fontSize: 18,
           textAlign: "center",
-          // anchorX: -10,
-          anchorY: -70
+          anchorX: -32,
+          anchorY: -45
         },
-        width: 31,
-        height: 38
-      },
-      {
-        id: 1,
-        iconPath: "/images/map/Unchecked/scenic_spot.png",
-        longitude: 116.411885,
-        latitude: 39.92392,
-        label:{
-          content: '小何饭店',
-          color: '#333',
-          fontSize: 20,
-          textAlign: "center",
-          // anchorX: -10,
-          anchorY: -70
+        anchor: {
+          x : 1,
+          y : .5
         },
-        // title: "小何饭店2",
         width: 31,
         height: 38
       }
@@ -159,35 +149,37 @@ Page({
             iconPath: "/images/map/Unchecked/scenic_spot.png",
             longitude: 116.411885,
             latitude: 39.92492,
-            // title: "小何饭店1",
             label:{
               content: '金宅',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
+            },
+            anchor: {
+              x : 1,
+              y : .5
             },
             width: 31,
             height: 38
           },
-          {
-            id: 1,
-            iconPath: "/images/map/Unchecked/scenic_spot.png",
-            longitude: 116.411885,
-            latitude: 39.92392,
-            label:{
-              content: '小何饭店',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            // title: "小何饭店2",
-            width: 31,
-            height: 38
-          }
+          // {
+          //   id: 1,
+          //   iconPath: "/images/map/Unchecked/scenic_spot.png",
+          //   longitude: 116.411885,
+          //   latitude: 39.92392,
+          //   label:{
+          //     content: '小何饭店',
+          //     color: '#333',
+          //     fontSize: 20,
+          //     textAlign: "center",
+          //     // anchorX: -10,
+          //     anchorY: -70
+          //   },
+          //   width: 31,
+          //   height: 38
+          // }
         ]
       })
     }
@@ -199,32 +191,18 @@ Page({
             iconPath: "/images/map/Unchecked/restaurant.png",
             longitude: 116.411885,
             latitude: 39.92492,
-            // title: "小何饭店1",
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '澳门豆捞',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
-            width: 31,
-            height: 38
-          },
-          {
-            id: 1,
-            iconPath: "/images/map/Unchecked/restaurant.png",
-            longitude: 116.411885,
-            latitude: 39.92392,
-            label:{
-              content: '澳门豆捞1',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            // title: "小何饭店2",
             width: 31,
             height: 38
           }
@@ -239,32 +217,18 @@ Page({
             iconPath: "/images/map/Unchecked/hotel.png",
             longitude: 116.411885,
             latitude: 39.92492,
-            // title: "小何饭店1",
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '龙门客栈1',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
-            width: 31,
-            height: 38
-          },
-          {
-            id: 1,
-            iconPath: "/images/map/Unchecked/hotel.png",
-            longitude: 116.411885,
-            latitude: 39.92392,
-            label:{
-              content: '龙门客栈2',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            // title: "小何饭店2",
             width: 31,
             height: 38
           }
@@ -279,32 +243,18 @@ Page({
             iconPath: "/images/map/Unchecked/server.png",
             longitude: 116.411885,
             latitude: 39.92492,
-            // title: "小何饭店1",
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '服务站',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
-            width: 31,
-            height: 38
-          },
-          {
-            id: 1,
-            iconPath: "/images/map/Unchecked/server.png",
-            longitude: 116.411885,
-            latitude: 39.92392,
-            label:{
-              content: '服务',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            // title: "小何饭店2",
             width: 31,
             height: 38
           }
@@ -319,32 +269,18 @@ Page({
             iconPath: "/images/map/Unchecked/p.png",
             longitude: 116.411885,
             latitude: 39.92492,
-            // title: "小何饭店1",
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '停车场1',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
-            width: 31,
-            height: 38
-          },
-          {
-            id: 1,
-            iconPath: "/images/map/Unchecked/p.png",
-            longitude: 116.411885,
-            latitude: 39.92392,
-            label:{
-              content: '停车场',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            // title: "小何饭店2",
             width: 31,
             height: 38
           }
@@ -373,14 +309,17 @@ Page({
             iconPath: "/images/map/Unchecked/yuyin.png",
             longitude: 116.411885,
             latitude: 39.92492,
-            // title: "小何饭店1",
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '语音导航',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
             width: 31,
             height: 38
@@ -396,13 +335,17 @@ Page({
             iconPath: "/images/map/Unchecked/yanchu.png",
             longitude: 116.411885,
             latitude: 39.92492,
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '演出点',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
             width: 31,
             height: 38
@@ -419,13 +362,17 @@ Page({
             iconPath: "/images/map/Unchecked/matou.png",
             longitude: 116.411885,
             latitude: 39.92492,
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '游船码头',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
             width: 31,
             height: 38
@@ -441,13 +388,17 @@ Page({
             iconPath: "/images/map/Unchecked/wc.png",
             longitude: 116.411885,
             latitude: 39.92492,
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '厕所',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
             width: 31,
             height: 38
@@ -463,13 +414,17 @@ Page({
             iconPath: "/images/map/Unchecked/qixi.png",
             longitude: 116.411885,
             latitude: 39.92492,
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '游客休息',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
             width: 31,
             height: 38
@@ -485,13 +440,17 @@ Page({
             iconPath: "/images/map/Unchecked/bj.png",
             longitude: 116.411885,
             latitude: 39.92492,
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '报警柱',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
             width: 31,
             height: 38
@@ -507,13 +466,17 @@ Page({
             iconPath: "/images/map/Unchecked/sos.png",
             longitude: 116.411885,
             latitude: 39.92492,
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: 'AED急救',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
             width: 31,
             height: 38
@@ -529,13 +492,17 @@ Page({
             iconPath: "/images/map/Unchecked/zhong.png",
             longitude: 116.411885,
             latitude: 39.92492,
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '游客中心',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
             width: 31,
             height: 38
@@ -551,13 +518,17 @@ Page({
             iconPath: "/images/map/Unchecked/characteristic.png",
             longitude: 116.411885,
             latitude: 39.92492,
+            anchor: {
+              x : 1,
+              y : .5
+            },
             label:{
               content: '特色商铺',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
+              anchorX: -32,
+              anchorY: -45
             },
             width: 31,
             height: 38
@@ -580,6 +551,7 @@ Page({
   },
   // markers点击
   gotohere: function(e){
+    console.log('点击了markers！！！')
     wx.hideTabBar()
     this.setData({
       rightImg: false
