@@ -1,0 +1,15 @@
+<view class="top">
+  <view class="search">
+    <input type="text" placeholder="搜索南浔最新资讯"/>
+    <image src="/images/index/search.png"></image>
+</view>
+</view>
+<view class="list">
+  <navigator class="list_News">
+    <image src="/images/index/indexMap.png"></image>
+    <view class="list_text">
+      <view class="list_text01">南浔节假日景点游客人数再创新高</view>
+      <view class="list_text02">十一长假，南浔节假日景点游客人数再创新高！</view>
+    </view>
+  </navigator>
+</view>

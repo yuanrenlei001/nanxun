@@ -1,0 +1,23 @@
+<view class="top">
+  <view class="search">
+    <input type="text" placeholder="搜索南浔最新资讯"/>
+    <image src="/images/index/search.png"></image>
+</view>
+</view>
+<view class="main">
+  <view class="listUl">
+    <navigator class="listLi">
+      <image src="/images/index/indexMap.png" class="bg"></image>
+      <view class="listText">
+        <view class="title">水乡婚礼</view>
+      <view class="bottom">
+        <image src="/images/index/indexMap.png" class="userImg"></image>
+        <text class="name">大白</text>
+        <view class="zan">
+          <image src="/images/zan.png" class="unzan"></image> 12
+        </view>
+      </view>
+      </view>
+    </navigator>
+  </view>
+</view>

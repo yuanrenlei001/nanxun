@@ -1,0 +1,31 @@
+<!--pages/notice/notice.wxml-->
+<view class="main">
+  <!-- <view class="list" wx:for='{{trendsList}}' wx:key='index'>
+    <view class="title">新的景点开设</view>
+    <view class="time">2020.10.24</view>
+    <view class="text {{item.seeMore?'three':''}}">
+      {{item.text}}
+    </view>
+    <view class="text_toggle_box" wx:if='{{item.seeMore}}' data-index='{{index}}' catchtap='toggleHandler'>
+    <text class="text_toggle_text">查看更多</text>
+   </view>
+   <view class="text_toggle_box" wx:if='{{!item.seeMore && item.auto}}' data-index='{{index}}' catchtap='toggleContent'>
+    <text class="text_toggle_text">收起</text>
+   </view>
+  </view> -->
+
+  <block wx:for='{{trendsList}}' wx:key='index'>
+  <view class="box list">
+    <view class="title">新的景点开设</view>
+    <view class="time">2020.10.24</view>
+   <view class="textFour_box text {{item.seeMore?'three':''}}">{{item.text}}</view>
+   <view class="text_toggle_box" wx:if='{{item.seeMore}}' data-index='{{index}}' catchtap='toggleHandler'>
+    <image class="open" src="/images/iconMore.png"></image>
+   </view>
+   <view class="text_toggle_box" wx:if='{{!item.seeMore && item.auto}}' data-index='{{index}}' catchtap='toggleContent'>
+    <image class="open" src="/images/iconUp.png"></image>
+   </view>
+  </view>
+ </block>
+
+</view>

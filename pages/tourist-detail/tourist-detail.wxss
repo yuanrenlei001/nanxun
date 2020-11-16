@@ -1,0 +1,58 @@
+/* pages/tourist-detail/tourist-detail.wxss */
+.swipers {width: 100%;height:386rpx;position: relative;z-index: 1;}
+.swipers image {width: 100%;height:386rpx;}
+
+.swipers .wx-swiper-dots.wx-swiper-dots-horizontal{
+  margin-bottom: 36rpx;
+}
+.main {background: #fff;position: relative;
+  top:-34rpx;
+  z-index: 2;
+  min-height:500rpx;
+  border-radius: 32rpx;
+  padding: 60rpx;
+}
+.title {position: relative;width: 100%;}
+.title image {width:40rpx;height:40rpx;margin-right: 8rpx;vertical-align: middle;}
+.title01 {font-size: 36rpx;color: #000;width: 50%;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow: hidden;
+}
+.title02 {font-size: 20rpx;color: #333;margin-right: 50rpx;
+  position: absolute;
+  right:100rpx;
+  top:5rpx;
+}
+.title03 {font-size: 20rpx;color: #333;
+  position: absolute;
+  right:0;
+  top:5rpx;
+}
+.text {
+  font-size: 28rpx;color: #666;
+  margin: 8rpx 0 10rpx 0;
+}
+audio {
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+  margin: 36rpx 0;
+
+}
+.content {
+font-size: 24rpx;
+font-weight: 300;
+color: #333333;
+line-height: 34px;
+text-align: justify;
+}
+.bottom image {
+  width:32rpx;height:32rpx;margin-right: 16rpx;vertical-align: sub;
+}
+.bottom view {float:right;}
+.bottom01 {margin-right: 56rpx;}

@@ -1,0 +1,41 @@
+<!--compoments/hotel/hotel.wxml-->
+<view class="tab2Model">
+  <view class="onD">
+    <view class="modelTop">
+      <view class="flex">
+        <span class="leftText">{{data.name}}</span>
+        <view class="tese" wx:if="{{data.lable}}">{{data.lable}}</view>
+        <image wx:if="{{data.type === 0}}" class="leftMai" src="/images/map/mai.png"></image>
+      </view>
+      <view class="rightAr" wx:if="{{data.run}}">
+        <image wx:if="{{data.type === 0}}" class="arImg" src="/images/map/ar.png"></image>
+        <image wx:if="{{data.type === 1}}" class="arImg1" src="/images/map/Unchecked/run.png"></image>
+        <view wx:if="{{data.type === 0}}" class="arT">VR看景</view>
+      </view>
+    </view>
+    <view class="positionT">{{data.address}}</view>
+    <view wx:if="{{data.describe}}" class="textContent">{{data.describe}}</view>
+    <view wx:if="{{data.star}}">
+      <image class="starW" src="/images/map/star1.png"></image>
+      <image class="starW" src="/images/map/star1.png"></image>
+      <image class="starW" src="/images/map/star1.png"></image>
+      <image class="starW" src="/images/map/star1.png"></image>
+      <image class="starW" src="/images/map/star2.png"></image>
+    </view>
+    <view class="flex starBw">
+      <view class="flex">
+        <image class="leftImgW" src="/images/map/share.png"></image>
+        <view class="shareText">分享</view>
+      </view>
+      <view class="flex ml190">
+        <image class="leftImgW" src="/images/map/star.png"></image>
+        <view class="shareText mt5">收藏</view>
+      </view>
+      <view class="flex ml170">
+        <image class="leftImgW" src="/images/map/nav.png"></image>
+        <view class="shareText">导航</view>
+      </view>
+    </view>
+  </view>
+</view>
+

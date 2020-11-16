@@ -1,0 +1,16 @@
+<view class="top">
+  <view class="search">
+    <input type="text" placeholder="搜索景点"/>
+    <image src="/images/index/search.png"></image>
+    
+  </view>
+</view>
+<view class="main">
+  <navigator class="list">
+    <view class="listLeft"><image src="/images/xxx.jpg"></image></view>
+    <view class="listRight">
+      <view class="listRight01">南浔古镇</view>
+      <view class="listRight02">南浔古镇位于湖州市南浔区，地处江浙南浔古镇位于湖州市南浔区，地处江浙</view>
+    </view>
+  </navigator>
+</view>

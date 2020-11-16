@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/phone/phone",
+    "pages/address-detail/address-detail",
+    "pages/traffic/traffic",
+    "pages/address/address",
+    "pages/tourist/tourist",
+    "pages/voice/voice",
+    "pages/ar/ar",
+    "pages/vr/vr",
+    "pages/specialty-detail/specialty-detail",
+    "pages/specialty/specialty",
+    "pages/food/food",
+    "pages/food-detail/food-detail",
+    "pages/tourist-detail/tourist-detail",
+    "pages/tourist-guide/tourist-guide",
+    "pages/show-list/show-list",
+    "pages/notice-list/notice-list",
+    "pages/index-more/index-more",
+    "pages/notice/notice",
+    "pages/foryou/index",
+    "pages/map/index",
+    "pages/user/index",
+    "pages/for-strategy/index"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFC645",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#333",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/nav-index.png",
+        "selectedIconPath": "/images/nav-index-active.png",
+        "text": "浔开心"
+      },
+      {
+        "pagePath": "pages/foryou/index",
+        "iconPath": "/images/nav-you.png",
+        "selectedIconPath": "/images/nav-you-active.png",
+        "text": "浔找你"
+      },
+      {
+        "pagePath": "pages/for-strategy/index",
+        "iconPath": "/images/nav-strategy.png",
+        "selectedIconPath": "/images/nav-strategy-active.png",
+        "text": "浔攻略"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "/images/nav-user.png",
+        "selectedIconPath": "/images/nav-user-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
