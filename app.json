@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/user/index",
+    
     "pages/foryou/index",
     "pages/customized/customized",
    
@@ -26,7 +28,7 @@
     "pages/index-more/index-more",
     "pages/notice/notice",
     "pages/map/index",
-    "pages/user/index",
+    
     "pages/for-strategy/index"
   ],
   "window": {
