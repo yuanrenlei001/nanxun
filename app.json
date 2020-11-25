@@ -1,8 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/user/index",
+    
     "pages/foryou/index",
     "pages/customized/customized",
+   
     "pages/phone/phone",
     "pages/address-detail/address-detail",
     "pages/traffic/traffic",
@@ -25,7 +28,7 @@
     "pages/index-more/index-more",
     "pages/notice/notice",
     "pages/map/index",
-    "pages/user/index",
+    
     "pages/for-strategy/index"
   ],
   "window": {
@@ -34,6 +37,9 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
+  "navigateToMiniProgramAppIdList": [
+    "wx0e6ed4f51db9d078"
+  ],
   "tabBar": {
     "color": "#333",
     "selectedColor": "#333",
