@@ -560,7 +560,7 @@ Page({
       this.setData({
         modelInfo: {
           name: '金宅',
-          type: 0,
+          type: this.data.index,
           address: '200m  |  南浔古镇东大街38号',
           lable: '',
           describe: '南浔金家，位于南浔古镇东大街38号，为南浔近代丝商“八牛”之一，人称小金山',
@@ -574,7 +574,7 @@ Page({
       this.setData({
         modelInfo: {
           name: '小何饭店',
-          type: '',
+          type: this.data.index,
           address: '200m  |  南浔古镇东大街38号',
           lable: '特色店铺',
           describe: '',
@@ -588,7 +588,7 @@ Page({
       this.setData({
         modelInfo: {
           name: '小何饭店',
-          type: '',
+          type: this.data.index,
           address: '200m  |  南浔古镇东大街38号',
           lable: '特色店铺',
           describe: '',
@@ -602,7 +602,7 @@ Page({
       this.setData({
         modelInfo: {
           name: '小何饭店',
-          type: '',
+          type: this.data.index,
           address: '200m  |  南浔古镇东大街38号',
           lable: '特色店铺',
           describe: '',
@@ -616,7 +616,7 @@ Page({
       this.setData({
         modelInfo: {
           name: '酒店停车场',
-          type: '',
+          type: this.data.index,
           address: '200m  |  南浔古镇东大街38号',
           lable: '',
           describe: '',
