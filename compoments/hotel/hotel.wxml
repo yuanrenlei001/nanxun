@@ -5,12 +5,12 @@
       <cover-view class="flex">
         <cover-view class="leftText">{{data.name}}</cover-view>
         <cover-view class="tese" wx:if="{{data.lable}}">{{data.lable}}</cover-view>
-        <cover-image wx:if="{{data.type === 0}}" class="leftMai" src="/images/map/mai.png"></cover-image>
+        <cover-image wx:if="{{data.type === '0'}}" class="leftMai" src="/images/map/mai.png"></cover-image>
       </cover-view>
       <cover-view class="rightAr" wx:if="{{data.run}}">
-        <cover-image wx:if="{{data.type === 0}}" class="arImg" src="/images/map/ar.png"></cover-image>
-        <cover-image wx:if="{{data.type === 1}}" class="arImg1" src="/images/map/Unchecked/run.png"></cover-image>
-        <cover-view wx:if="{{data.type === 0}}" class="arT">VR看景</cover-view>
+        <cover-image wx:if="{{data.type === '0'}}" class="arImg" src="/images/map/ar.png"></cover-image>
+        <cover-image wx:if="{{data.type === '1'}}" class="arImg1" src="/images/map/Unchecked/run.png"></cover-image>
+        <cover-view wx:if="{{data.type === '0'}}" class="arT">VR看景</cover-view>
       </cover-view>
     </cover-view>
     <cover-view class="positionT">{{data.address}}</cover-view>
