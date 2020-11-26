@@ -1,0 +1,15 @@
+<swiper indicator-dots="{{indicatorDots}}" class="swipers"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{img}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{url+item}}"></image>
+          </swiper-item>
+        </block>
+      </swiper> 
+
+<view class="main">
+  <view class="title">
+    <view class="title01">{{detail.name}}</view>
+  </view>
+  <rich-text class="content" nodes="{{detail.intro}}"></rich-text>
+</view>

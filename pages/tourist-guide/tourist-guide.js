@@ -6,24 +6,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    latitude: 23.099994,
-    longitude: 113.324520,
+    latitude: 30.84979,
+    longitude: 120.41847,
     zoom:false,
     compass:false,
     scroll:false,
     markers: [{
       id: 1,
-      latitude: 23.099994,
-      longitude: 113.324520,
+      latitude: 30.84979,
+    longitude: 120.41847,
       name: 'T.I.T 创意园'
     }],
     covers: [{
-      latitude: 23.099994,
-      longitude: 113.344520,
+      latitude: 30.84979,
+    longitude: 120.41847,
       iconPath: '/image/location.png'
     }, {
-      latitude: 23.099994,
-      longitude: 113.304520,
+      latitude: 30.84979,
+    longitude: 120.41847,
       iconPath: '/image/location.png'
     }]
   },
