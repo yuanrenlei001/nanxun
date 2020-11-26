@@ -6,11 +6,19 @@
         <cover-view class="leftText">{{data.name}}</cover-view>
         <cover-view class="tese" wx:if="{{data.lable}}">{{data.lable}}</cover-view>
         <cover-image wx:if="{{data.type === '0'}}" class="leftMai" src="/images/map/mai.png"></cover-image>
+        <cover-view class="flex stopNum" wx:if="{{data.type === '4'}}">
+          <cover-view class="">20</cover-view>
+          <cover-view class="stopTotal">/100</cover-view>
+        </cover-view>
       </cover-view>
       <cover-view class="rightAr" wx:if="{{data.run}}">
         <cover-image wx:if="{{data.type === '0'}}" class="arImg" src="/images/map/ar.png"></cover-image>
         <cover-image wx:if="{{data.type === '1'}}" class="arImg1" src="/images/map/Unchecked/run.png"></cover-image>
         <cover-view wx:if="{{data.type === '0'}}" class="arT">VR看景</cover-view>
+      </cover-view>
+      <cover-view class="rightAr1" wx:if="{{data.type !== '0' && data.type !== '1' && data.type !== '2'}}">
+        <cover-image class="leftImgW1" src="/images/map/nav.png"></cover-image>
+        <cover-view class="arT1">导航</cover-view>
       </cover-view>
     </cover-view>
     <cover-view class="positionT">{{data.address}}</cover-view>
@@ -22,16 +30,17 @@
       <cover-image class="starW" src="/images/map/star1.png"></cover-image>
       <cover-image class="starW" src="/images/map/star2.png"></cover-image>
     </cover-view>
+    <!-- <cover-view style="height: 24rpx;"></cover-view> -->
     <cover-view class="flex starBw">
-      <cover-view class="flex">
+      <cover-view class="flex" wx:if="{{data.type === '0' || data.type === '1' || data.type === '2'}}">
         <cover-image class="leftImgW" src="/images/map/share.png"></cover-image>
         <cover-view class="shareText">分享</cover-view>
       </cover-view>
-      <cover-view class="flex ml190">
+      <cover-view class="flex ml190" wx:if="{{data.type === '0' || data.type === '1' || data.type === '2'}}">
         <cover-image class="leftImgW" src="/images/map/star.png"></cover-image>
         <cover-view class="shareText mt5">收藏</cover-view>
       </cover-view>
-      <cover-view class="flex ml170">
+      <cover-view class="flex ml170" wx:if="{{data.type === '0' || data.type === '1' || data.type === '2'}}">
         <cover-image class="leftImgW" src="/images/map/nav.png"></cover-image>
         <cover-view class="shareText">导航</cover-view>
       </cover-view>
