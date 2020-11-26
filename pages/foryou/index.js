@@ -10,8 +10,8 @@ Page({
     hiider: false,
     listModel: false,
     index: '0',
-    longitude: 116.411885,
-    latitude: 39.92392,
+    latitude: 30.84979,
+    longitude: 120.41847,
     shouAll: false,
     modelShow: false,
     scale: 16,
@@ -20,8 +20,8 @@ Page({
       {
         id: 0,
         iconPath: "/images/map/Unchecked/scenic_spot.png",
-        longitude: 116.411885,
-        latitude: 39.92492,
+        latitude: 30.84979,
+    longitude: 120.41847,
         anchor: {
           x : 1,
           y : .5

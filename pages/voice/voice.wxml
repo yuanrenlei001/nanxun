@@ -10,22 +10,22 @@
     <view class="list">
     <image src="/images/xxx.jpg" class="bg"></image>
     <image src="/images/play.png" class="play"></image>
-    <view class="text">柯桥风景区</view>
+    <view class="text">南浔风景区</view>
   </view>
   <view class="list">
     <image src="/images/xxx.jpg" class="bg"></image>
     <image src="/images/play.png" class="play"></image>
-    <view class="text">柯桥风景区</view>
+    <view class="text">南浔风景区</view>
   </view>
   <view class="list">
     <image src="/images/xxx.jpg" class="bg"></image>
     <image src="/images/play.png" class="play"></image>
-    <view class="text">柯桥风景区</view>
+    <view class="text">南浔风景区</view>
   </view>
   <view class="list">
     <image src="/images/xxx.jpg" class="bg"></image>
     <image src="/images/play.png" class="play"></image>
-    <view class="text">柯桥风景区</view>
+    <view class="text">南浔风景区</view>
   </view>
   </view>
 </view>

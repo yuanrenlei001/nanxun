@@ -13,12 +13,12 @@
 <view class="video">
   <video 
       id="myVideo" 
-      src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" 
+      src="https://nanxun.zjtoprs.com/minio/old-town/com/info/propagandafilm1.mp4" 
       enable-danmu 
       danmu-btn 
       controls 
       object-fit="cover"
-      poster="{{videoUrl}}"
+      poster="/images/xxx.jpg"
     ></video>
 </view>
 
@@ -26,13 +26,13 @@
 <view class="main">
   <!-- 最新公告 -->
   <view class="news" bindtap="goNotice">
-    <image src="/images/index/iconNews.png"></image> 最新公告： <text>柯桥部分景区维修中,具体景点如柯桥部分景区维修中,具体景点如</text>
+    <image src="/images/index/iconNews.png"></image> 最新公告： <text>南浔古镇部分景区维修中,具体景点如南浔古镇部分景区维修中,具体景点如</text>
   </view>
   <!-- 分类列表 -->
   <view class="indexSort">
     <view class="sortTop">
       <text class="sortTop01">乐游南浔</text>
-      <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view>
+      <!-- <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view> -->
     </view>
     <view class="sort">
       <view class="sortUl">
@@ -65,8 +65,25 @@
       <view class="sortTop02" bindtap="noticeList">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
     <view class="newImg">
-      <image src="/images/index/indexMap.png"></image>
+      <image src="/images/xxx.jpg"></image>
       <text>南浔新增写生基地</text>
+    </view>
+  </view>
+
+  <!-- 热门景点 -->
+  <view class="indexJd">
+    <view class="sortTop">
+      <text class="sortTop01">热门景点</text>
+      <view class="sortTop02" bindtap="goScenic">查看全部 <image src="/images/index/iconRight.png"></image></view>
+    </view> 
+    <swiper class="swiperContent" previous-margin='50px' next-margin='50px' bindchange="swiperChange"  autoplay circular>
+      <swiper-item wx:for='{{imgList}}' >
+        <image bindtap="goscenic" data-id='{{item.id}}' class='le-img {{nowIdx==index?"le-active":""}}' src='{{url+item.pictureUrl}}'></image>
+      </swiper-item>
+    </swiper>
+    <view class="text">
+      <view class="swTitle">{{titles}}</view>
+      <view class="swText">{{texts}}</view>
     </view>
   </view>
 
@@ -78,10 +95,7 @@
     </view> 
     <view class="list">
       <view class="listUl">
-        <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
-        <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
-        <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
-        <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
+        <navigator class="listLi" url="/pages/show-detail/show-detail?id={{item.id}}" wx:for="{{showLists}}"><image src="{{url+item.coverUrl}}"></image> <text>{{item.name}}</text></navigator>
       </view>
     </view>
   </view>

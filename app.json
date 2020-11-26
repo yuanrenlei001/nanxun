@@ -1,20 +1,16 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/show-list/show-list",
     "pages/user/index",
-    
     "pages/foryou/index",
     "pages/customized/customized",
-   
     "pages/phone/phone",
     "pages/address-detail/address-detail",
     "pages/traffic/traffic",
-    
-    
     "pages/address/address",
     "pages/tourist/tourist",
     "pages/voice/voice",
-   
     "pages/ar/ar",
     "pages/vr/vr",
     "pages/specialty-detail/specialty-detail",
@@ -23,22 +19,23 @@
     "pages/food-detail/food-detail",
     "pages/tourist-detail/tourist-detail",
     "pages/tourist-guide/tourist-guide",
-    "pages/show-list/show-list",
     "pages/notice-list/notice-list",
     "pages/index-more/index-more",
     "pages/notice/notice",
     "pages/map/index",
-    
-    "pages/for-strategy/index"
+    "pages/for-strategy/index",
+    "pages/show-detail/show-detail",
+    "pages/scenic/scenic"
   ],
   "window": {
     "backgroundTextStyle": "light",
+    "onReachBottomDistance": 5,
     "navigationBarBackgroundColor": "#FFC645",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
   "navigateToMiniProgramAppIdList": [
-    "wx0e6ed4f51db9d078"
+    "wx24fda5cd9917d177"
   ],
   "tabBar": {
     "color": "#333",

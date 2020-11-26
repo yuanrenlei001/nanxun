@@ -33,7 +33,10 @@
   <view class="maskColorText">正在努力规划行程中……</view>
 </view>
 <view hidden="{{!mapShow}}">
-  <map class="map"></map>
+  <map class="map"
+  latitude="{{latitude}}"
+      longitude="{{longitude}}"
+  ></map>
   <cover-view class="footerBlock">
     <cover-view style="margin-left: 52rpx;margin-top: 40rpx;">
       <cover-view class="map_top">小莲庄-嘉业藏书楼-南浔张氏旧宅建筑群</cover-view>

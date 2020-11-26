@@ -8,14 +8,15 @@ Page({
   data: {
     background: ['../../images/xxx.jpg','../../images/xxx.jpg'],
     indicatorDots: true,
+    url:app.data.request_img,
     autoplay: true,
     interval: 3000,
     duration: 500,
-    url:app.data.request_img,
     poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
     name: '此时此刻',
     author: '许巍',
     src: 'http://music.163.com/song/media/outer/url?id=1293886117.mp3',
+    id:null,
     detail:null,
     img:null
   },
@@ -51,12 +52,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.setNavigationBarTitle({title: app.data.common_page_title.tourist_detail});
+    wx.setNavigationBarTitle({title: app.data.common_page_title.show_detail});
     this.init()
   },
   init(){
     wx.request({
-      url: app.data.request_url+'/api/com/comPlace/getById?id='+this.data.id,
+      url: app.data.request_url+'/api/com/comActivity/getById?id='+this.data.id,
       method: "get",
       data: {},
       dataType: "json",

@@ -31,7 +31,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.setNavigationBarTitle({title: app.data.common_page_title.show_list});
+    wx.setNavigationBarTitle({title: app.data.common_page_title.scenic});
     this.setData({
       pageNum:1
     })
@@ -42,7 +42,7 @@ Page({
     var pageSize = this.data.pageSize;
     var that = this;
     wx.request({
-      url: app.data.request_url+'/api/com/comActivity/getAll?pageNum='+pageNum+'&pageSize='+pageSize,
+      url: app.data.request_url+'/api/com/comPlace/getAll?pageNum='+pageNum+'&pageSize='+pageSize,
       method: "get",
       data: {},
       dataType: "json",
@@ -74,7 +74,7 @@ addList(){
   var that = this;
   console.log(pageNum)
   wx.request({
-    url: app.data.request_url+'/api/com/comActivity/getAll?pageNum='+pageNum+'&pageSize='+pageSize,
+    url: app.data.request_url+'/api/com/comPlace/getAll?pageNum='+pageNum+'&pageSize='+pageSize,
     method: "get",
     data: {},
     dataType: "json",
