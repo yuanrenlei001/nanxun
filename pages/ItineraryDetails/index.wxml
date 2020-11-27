@@ -1,0 +1,25 @@
+<!--pages/ItineraryDetails/index.wxml-->
+<view class="topLine">
+  <view class="wbr">
+    <view class="lineText">行程路线：</view>
+    <view class="mt10">
+      莲庄——嘉业堂藏书楼——张石铭旧宅——求恕里——刘氏梯号（红房子）
+    </view>
+  </view>
+</view>
+<block>
+  <view class="contentT">
+    <view class="day">第一天</view>
+    <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上午抵达小莲庄。小莲庄是始建于清光绪年间的古典园林建筑。属于南浔首富刘镛（字贯经）的私家园林、家庙及义庄所在，位于南浔镇南栅万古桥西，北临鹧鸪溪，西与嘉业堂藏书楼隔河相望。</text>
+    <image class="contentImg" src="/images/strategy/fj.jpg"></image>
+    <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上午抵达小莲庄。小莲庄是始建于清光绪年间的古典园林建筑。属于南浔首富刘镛（字贯经）的私家园林、家庙及义庄所在，位于南浔镇南栅万古桥西，北临鹧鸪溪，西与嘉业堂藏书楼隔河相望。</text>
+    <image class="contentImg" src="/images/strategy/fj.jpg"></image>
+  </view>
+  <view class="contentT">
+    <view class="day">第二天</view>
+    <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上午抵达小莲庄。小莲庄是始建于清光绪年间的古典园林建筑。属于南浔首富刘镛（字贯经）的私家园林、家庙及义庄所在，位于南浔镇南栅万古桥西，北临鹧鸪溪，西与嘉业堂藏书楼隔河相望。</text>
+    <image class="contentImg" src="/images/strategy/fj.jpg"></image>
+    <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上午抵达小莲庄。小莲庄是始建于清光绪年间的古典园林建筑。属于南浔首富刘镛（字贯经）的私家园林、家庙及义庄所在，位于南浔镇南栅万古桥西，北临鹧鸪溪，西与嘉业堂藏书楼隔河相望。</text>
+    <image class="contentImg" src="/images/strategy/fj.jpg"></image>
+  </view>
+</block>

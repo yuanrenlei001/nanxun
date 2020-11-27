@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/attractionsDdetails/index",
+    "pages/ItineraryDetails/index",
     "pages/index/index",
     "pages/show-list/show-list",
     "pages/user/index",
@@ -25,7 +27,9 @@
     "pages/map/index",
     "pages/for-strategy/index",
     "pages/show-detail/show-detail",
-    "pages/scenic/scenic"
+    "pages/scenic/scenic",
+    "pages/222",
+    "pages/attractionsDdetails/attractionsDdetails"
   ],
   "window": {
     "backgroundTextStyle": "light",
