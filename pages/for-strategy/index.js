@@ -52,6 +52,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // this.getList();
+    this.getIDList();
     wx.setNavigationBarTitle({title: app.data.common_page_title.for_strategy});
   },
 
@@ -108,6 +110,44 @@ Page({
   customizedFun: function(){
     wx.navigateTo({
       url: "../customized/customized"
+    })
+  },
+  /**
+   * 初始化获取列表
+   */
+  getList: function () {
+    wx.request({
+      url: app.data.request_url+'/api/com/comRoute/getAll?pageNum=1&pageSize=6',
+      method: "get",
+      dataType: "json",
+      data: {},
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        console.log('markers++++',res);
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    })
+  },
+  /**
+   * 根据id获取列表
+   */
+  getIDList: function () {
+    wx.request({
+      url: app.data.request_url+'/api/com/comRoute/getById?id=1',
+      method: "get",
+      dataType: "json",
+      data: {},
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        console.log('markers++++',res);
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
     })
   }
 })

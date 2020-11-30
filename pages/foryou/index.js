@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    type: '景点',
     rightImg: true,
     hiider: false,
     listModel: false,
@@ -99,8 +100,34 @@ Page({
         console.log(res)
       }
     })
+    this.getMarks();
   },
-
+  /**
+   * 获取markers模块信息
+   */
+  getMarks: function () {
+    wx.request({
+      url: app.data.request_url+'/api/com/comPlace/getAll?type='+ this.data.type,
+      method: "get",
+      dataType: "json",
+      data: {},
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        let data = res.data.data;
+        let list = data.records;
+        let item = list[0]
+        var regex1 = /(?<=\()\S+(?=\))/g;
+        let str = '1111(120.374334027394 30.8560762051528)'
+        console.log('point',item)
+        console.log('point',item.point.match(regex1))
+        // console.log('markers++++',data);
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -138,6 +165,7 @@ Page({
   // 头部点击
   headerTap: function(e){
     let curreIndex = e.currentTarget.dataset.index
+    this.getMarks()
     this.setData({
       index: curreIndex
     })
