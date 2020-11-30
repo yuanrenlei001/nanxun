@@ -1,1 +1,16 @@
 /* pages/attractionsDdetails/index.wxss */
+.bgImg{
+  width: 750rpx;
+  height: 386rpx;
+  background-image: url('');
+}
+.contentText{
+  width: 750rpx;
+  height: 852rpx;
+  background-color: #333;
+}
+.test{
+  width: 100vh;
+  height: 100vh;
+  background-color: red;
+}
