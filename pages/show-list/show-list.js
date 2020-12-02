@@ -6,37 +6,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
-
-=======
     showLists:[],
     url:app.data.request_img,
     pageNum:1,
     pageSize:8,
     hasMoreData: true,
     message:'正在加载数据...'
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-<<<<<<< HEAD
-
-=======
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   },
 
   /**
@@ -44,10 +32,6 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.show_list});
-<<<<<<< HEAD
-  },
-
-=======
     this.setData({
       pageNum:1
     })
@@ -138,7 +122,6 @@ onReachBottom: function () {
       })
   }
 },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -163,12 +146,6 @@ onReachBottom: function () {
   /**
    * 页面上拉触底事件的处理函数
    */
-<<<<<<< HEAD
-  onReachBottom: function () {
-
-  },
-=======
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 
   /**
    * 用户点击右上角分享

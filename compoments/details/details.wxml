@@ -1,18 +1,4 @@
 <!--compoments/details/details.wxml-->
-<<<<<<< HEAD
-<view class="detailsBg">
-  <view class="listH" wx:for="{{list}}" wx:key="index">
-    <view class="flex">
-      <view class="leftText bjStyle">{{item.name}}</view>
-      <view class="bjStyle rightNav">
-        <image wx:if="{{type === '1'}}" class="rImg" src="/images/map/Unchecked/nav.png"></image>
-        <image wx:if="{{type === '2'}}" class="rImg1" src="/images/map/Unchecked/run.png"></image>
-      </view>
-    </view>
-    <view class="positionT">{{item.address}}</view>
-  </view>
-</view>
-=======
 <cover-view class="detailsBg">
   <cover-view class="listH" wx:for="{{list}}" wx:key="index">
     <cover-view class="flex">
@@ -26,4 +12,3 @@
     <cover-view class="border_false"></cover-view>
   </cover-view>
 </cover-view>
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d

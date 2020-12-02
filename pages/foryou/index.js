@@ -6,13 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
-    hiider: false,
-    listModel: false,
-    index: '0',
-    longitude: 116.411885,
-    latitude: 39.92392,
-=======
     type: '景点',
     rightImg: true,
     hiider: false,
@@ -20,7 +13,6 @@ Page({
     index: '0',
     latitude: 30.84979,
     longitude: 120.41847,
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     shouAll: false,
     modelShow: false,
     scale: 16,
@@ -29,36 +21,6 @@ Page({
       {
         id: 0,
         iconPath: "/images/map/Unchecked/scenic_spot.png",
-<<<<<<< HEAD
-        longitude: 116.411885,
-        latitude: 39.92492,
-        // title: "小何饭店1",
-        label:{
-          content: '金宅',
-          color: '#333',
-          fontSize: 20,
-          textAlign: "center",
-          // anchorX: -10,
-          anchorY: -70
-        },
-        width: 31,
-        height: 38
-      },
-      {
-        id: 1,
-        iconPath: "/images/map/Unchecked/scenic_spot.png",
-        longitude: 116.411885,
-        latitude: 39.92392,
-        label:{
-          content: '小何饭店',
-          color: '#333',
-          fontSize: 20,
-          textAlign: "center",
-          // anchorX: -10,
-          anchorY: -70
-        },
-        // title: "小何饭店2",
-=======
         latitude: 30.84979,
     longitude: 120.41847,
         anchor: {
@@ -77,7 +39,6 @@ Page({
           x : 1,
           y : .5
         },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
         width: 31,
         height: 38
       }
@@ -139,10 +100,6 @@ Page({
         console.log(res)
       }
     })
-<<<<<<< HEAD
-  },
-
-=======
     this.getMarks();
   },
   /**
@@ -171,7 +128,6 @@ Page({
       }
     })
   },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -209,10 +165,7 @@ Page({
   // 头部点击
   headerTap: function(e){
     let curreIndex = e.currentTarget.dataset.index
-<<<<<<< HEAD
-=======
     this.getMarks()
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     this.setData({
       index: curreIndex
     })
@@ -224,40 +177,11 @@ Page({
             iconPath: "/images/map/Unchecked/scenic_spot.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-            // title: "小何饭店1",
-=======
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             label:{
               content: '金宅',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-<<<<<<< HEAD
-              // anchorX: -10,
-              anchorY: -70
-            },
-            width: 31,
-            height: 38
-          },
-          {
-            id: 1,
-            iconPath: "/images/map/Unchecked/scenic_spot.png",
-            longitude: 116.411885,
-            latitude: 39.92392,
-            label:{
-              content: '小何饭店',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            // title: "小何饭店2",
-            width: 31,
-            height: 38
-          }
-=======
               anchorX: -32,
               anchorY: -45
             },
@@ -284,7 +208,6 @@ Page({
           //   width: 31,
           //   height: 38
           // }
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
         ]
       })
     }
@@ -296,34 +219,6 @@ Page({
             iconPath: "/images/map/Unchecked/restaurant.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-            // title: "小何饭店1",
-            label:{
-              content: '澳门豆捞',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            width: 31,
-            height: 38
-          },
-          {
-            id: 1,
-            iconPath: "/images/map/Unchecked/restaurant.png",
-            longitude: 116.411885,
-            latitude: 39.92392,
-            label:{
-              content: '澳门豆捞1',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            // title: "小何饭店2",
-=======
             anchor: {
               x : 1,
               y : .5
@@ -336,7 +231,6 @@ Page({
               anchorX: -32,
               anchorY: -45
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             width: 31,
             height: 38
           }
@@ -351,34 +245,6 @@ Page({
             iconPath: "/images/map/Unchecked/hotel.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-            // title: "小何饭店1",
-            label:{
-              content: '龙门客栈1',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            width: 31,
-            height: 38
-          },
-          {
-            id: 1,
-            iconPath: "/images/map/Unchecked/hotel.png",
-            longitude: 116.411885,
-            latitude: 39.92392,
-            label:{
-              content: '龙门客栈2',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            // title: "小何饭店2",
-=======
             anchor: {
               x : 1,
               y : .5
@@ -391,7 +257,6 @@ Page({
               anchorX: -32,
               anchorY: -45
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             width: 31,
             height: 38
           }
@@ -406,34 +271,6 @@ Page({
             iconPath: "/images/map/Unchecked/server.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-            // title: "小何饭店1",
-            label:{
-              content: '服务站',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            width: 31,
-            height: 38
-          },
-          {
-            id: 1,
-            iconPath: "/images/map/Unchecked/server.png",
-            longitude: 116.411885,
-            latitude: 39.92392,
-            label:{
-              content: '服务',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            // title: "小何饭店2",
-=======
             anchor: {
               x : 1,
               y : .5
@@ -446,7 +283,6 @@ Page({
               anchorX: -32,
               anchorY: -45
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             width: 31,
             height: 38
           }
@@ -461,34 +297,6 @@ Page({
             iconPath: "/images/map/Unchecked/p.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-            // title: "小何饭店1",
-            label:{
-              content: '停车场1',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            width: 31,
-            height: 38
-          },
-          {
-            id: 1,
-            iconPath: "/images/map/Unchecked/p.png",
-            longitude: 116.411885,
-            latitude: 39.92392,
-            label:{
-              content: '停车场',
-              color: '#333',
-              fontSize: 20,
-              textAlign: "center",
-              // anchorX: -10,
-              anchorY: -70
-            },
-            // title: "小何饭店2",
-=======
             anchor: {
               x : 1,
               y : .5
@@ -501,7 +309,6 @@ Page({
               anchorX: -32,
               anchorY: -45
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             width: 31,
             height: 38
           }
@@ -530,26 +337,17 @@ Page({
             iconPath: "/images/map/Unchecked/yuyin.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-            // title: "小何饭店1",
-=======
             anchor: {
               x : 1,
               y : .5
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             label:{
               content: '语音导航',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-<<<<<<< HEAD
-              // anchorX: -10,
-              anchorY: -70
-=======
               anchorX: -32,
               anchorY: -45
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             },
             width: 31,
             height: 38
@@ -565,25 +363,17 @@ Page({
             iconPath: "/images/map/Unchecked/yanchu.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-=======
             anchor: {
               x : 1,
               y : .5
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             label:{
               content: '演出点',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-<<<<<<< HEAD
-              // anchorX: -10,
-              anchorY: -70
-=======
               anchorX: -32,
               anchorY: -45
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             },
             width: 31,
             height: 38
@@ -600,25 +390,17 @@ Page({
             iconPath: "/images/map/Unchecked/matou.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-=======
             anchor: {
               x : 1,
               y : .5
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             label:{
               content: '游船码头',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-<<<<<<< HEAD
-              // anchorX: -10,
-              anchorY: -70
-=======
               anchorX: -32,
               anchorY: -45
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             },
             width: 31,
             height: 38
@@ -634,25 +416,17 @@ Page({
             iconPath: "/images/map/Unchecked/wc.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-=======
             anchor: {
               x : 1,
               y : .5
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             label:{
               content: '厕所',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-<<<<<<< HEAD
-              // anchorX: -10,
-              anchorY: -70
-=======
               anchorX: -32,
               anchorY: -45
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             },
             width: 31,
             height: 38
@@ -668,25 +442,17 @@ Page({
             iconPath: "/images/map/Unchecked/qixi.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-=======
             anchor: {
               x : 1,
               y : .5
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             label:{
               content: '游客休息',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-<<<<<<< HEAD
-              // anchorX: -10,
-              anchorY: -70
-=======
               anchorX: -32,
               anchorY: -45
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             },
             width: 31,
             height: 38
@@ -702,25 +468,17 @@ Page({
             iconPath: "/images/map/Unchecked/bj.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-=======
             anchor: {
               x : 1,
               y : .5
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             label:{
               content: '报警柱',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-<<<<<<< HEAD
-              // anchorX: -10,
-              anchorY: -70
-=======
               anchorX: -32,
               anchorY: -45
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             },
             width: 31,
             height: 38
@@ -736,25 +494,17 @@ Page({
             iconPath: "/images/map/Unchecked/sos.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-=======
             anchor: {
               x : 1,
               y : .5
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             label:{
               content: 'AED急救',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-<<<<<<< HEAD
-              // anchorX: -10,
-              anchorY: -70
-=======
               anchorX: -32,
               anchorY: -45
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             },
             width: 31,
             height: 38
@@ -770,25 +520,17 @@ Page({
             iconPath: "/images/map/Unchecked/zhong.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-=======
             anchor: {
               x : 1,
               y : .5
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             label:{
               content: '游客中心',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-<<<<<<< HEAD
-              // anchorX: -10,
-              anchorY: -70
-=======
               anchorX: -32,
               anchorY: -45
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             },
             width: 31,
             height: 38
@@ -804,25 +546,17 @@ Page({
             iconPath: "/images/map/Unchecked/characteristic.png",
             longitude: 116.411885,
             latitude: 39.92492,
-<<<<<<< HEAD
-=======
             anchor: {
               x : 1,
               y : .5
             },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             label:{
               content: '特色商铺',
               color: '#333',
               fontSize: 20,
               textAlign: "center",
-<<<<<<< HEAD
-              // anchorX: -10,
-              anchorY: -70
-=======
               anchorX: -32,
               anchorY: -45
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
             },
             width: 31,
             height: 38
@@ -845,24 +579,16 @@ Page({
   },
   // markers点击
   gotohere: function(e){
-<<<<<<< HEAD
-    wx.hideTabBar()
-=======
     console.log('点击了markers！！！')
     wx.hideTabBar()
     this.setData({
       rightImg: false
     })
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     if(this.data.index === "0"){
       this.setData({
         modelInfo: {
           name: '金宅',
-<<<<<<< HEAD
-          type: 0,
-=======
           type: this.data.index,
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
           address: '200m  |  南浔古镇东大街38号',
           lable: '',
           describe: '南浔金家，位于南浔古镇东大街38号，为南浔近代丝商“八牛”之一，人称小金山',
@@ -876,11 +602,7 @@ Page({
       this.setData({
         modelInfo: {
           name: '小何饭店',
-<<<<<<< HEAD
-          type: '',
-=======
           type: this.data.index,
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
           address: '200m  |  南浔古镇东大街38号',
           lable: '特色店铺',
           describe: '',
@@ -894,11 +616,7 @@ Page({
       this.setData({
         modelInfo: {
           name: '小何饭店',
-<<<<<<< HEAD
-          type: '',
-=======
           type: this.data.index,
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
           address: '200m  |  南浔古镇东大街38号',
           lable: '特色店铺',
           describe: '',
@@ -912,11 +630,7 @@ Page({
       this.setData({
         modelInfo: {
           name: '小何饭店',
-<<<<<<< HEAD
-          type: '',
-=======
           type: this.data.index,
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
           address: '200m  |  南浔古镇东大街38号',
           lable: '特色店铺',
           describe: '',
@@ -930,11 +644,7 @@ Page({
       this.setData({
         modelInfo: {
           name: '酒店停车场',
-<<<<<<< HEAD
-          type: '',
-=======
           type: this.data.index,
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
           address: '200m  |  南浔古镇东大街38号',
           lable: '',
           describe: '',

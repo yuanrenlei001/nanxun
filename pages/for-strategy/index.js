@@ -6,9 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
-
-=======
     list:[
       {
         name: '推荐路线一',
@@ -35,7 +32,6 @@ Page({
         starStatus: true
       }
     ]
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   },
 
   /**
@@ -56,11 +52,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-<<<<<<< HEAD
-=======
     // this.getList();
     this.getIDList();
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     wx.setNavigationBarTitle({title: app.data.common_page_title.for_strategy});
   },
 
@@ -97,8 +90,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-<<<<<<< HEAD
-=======
   },
   starShow: function(e) {
     let i = e.currentTarget.dataset.index
@@ -158,6 +149,5 @@ Page({
         app.showToast("服务器请求出错");
       }
     })
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   }
 })

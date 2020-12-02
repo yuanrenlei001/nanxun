@@ -1,30 +1,11 @@
 <view class="top">
   <view class="search">
-<<<<<<< HEAD
-    <input type="text" placeholder="搜索南浔最新资讯"/>
-=======
     <input type="text" placeholder="搜索南浔活动演出"/>
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     <image src="/images/index/search.png"></image>
 </view>
 </view>
 <view class="main">
   <view class="listUl">
-<<<<<<< HEAD
-    <navigator class="listLi">
-      <image src="/images/index/indexMap.png" class="bg"></image>
-      <view class="listText">
-        <view class="title">水乡婚礼</view>
-      <view class="bottom">
-        <image src="/images/index/indexMap.png" class="userImg"></image>
-        <text class="name">大白</text>
-        <view class="zan">
-          <image src="/images/zan.png" class="unzan"></image> 12
-        </view>
-      </view>
-      </view>
-    </navigator>
-=======
     <view class="listLis">
       <navigator class="listLi" url="/pages/show-detail/show-detail?id={{item.id}}" wx:for="{{showLists}}" wx:key = 'key'>
         <image src="{{url+item.coverUrl}}" class="bg"></image>
@@ -32,6 +13,5 @@
       </navigator>
       <view class="message">{{message}}</view>
     </view>
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   </view>
 </view>

@@ -1,13 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-<<<<<<< HEAD
-=======
     "pages/show-list/show-list",
     "pages/user/index",
     "pages/foryou/index",
     "pages/customized/customized",
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     "pages/phone/phone",
     "pages/address-detail/address-detail",
     "pages/traffic/traffic",
@@ -22,20 +19,6 @@
     "pages/food-detail/food-detail",
     "pages/tourist-detail/tourist-detail",
     "pages/tourist-guide/tourist-guide",
-<<<<<<< HEAD
-    "pages/show-list/show-list",
-    "pages/notice-list/notice-list",
-    "pages/index-more/index-more",
-    "pages/notice/notice",
-    "pages/foryou/index",
-    "pages/map/index",
-    "pages/user/index",
-    "pages/for-strategy/index"
-    
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-=======
     "pages/notice-list/notice-list",
     "pages/index-more/index-more",
     "pages/notice/notice",
@@ -50,17 +33,13 @@
   "window": {
     "backgroundTextStyle": "light",
     "onReachBottomDistance": 5,
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     "navigationBarBackgroundColor": "#FFC645",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
-<<<<<<< HEAD
-=======
   "navigateToMiniProgramAppIdList": [
     "wx24fda5cd9917d177"
   ],
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   "tabBar": {
     "color": "#333",
     "selectedColor": "#333",
@@ -76,7 +55,7 @@
         "pagePath": "pages/foryou/index",
         "iconPath": "/images/nav-you.png",
         "selectedIconPath": "/images/nav-you-active.png",
-        "text": "浔找你"
+        "text": "浔找你---"
       },
       {
         "pagePath": "pages/for-strategy/index",

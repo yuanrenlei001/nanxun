@@ -1,7 +1,4 @@
 <!--pages/user/index.wxml-->
-<<<<<<< HEAD
-<text>我的111</text>
-=======
 <view class="top">
   <image src="/images/user/bg.png" class="bg"></image>
   <view class="user"></view>
@@ -13,4 +10,3 @@
   <navigator class='sort'><image src="/images/user/icon03.png" class="sortIcon"></image> 我的收藏  <image class="sortRight" src="/images/index/iconRight.png"></image></navigator>
   <navigator class='sort'><image src="/images/user/icon04.png" class="sortIcon"></image> 资讯服务  <image class="sortRight" src="/images/index/iconRight.png"></image></navigator>
 </view>
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d

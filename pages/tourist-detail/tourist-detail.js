@@ -11,12 +11,6 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 500,
-<<<<<<< HEAD
-    poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
-    name: '此时此刻',
-    author: '许巍',
-    src: 'http://music.163.com/song/media/outer/url?id=1293886117.mp3'
-=======
     url:app.data.request_img,
     poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
     name: '此时此刻',
@@ -24,7 +18,6 @@ Page({
     src: 'http://music.163.com/song/media/outer/url?id=1293886117.mp3',
     detail:null,
     img:null
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   },
   audioPlay: function () {
     this.audioCtx.play()
@@ -42,13 +35,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-<<<<<<< HEAD
-
-=======
     this,this.setData({
       id:this.options.id
     })
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   },
 
   /**
@@ -63,11 +52,6 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.tourist_detail});
-<<<<<<< HEAD
-    
-  },
-
-=======
     this.init()
   },
   init(){
@@ -90,7 +74,6 @@ Page({
       }
     });
   },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   /**
    * 生命周期函数--监听页面隐藏
    */

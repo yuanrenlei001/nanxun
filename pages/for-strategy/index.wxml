@@ -1,7 +1,4 @@
 <!--pages/for-strategy/index.wxml-->
-<<<<<<< HEAD
-<text>寻攻略 </text>
-=======
 <view class="bg">
   <view class="topBg">
     <view bindtap="customizedFun" class="topBtn">行程订制</view>
@@ -22,4 +19,3 @@
     </view>
   </view>
 </view>
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d

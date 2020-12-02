@@ -34,55 +34,6 @@
     <image class="periphery" src="/images/map/periphery.png"></image>
   </view>
   <image class="timeMap" src="/images/map/time.png"></image>
-<<<<<<< HEAD
-  <image class="positionMap" src="/images/map/position.png"></image>
-  <image class="refreshMap" src="/images/map/refresh.png"></image>
-</map>
-<!-- 遮罩层  -->
-<view class="mask" wx:if="{{shouAll}}">
-  <view class="tBg">
-    <view class="topH">
-      <image class="close" bindtap="closeFun" src="/images/map/x.png"></image>
-    </view>
-    <view class="row-h">
-      <view bindtap="headerTap" data-index="0" class="moreBlock textLine bodeR {{index==='0'?'activeD':''}}">景点</view>
-      <view bindtap="headerTap" data-index="1" class="moreBlock textLine bodeR {{index==='1'?'activeD':''}}">美食</view>
-      <view bindtap="headerTap" data-index="2" class="moreBlock {{index==='2'?'activeD':''}}">
-        <view class="dobleText">酒店</view>
-        <view>民宿</view>
-      </view>
-    </view>
-    <view class="row-h">
-      <view bindtap="headerTap" data-index="5" class="moreBlock bodeR {{index==='5'?'activeD':''}}">
-        <view class="dobleText">语音</view>
-        <view>导航</view>
-      </view>
-      <view bindtap="headerTap" data-index="6" class="moreBlock textLine bodeR {{index==='6'?'activeD':''}}">演出点</view>
-      <view bindtap="headerTap" data-index="7" class="moreBlock {{index==='7'?'activeD':''}}">
-        <view class="dobleText">游船</view>
-        <view>码头</view>
-      </view>
-    </view>
-    <view class="row-h">
-      <view bindtap="headerTap" data-index="8" class="moreBlock textLine bodeR {{index==='8'?'activeD':''}}">厕所</view>
-      <view bindtap="headerTap" data-index="4" class="moreBlock textLine bodeR {{index==='4'?'activeD':''}}">停车场</view>
-      <view bindtap="headerTap" data-index="9" class="moreBlock textLine {{index==='9'?'activeD':''}}">游客休息点</view>
-    </view>
-    <view class="row-h">
-      <view bindtap="headerTap" data-index="10" class="moreBlock textLine bodeR {{index==='10'?'activeD':''}}">报警柱</view>
-      <view bindtap="headerTap" data-index="11" class="moreBlock textLine bodeR {{index==='11'?'activeD':''}}">AED急救</view>
-      <view bindtap="headerTap" data-index="12" class="moreBlock {{index==='12'?'activeD':''}}">
-        <view class="dobleText">游客</view>
-        <view>中心</view>
-      </view>
-    </view>
-    <view class="flex">
-      <view bindtap="headerTap" data-index="3" class="lastD bodeR {{index==='3'?'activeD':''}}">志愿服务站</view>
-      <view bindtap="headerTap" data-index="13" class="lastD bodeR {{index==='13'?'activeD':''}}">特色商铺</view>
-  </view>
-  </view>
-</view>
-=======
   <image wx:if="{{rightImg}}" class="positionMap" src="/images/map/position.png"></image>
   <image wx:if="{{!rightImg}}" class="positionMapR" src="/images/map/position.png"></image>
   <image wx:if="{{rightImg}}" class="refreshMap" src="/images/map/refresh.png"></image>
@@ -131,7 +82,6 @@
   </cover-view>
   </cover-view>
 </cover-view>
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 <!-- 底部详情弹框 -->
 <hotel wx:if="{{hiider}}" data="{{modelInfo}}"></hotel>
 <details wx:if="{{listModel}}" list="{{navList}}" type="{{1}}"></details>

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-/* pages/for-strategy/index.wxss */
-=======
 /* pages/for-strategy/index.wxss */
 .bg{
   width: 100%;
@@ -85,4 +82,3 @@
   margin-left: 36rpx;
   margin-right: 18rpx;
 }
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d

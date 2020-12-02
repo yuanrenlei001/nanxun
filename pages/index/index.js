@@ -1,7 +1,5 @@
 // pages/foryou/index.js
 const app = getApp()
-<<<<<<< HEAD
-=======
 
 function getRandomColor() {
   const rgb = []
@@ -12,17 +10,12 @@ function getRandomColor() {
   }
   return '#' + rgb.join('')
 }
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-<<<<<<< HEAD
-    videoUrl:'http://img1.imgtn.bdimg.com/it/u=1563980539,1672265910&fm=26&gp=0.jpg'
-
-=======
     videoUrl:'http://img1.imgtn.bdimg.com/it/u=1563980539,1672265910&fm=26&gp=0.jpg',
     　　imgList:[],
     currentIndex: 0,
@@ -37,17 +30,12 @@ Page({
     url:app.data.request_img,
     message:'正在加载数据...',
     img:null
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.index});
-<<<<<<< HEAD
-  },
-
-=======
     this.setData({
       pageNum:1
     })
@@ -194,15 +182,12 @@ onReachBottom: function () {
       bgColor: getRandomColor()
     })
   },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   // 跳转最新公告
   goNotice:function(){
     wx.navigateTo({
       url: '../notice/notice',
     })
   },
-<<<<<<< HEAD
-=======
   goScenic:function(){
     wx.navigateTo({
       url: '../scenic/scenic',
@@ -241,7 +226,6 @@ onReachBottom: function () {
       
       })
   },
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   // 跳转资讯列表
   noticeList:function(){
     wx.navigateTo({

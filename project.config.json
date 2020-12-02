@@ -38,11 +38,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.12.1",
-<<<<<<< HEAD
-  "appid": "wxffc88450f8f807dc",
-=======
   "appid": "wx24fda5cd9917d177",
->>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   "projectname": "xunkaixin",
   "debugOptions": {
     "hidedInDevtools": []
