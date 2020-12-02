@@ -6,7 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    showLists:[],
+    url:app.data.request_img,
+    pageNum:1,
+    pageSize:8,
+    hasMoreData: true,
+    message:'正在加载数据...'
   },
 
   /**
@@ -20,7 +25,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**
@@ -28,6 +33,37 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.vr});
+    this.list();
+  },
+  list(){
+    var pageNum = this.data.pageNum;
+    var pageSize = this.data.pageSize;
+    var that = this;
+    wx.request({
+      url: app.data.request_url+'/api/com/xcxPropaganda/getInfoByName?pageNum='+pageNum+'&pageSize='+pageSize+'&type=宣传VR',
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        wx.stopPullDownRefresh();
+        var list = res.data.data.records;
+        that.setData({
+          showLists:list
+        })
+        if(list.length>=pageSize){
+          that.setData({
+            pageNum:that.data.pageNum+1,
+            hasMoreData:true
+          })
+        }
+        
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
   },
 
   /**

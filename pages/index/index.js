@@ -16,8 +16,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    videoUrl:'http://img1.imgtn.bdimg.com/it/u=1563980539,1672265910&fm=26&gp=0.jpg',
-    　　imgList:[],
+    videoUrl:'https://nanxun.zjtoprs.com/minio/old-town/com/info/propagandafilm1.mp4',
+    imgList:[],
     currentIndex: 0,
     swiperH: '',//swiper高度
     　　nowIdx: 0,//当前swiper索引
@@ -42,6 +42,8 @@ Page({
     this.list();
   //  查询热门景点
     this.scenic()
+  },
+  onLoad:function(){
   },
   list(){
     var pageNum = this.data.pageNum;

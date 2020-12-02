@@ -51,7 +51,7 @@ Page({
         wx.stopPullDownRefresh();
         var list = res.data.data.records;
         that.setData({
-          showLists:list
+          showLists:list,
         })
         if(list.length>=pageSize){
           that.setData({

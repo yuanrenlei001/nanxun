@@ -1,6 +1,14 @@
 //app.js
 App({
   data:{
+    // 用户登录缓存key
+    cache_user_login_key: "null",
+    
+    // 用户信息缓存key
+    cache_user_info_key: "null",
+
+    // 用户站点信息缓存key
+    cache_user_merchant_key: "null",
     // 页面标题
     common_page_title:{
       'index':'浔开心',
@@ -12,7 +20,7 @@ App({
       'notice_list':'资讯列表',
       'scenic':'热门景点列表',
       'show_list':'演出列表',
-      'tourist_guide':'美景导游',
+      'tourist_guide':'景点',
       'tourist_detail':'美景详情',
       'food':'美食餐饮',
       'food_detail':'美食详情',
@@ -55,18 +63,37 @@ App({
       return user;
     }
   },
+   /**
+   * 从缓存获取用户信息
+   */
+  get_user_cache_info() {
+    let user = wx.getStorageSync(this.data.cache_user_info_key);
+    // console.log(user)
+    if (user == '') {
+      return false;
+    }
+    return user;
+  },
   // 用户登录
   user_auth_login(object, method, auth_data) {
     var self = this;
     wx.checkSession({
       success: function () {
-        var openid = wx.getStorageSync(self.data.cache_user_login_key) || null;
-        if (openid == null)
-        {
-          self.user_login(object, method);
-        } else {
-          self.get_user_login_info(object, method, openid, auth_data);
-        }
+        console.log(auth_data)
+        wx.setStorage({
+          key:self.data.cache_user_info_key,
+          data:auth_data,
+          success: (res) => {
+            wx.getStorage({
+              key: self.data.cache_user_info_key,
+              success (res) {
+                if (typeof object === 'object' && (method || null) != null) {
+                  object[method]();
+                }
+              }
+            })
+          },
+        })
       },
       fail: function () {
         self.user_login(object, method);
@@ -74,9 +101,10 @@ App({
     });
   },
   user_login(object, method) {
-    var openid = wx.getStorageSync(this.data.cache_user_login_key) || null;
-    if (openid == null)
-    {
+    var openid = wx.getStorageSync(this.data.cache_user_login_key);
+    console.log(openid == '')
+    if (openid == ''){
+      console.log(1)
       var self = this;
       // 加载loding
       wx.showLoading({ title: "授权中..." });
@@ -84,7 +112,53 @@ App({
       wx.login({
         success: (res) => {
           if (res.code) {
-            
+            console.log(res.code)
+
+            wx.request({
+              url: this.data.request_url+'/api/xcx/xcxUser/login',
+              method: 'POST',
+              data: { code: res.code },
+              dataType: 'json',
+              header: { 'content-type': 'application/x-www-form-urlencoded' },
+              success: (res) => {
+                wx.hideLoading();
+                if (res.data.code == 200) {
+                  var data = res.data.data;
+                    wx.setStorage({
+                      key: self.data.cache_user_login_key,
+                      data: data.openid
+                    });
+                    self.login_to_auth();
+                  // if ((data.is_user_exist || 0) == 1) {
+                  //   wx.setStorage({
+                  //     key: self.data.cache_user_info_key,
+                  //     data: data,
+                  //     success: (res) => {
+                  //       if (typeof object === 'object' && (method || null) != null) {
+                  //         object[method]();
+                  //       }
+                  //     },
+                  //     fail: () => {
+                  //       self.showToast('用户信息缓存失败');
+                  //     }
+                  //   });
+                  // } else {
+                  //   wx.setStorage({
+                  //     key: self.data.cache_user_login_key,
+                  //     data: data.openid
+                  //   });
+                  //   self.login_to_auth();
+                  // }
+                } else {
+                  wx.hideLoading();
+                  self.showToast(res.data.msg);
+                }
+              },
+              fail: () => {
+                wx.hideLoading();
+                self.showToast('服务器请求出错');
+              },
+            });
           }
         },
         fail: (e) => {
@@ -93,8 +167,19 @@ App({
         }
       });
     } else {
+      console.log(2)
       this.login_to_auth();
     }
+  },
+  user_is_need_login(user) {
+    // 用户信息是否正确
+    if (user == false)
+    {
+      return true;
+    }
+
+    
+    return false;
   },
   // 用户跳转授权
   login_to_auth() {

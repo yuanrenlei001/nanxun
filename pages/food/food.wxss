@@ -44,9 +44,6 @@ box-shadow: 0px 0px 16px 4px rgba(217, 216, 216, 0.5);
   height:140rpx;
   position: relative;
 }
-.title {
- 
-}
 .bottom {padding: 0 30rpx;position: absolute;bottom:30rpx;left:0;width: 70%;}
 .userImg {width: 16rpx;height:20rpx;vertical-align: middle;}
 .name {font-size: 14rpx;padding-left: 10rpx;}
@@ -71,8 +68,8 @@ font-size: 20rpx;
 
 line-height: 32rpx;
 }
-.sort {position: absolute;top:0;height:68rpx;line-height: 68rpx;width: 100%;}
-.sort view {width: 20%;float:left;text-align: center;position: relative;}
+.sort {position: absolute;top:0;height:68rpx;line-height: 68rpx;width: 100%;background: #fff;}
+.sort view {width: 33.3333%;float:left;text-align: center;position: relative;}
 .active:before {
   content: '';
   width: 74rpx;

@@ -1,6 +1,6 @@
 <view class="top">
   <view class="search">
-    <input type="text" placeholder="搜索南浔活动演出"/>
+    <input type="text" placeholder="搜索南浔活动演出" bindinput="inputTyping"/>
     <image src="/images/index/search.png"></image>
 </view>
 </view>

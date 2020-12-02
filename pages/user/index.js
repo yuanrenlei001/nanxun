@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    avatar: app.data.default_user_head_src,
+    nickname: "用户名",
   },
 
   /**
@@ -28,8 +29,17 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.user});
+    this.init();
   },
-
+  init(e){
+    var user = app.get_user_info(this, "init"),
+    self=this;
+    console.log(user)
+    self.setData({
+      avatar: user.userInfo.avatarUrl || app.data.default_user_head_src,
+      nickname: user.userInfo.nickName || '用户名',
+    });
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

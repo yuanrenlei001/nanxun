@@ -1,8 +1,8 @@
 <!--pages/user/index.wxml-->
 <view class="top">
   <image src="/images/user/bg.png" class="bg"></image>
-  <view class="user"></view>
-  <view class="name">请登录/注册账号</view>
+  <view class="user"><image src="{{avatar}}" wx:if="{{avatar.length>0}}"></image></view>
+  <view class="name">{{nickname}}</view>
 </view>
 <view class="main">
   <navigator class='sort'><image src="/images/user/icon01.png" class="sortIcon"></image> 我的预定  <image class="sortRight" src="/images/index/iconRight.png"></image></navigator>

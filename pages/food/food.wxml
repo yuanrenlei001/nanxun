@@ -9,15 +9,13 @@
       enable-scroll = '{{scroll}}'
     ></map>
     <view class="sort">
-      <view>面馆</view>
-      <view class="active">餐饮</view>
-      <view>特产</view>
-      <view>酒吧</view>
-      <view>其他</view>
+      <view bindtap="sort" data-type='餐馆'  class="{{active =='餐馆' ? 'active':''}}">餐馆</view>
+      <view bindtap="sort" data-type='特产' class="{{active =='特产' ? 'active':''}}" >特产</view>
+      <view bindtap="sort" data-type='酒吧' class="{{active =='酒吧' ? 'active':''}}" >酒吧</view>
     </view>
     <view class="top">
   <view class="search">
-    <input type="text" placeholder="搜索景点"/>
+    <input type="text" placeholder="搜索美食餐饮" bindinput="inputTyping"/>
     <image src="/images/index/search.png"></image>
     
 </view>
@@ -28,24 +26,34 @@
 
   <!-- 景点列表 -->
   <view class="main">
-  <view class="listUl">
-    <navigator class="listLi" url="/pages/food-detail/food-detail">
-      <image src="/images/xxx.jpg" class="bg"></image>
+  <view class="listUl" wx:if="{{active !== '特产'}}">
+    <navigator class="listLi" url="/pages/food-detail/food-detail?id={{item.id}}" wx:for="{{showLists}}" wx:key='index'>
+      <image src="{{url+img[0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">
-          <text class="titleNname">金宅</text>
-          <image src="/images/collection.png" class="collection"></image>
+          <text class="titleNname">{{item.name}}</text>
           
         </view>
-        <view class="type"><text style="color:#999;">500m</text> 国家级文化保护单位</view>
+        <view class="type" wx:if="{{item.if}}"> {{item.label}}</view>
       <view class="bottom">
         <image src="/images/address.png" class="userImg"></image>
-        <text class="name">南西街78号</text>
+        <text class="name">{{item.address}}</text>
         <view class="zan">
           <image src="/images/see.png" class="unzan"></image> 浏览数 120
         </view>
       </view>
       </view>
     </navigator>
+  </view>
+  <view class="listUl" wx:if="{{active == '特产'}}"  >
+    <navigator class="listLi" url="/pages/specialty-detail/specialty-detail?id={{item.id}}" style="height:376rpx;" wx:for="{{showLists}}" wx:key='index'>
+      <image src="{{url+img[0]}}" class="bg"></image>
+      <view class="listText" style="height:108rpx;">
+        <view class="title" style="height:108rpx;line-height: 108rpx;">
+          <text class="titleNname">{{item.name}}</text>
+        </view>
+      </view>
+    </navigator>
+    
   </view>
 </view>

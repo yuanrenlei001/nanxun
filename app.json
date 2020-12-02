@@ -1,6 +1,12 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/vr/vr",
+    "pages/specialty/specialty",
+    "pages/specialty-detail/specialty-detail",
+    "pages/food/food",
+    "pages/tourist-guide/tourist-guide",
+    "pages/tourist-detail/tourist-detail",
     "pages/show-list/show-list",
     "pages/user/index",
     "pages/foryou/index",
@@ -12,13 +18,7 @@
     "pages/tourist/tourist",
     "pages/voice/voice",
     "pages/ar/ar",
-    "pages/vr/vr",
-    "pages/specialty-detail/specialty-detail",
-    "pages/specialty/specialty",
-    "pages/food/food",
     "pages/food-detail/food-detail",
-    "pages/tourist-detail/tourist-detail",
-    "pages/tourist-guide/tourist-guide",
     "pages/notice-list/notice-list",
     "pages/index-more/index-more",
     "pages/notice/notice",
@@ -28,7 +28,8 @@
     "pages/scenic/scenic",
     "pages/222",
     "pages/ItineraryDetails/index",
-    "pages/attractionsDdetails/index"
+    "pages/attractionsDdetails/index",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -49,13 +50,13 @@
         "pagePath": "pages/index/index",
         "iconPath": "/images/nav-index.png",
         "selectedIconPath": "/images/nav-index-active.png",
-        "text": "浔开心"
+        "text": "123浔开心"
       },
       {
         "pagePath": "pages/foryou/index",
         "iconPath": "/images/nav-you.png",
         "selectedIconPath": "/images/nav-you-active.png",
-        "text": "浔找你---"
+        "text": "浔找你"
       },
       {
         "pagePath": "pages/for-strategy/index",

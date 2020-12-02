@@ -14,7 +14,10 @@ Page({
     poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
     name: '此时此刻',
     author: '许巍',
-    src: 'http://music.163.com/song/media/outer/url?id=1293886117.mp3'
+    src: 'http://music.163.com/song/media/outer/url?id=1293886117.mp3',
+    id:null,
+    detail:null,
+    url:app.data.request_img,
   },
   audioPlay: function () {
     this.audioCtx.play()
@@ -32,7 +35,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id:this.options.id
+    })
   },
 
   /**
@@ -47,9 +52,33 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.specialty_detail});
-    
+    this.init()
   },
-
+  init(){
+    wx.request({
+      url: app.data.request_url+'/api/com/comSpecialty/getById?id='+this.data.id,
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        wx.stopPullDownRefresh();
+        if(res.data.data.pictureUrl){
+          this.setData({
+            detail:res.data.data,
+            img:res.data.data.pictureUrl.split(',')
+          })
+        }else{
+          app.showToast("轮播图未上传！");
+        }
+        
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
