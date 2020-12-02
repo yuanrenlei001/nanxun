@@ -61,6 +61,15 @@
   right: 36rpx;
   display: flex;
 }
+<<<<<<< HEAD
+=======
+.rightAr1{
+  position: absolute;
+  right: 80rpx;
+  top: 60rpx;
+  display: flex;
+}
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 .arImg{
   width: 40rpx;
   height: 40rpx;
@@ -71,6 +80,20 @@
   height: 84rpx;
   margin-right: 10rpx;
 }
+<<<<<<< HEAD
+=======
+.leftImgW1{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+.arT1{
+  font-size: 20rpx;
+  font-weight: 400;
+  color: #333;
+  line-height: 30rpx;
+}
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 .arT{
   font-size: 20rpx;
   font-weight: 400;
@@ -91,11 +114,18 @@
   color: #333;
   padding-right: 44rpx;
   line-height: 28rpx;
+<<<<<<< HEAD
+=======
+  white-space: normal;
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 }
 .leftImgW{
   width: 32rpx;
   height: 32rpx;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 }
 .shareText{
   font-size: 20rpx;
@@ -111,4 +141,17 @@
 }
 .mt5{
   margin-top: 5rpx;
+<<<<<<< HEAD
+=======
+}
+.stopNum{
+  color: #60ABFF;
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-left: 20rpx;
+  margin-top: 8rpx;
+}
+.stopTotal{
+  color: #333;
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 }

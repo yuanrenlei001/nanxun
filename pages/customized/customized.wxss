@@ -1,0 +1,157 @@
+/* pages/customized/customized.wxss */
+.bg{
+  background: #fff;
+  width: 100%;
+  height: 100vh;
+  padding-top: 106rpx;
+  padding-left: 148rpx;
+}
+.flex{
+  display: flex;
+}
+.text1{
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #000000;
+  line-height: 44rpx;
+}
+.text2{
+  margin-top: 62rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #000000;
+  line-height: 40rpx;
+}
+.text3{
+  margin-top: 32rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #000000;
+  line-height: 40rpx;
+}
+.inputL{
+  width: 168rpx;
+  margin-left: 48rpx;
+  margin-right: 44rpx;
+}
+.text4{
+  margin-top: 44rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #000000;
+  line-height: 40rpx;
+}
+.likeD{
+  width: 500rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.selsctV{
+  margin-top: 18rpx;
+  width: 148rpx;
+  height: 46rpx;
+  margin-right: 12rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 46rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+.likeColor{
+  border: 2rpx solid rgba(51, 51, 51, 0.42);
+  color: rgba(51, 51, 51, 0.42);
+}
+.likeColorActive{
+  border: 2rpx solid #66AC5B;
+  color: #66AC5B;
+}
+.text5{
+  margin-top: 50rpx;
+
+}
+.btn{
+  margin-top: 72rpx;
+  width: 452rpx;
+  height: 74rpx;
+  background: #FFC645;
+  border-radius: 16rpx;
+  text-align: center;
+  line-height: 74rpx;
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+.loadingImg{
+  width: 156rpx;
+  height: 156rpx;
+}
+.maskColorText{
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+.map{
+  width: 100%;
+  height: 100vh;
+}
+.footerBlock{
+  height: 450rpx;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  /* padding-left: 52rpx; */
+  /* padding-top: 40rpx; */
+}
+.map_top{
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333333;
+  line-height: 40rpx;
+}
+.address{
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #333333;
+  line-height: 34rpx;
+}
+.route{
+  height: 134rpx;
+}
+.introduce{
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #333333;
+  line-height: 34rpx;
+}
+.more{
+  font-size: 20rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 0.52);
+  line-height: 28rpx;
+  position: absolute;
+  right: 38rpx;
+}
+.footerText{
+  margin-top: 14rpx;
+  width: 654rpx;
+  font-size: 20rpx;
+  font-weight: 300;
+  color: #333333;
+  line-height: 28rpx;
+  white-space: normal;
+}

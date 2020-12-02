@@ -118,13 +118,24 @@
 .tBg{
   background: #fff;
   width: 100%;
+<<<<<<< HEAD
   height: 846rpx;
+=======
+  /* height: 846rpx; */
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 }
 .topH{
   height: 66rpx;
   width: 100%;
   position: relative;
+<<<<<<< HEAD
   border-bottom: 2rpx solid rgba(221, 221, 221, 0.36);
+=======
+  border: 2rpx solid rgba(221, 221, 221, 0.36);
+}
+.bdSi{
+  border: 2rpx solid rgba(221, 221, 221, 0.36);
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 }
 .close{
   width: 28rpx;
@@ -169,4 +180,21 @@
 }
 .activeD{
   background: #FFC645;
+<<<<<<< HEAD
+=======
+}
+.positionMapR1{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  bottom: 620rpx;
+  left: 24rpx;
+}
+.positionMapR{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  bottom: 420rpx;
+  left: 24rpx;
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 }

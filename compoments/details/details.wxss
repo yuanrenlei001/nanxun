@@ -12,10 +12,25 @@
 .listH{
   width: 100%;
   height: 156rpx;
+<<<<<<< HEAD
   border-bottom: 1px solid #f1f1f1;
 }
 .flex{
   display: flex;
+=======
+  /* border-bottom: 1px solid #f1f1f1; */
+  position: relative;
+}
+.border_false{
+  width: 100%;
+  height: 1px;
+  background: #f1f1f1;
+  position: absolute;
+  bottom: 0;
+}
+.flex{
+  height: 100rpx;
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   position: relative;
 }
 .bjStyle{
@@ -46,5 +61,8 @@
   font-weight: 500;
   color: rgba(51, 51, 51, 0.62);
   margin-left: 36rpx;
+<<<<<<< HEAD
   margin-top: 8rpx;
+=======
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 }

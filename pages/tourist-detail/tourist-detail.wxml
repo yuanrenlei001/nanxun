@@ -1,14 +1,21 @@
 <swiper indicator-dots="{{indicatorDots}}" class="swipers"
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+<<<<<<< HEAD
         <block wx:for="{{background}}" wx:key="*this">
           <swiper-item>
             <image src="{{item}}"></image>
+=======
+        <block wx:for="{{img}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{url+item}}"></image>
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
           </swiper-item>
         </block>
       </swiper> 
 
 <view class="main">
   <view class="title">
+<<<<<<< HEAD
     <view class="title01">金宅</view>
     <view class="title02"><image src="/images/tourist/vr.png"></image> VR看景</view>
     <view class="title03"><image src="/images/tourist/address.png"></image> 导航</view>
@@ -18,6 +25,15 @@
   <view class="content">
     南浔金家，位于南浔古镇东大街38号，为南浔近代丝商“八牛”之一，人称小金山。金家一门风雅，诞生了近代著名画家金绍城、竹刻家金绍坊、女画家金章、文博大家王世襄、石油大王金开英。金绍城是近代著名画家、民国初年北方画坛领军人物、中国画学研究会首任会长、“湖社画会”的精神领袖。
   </view>
+=======
+    <view class="title01">{{detail.name}}</view>
+    <view class="title02"><image src="/images/tourist/vr.png"></image> VR看景</view>
+    <view class="title03"><image src="/images/tourist/address.png"></image> 导航</view>
+  </view>
+  <view class="text">{{detail.address}}</view>
+  <audio poster="{{img[0]}}" name="{{detail.name}}" author="" src="{{url+detail.audioUrl}}" id="myAudio" style="width:100%" controls loop></audio>
+  <rich-text class="content" nodes="{{detail.intro}}"></rich-text>
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   <view class="bottom">
     <view class="bottom02"><image src="/images/share.png"></image> 分享</view>
     <view class="bottom01"><image src="/images/un-collection.png"></image> 收藏</view>

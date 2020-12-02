@@ -10,6 +10,10 @@ App({
       'notice':'最新公告',
       'index_more':'首页更多',
       'notice_list':'资讯列表',
+<<<<<<< HEAD
+=======
+      'scenic':'热门景点列表',
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
       'show_list':'演出列表',
       'tourist_guide':'美景导游',
       'tourist_detail':'美景详情',
@@ -24,7 +28,12 @@ App({
       'address':'写生基地',
       'address_detail':'写生基地详情',
       'traffic':'交通出行',
+<<<<<<< HEAD
       'phone':'景区电话'
+=======
+      'phone':'景区电话',
+      'show_detail':'演出详情'
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     },
     // tabbar页面
       tabbar_pages: [
@@ -34,7 +43,13 @@ App({
         "/pages/user/index",
       ],
     // 请求地址
+<<<<<<< HEAD
     request_url: "",
+=======
+    request_url: "https://nanxun.zjtoprs.com",
+    // 文件类地址
+    request_img: "https://nanxun.zjtoprs.com/minio",
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   },
   onLaunch: function () {
 
@@ -108,6 +123,25 @@ App({
       }
     });
   },
+<<<<<<< HEAD
+=======
+  showToast(msg, status)
+  {
+    if ((status || 'error') == 'success')
+    {
+      wx.showToast({
+        title: msg,
+        duration: 3000
+      });
+    } else {
+      wx.showToast({
+        image: '/images/default-toast-error.png',
+        title: msg,
+        duration: 3000
+      });
+    }
+  },
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   globalData: {
     userInfo: null
   }

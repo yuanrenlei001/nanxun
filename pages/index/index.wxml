@@ -13,12 +13,20 @@
 <view class="video">
   <video 
       id="myVideo" 
+<<<<<<< HEAD
       src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" 
+=======
+      src="https://nanxun.zjtoprs.com/minio/old-town/com/info/propagandafilm1.mp4" 
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
       enable-danmu 
       danmu-btn 
       controls 
       object-fit="cover"
+<<<<<<< HEAD
       poster="{{videoUrl}}"
+=======
+      poster="/images/xxx.jpg"
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     ></video>
 </view>
 
@@ -26,17 +34,29 @@
 <view class="main">
   <!-- 最新公告 -->
   <view class="news" bindtap="goNotice">
+<<<<<<< HEAD
     <image src="/images/index/iconNews.png"></image> 最新公告： <text>柯桥部分景区维修中,具体景点如柯桥部分景区维修中,具体景点如</text>
+=======
+    <image src="/images/index/iconNews.png"></image> 最新公告： <text>南浔古镇部分景区维修中,具体景点如南浔古镇部分景区维修中,具体景点如</text>
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   </view>
   <!-- 分类列表 -->
   <view class="indexSort">
     <view class="sortTop">
       <text class="sortTop01">乐游南浔</text>
+<<<<<<< HEAD
       <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view>
     <view class="sort">
       <view class="sortUl">
         <navigator class="sortLi"><image src="/images/index/icon01.png"></image> <text>门票商城</text></navigator>
+=======
+      <!-- <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view> -->
+    </view>
+    <view class="sort">
+      <view class="sortUl">
+        <navigator class="sortLi" target="miniProgram" open-type="navigate" app-id="wx0e6ed4f51db9d078" version="trial"><image src="/images/index/icon01.png"></image> <text>门票商城</text></navigator>
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
         <navigator class="sortLi" url='/pages/tourist-guide/tourist-guide'><image src="/images/index/icon02.png"></image> <text>美景导游</text></navigator>
         <navigator class="sortLi" url='/pages/food/food'><image src="/images/index/icon03.png"></image> <text>美食餐饮</text></navigator>
         <navigator class="sortLi" url='/pages/specialty/specialty'><image src="/images/index/icon04.png"></image> <text>南浔特产</text></navigator>
@@ -65,11 +85,35 @@
       <view class="sortTop02" bindtap="noticeList">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
     <view class="newImg">
+<<<<<<< HEAD
       <image src="/images/index/indexMap.png"></image>
+=======
+      <image src="/images/xxx.jpg"></image>
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
       <text>南浔新增写生基地</text>
     </view>
   </view>
 
+<<<<<<< HEAD
+=======
+  <!-- 热门景点 -->
+  <view class="indexJd">
+    <view class="sortTop">
+      <text class="sortTop01">热门景点</text>
+      <view class="sortTop02" bindtap="goScenic">查看全部 <image src="/images/index/iconRight.png"></image></view>
+    </view> 
+    <swiper class="swiperContent" previous-margin='50px' next-margin='50px' bindchange="swiperChange"  autoplay circular>
+      <swiper-item wx:for='{{imgList}}' >
+        <image bindtap="goscenic" data-id='{{item.id}}' class='le-img {{nowIdx==index?"le-active":""}}' src='{{url+item.pictureUrl}}'></image>
+      </swiper-item>
+    </swiper>
+    <view class="text">
+      <view class="swTitle">{{titles}}</view>
+      <view class="swText">{{texts}}</view>
+    </view>
+  </view>
+
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   <!-- 演出列表 -->
   <view class="indexList">
     <view class="sortTop">
@@ -78,10 +122,14 @@
     </view> 
     <view class="list">
       <view class="listUl">
+<<<<<<< HEAD
         <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
         <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
         <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
         <navigator class="listLi"><image src="/images/xxx.jpg"></image> <text>水上婚礼</text></navigator>
+=======
+        <navigator class="listLi" url="/pages/show-detail/show-detail?id={{item.id}}" wx:for="{{showLists}}"><image src="{{url+item.coverUrl}}"></image> <text>{{item.name}}</text></navigator>
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
       </view>
     </view>
   </view>

@@ -34,6 +34,7 @@
     <image class="periphery" src="/images/map/periphery.png"></image>
   </view>
   <image class="timeMap" src="/images/map/time.png"></image>
+<<<<<<< HEAD
   <image class="positionMap" src="/images/map/position.png"></image>
   <image class="refreshMap" src="/images/map/refresh.png"></image>
 </map>
@@ -81,6 +82,56 @@
   </view>
   </view>
 </view>
+=======
+  <image wx:if="{{rightImg}}" class="positionMap" src="/images/map/position.png"></image>
+  <image wx:if="{{!rightImg}}" class="positionMapR" src="/images/map/position.png"></image>
+  <image wx:if="{{rightImg}}" class="refreshMap" src="/images/map/refresh.png"></image>
+</map>
+<!-- 遮罩层  -->
+<cover-view class="mask" wx:if="{{shouAll}}">
+  <cover-view class="tBg">
+    <cover-view class="topH">
+      <cover-image class="close" bindtap="closeFun" src="/images/map/x.png"></cover-image>
+    </cover-view>
+    <cover-view class="row-h">
+      <cover-view bindtap="headerTap" data-index="0" class="bdSi moreBlock textLine bodeR {{index==='0'?'activeD':''}}">景点</cover-view>
+      <cover-view bindtap="headerTap" data-index="1" class="bdSi moreBlock textLine bodeR {{index==='1'?'activeD':''}}">美食</cover-view>
+      <cover-view bindtap="headerTap" data-index="2" class="bdSi moreBlock {{index==='2'?'activeD':''}}">
+        <cover-view class="dobleText">酒店</cover-view>
+        <cover-view>民宿</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row-h">
+      <cover-view bindtap="headerTap" data-index="5" class="bdSi moreBlock bodeR {{index==='5'?'activeD':''}}">
+        <cover-view class="dobleText">语音</cover-view>
+        <cover-view>导航</cover-view>
+      </cover-view>
+      <cover-view bindtap="headerTap" data-index="6" class="bdSi moreBlock textLine bodeR {{index==='6'?'activeD':''}}">演出点</cover-view>
+      <cover-view bindtap="headerTap" data-index="7" class="bdSi moreBlock {{index==='7'?'activeD':''}}">
+        <cover-view class="dobleText">游船</cover-view>
+        <cover-view>码头</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="row-h">
+      <cover-view bindtap="headerTap" data-index="8" class="bdSi moreBlock textLine bodeR {{index==='8'?'activeD':''}}">厕所</cover-view>
+      <cover-view bindtap="headerTap" data-index="4" class="bdSi moreBlock textLine bodeR {{index==='4'?'activeD':''}}">停车场</cover-view>
+      <cover-view bindtap="headerTap" data-index="9" class="bdSi moreBlock textLine {{index==='9'?'activeD':''}}">游客休息点</cover-view>
+    </cover-view>
+    <cover-view class="row-h">
+      <cover-view bindtap="headerTap" data-index="10" class="bdSi moreBlock textLine bodeR {{index==='10'?'activeD':''}}">报警柱</cover-view>
+      <cover-view bindtap="headerTap" data-index="11" class="bdSi moreBlock textLine bodeR {{index==='11'?'activeD':''}}">AED急救</cover-view>
+      <cover-view bindtap="headerTap" data-index="12" class="bdSi moreBlock {{index==='12'?'activeD':''}}">
+        <cover-view class="dobleText">游客</cover-view>
+        <cover-view>中心</cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="flex">
+      <cover-view bindtap="headerTap" data-index="3" class="bdSi lastD bodeR {{index==='3'?'activeD':''}}">志愿服务站</cover-view>
+      <cover-view bindtap="headerTap" data-index="13" class="bdSi lastD bodeR {{index==='13'?'activeD':''}}">特色商铺</cover-view>
+  </cover-view>
+  </cover-view>
+</cover-view>
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
 <!-- 底部详情弹框 -->
 <hotel wx:if="{{hiider}}" data="{{modelInfo}}"></hotel>
 <details wx:if="{{listModel}}" list="{{navList}}" type="{{1}}"></details>

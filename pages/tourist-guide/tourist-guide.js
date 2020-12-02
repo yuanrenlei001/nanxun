@@ -6,13 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     latitude: 23.099994,
     longitude: 113.324520,
+=======
+    latitude: 30.84979,
+    longitude: 120.41847,
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     zoom:false,
     compass:false,
     scroll:false,
     markers: [{
       id: 1,
+<<<<<<< HEAD
       latitude: 23.099994,
       longitude: 113.324520,
       name: 'T.I.T 创意园'
@@ -24,6 +30,19 @@ Page({
     }, {
       latitude: 23.099994,
       longitude: 113.304520,
+=======
+      latitude: 30.84979,
+    longitude: 120.41847,
+      name: 'T.I.T 创意园'
+    }],
+    covers: [{
+      latitude: 30.84979,
+    longitude: 120.41847,
+      iconPath: '/image/location.png'
+    }, {
+      latitude: 30.84979,
+    longitude: 120.41847,
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
       iconPath: '/image/location.png'
     }]
   },

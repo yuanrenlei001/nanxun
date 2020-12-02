@@ -1,0 +1,17 @@
+<view class="top">
+  <view class="search">
+    <input type="text" placeholder="搜索南浔热门景点"/>
+    <image src="/images/index/search.png"></image>
+</view>
+</view>
+<view class="main">
+  <view class="listUl">
+    <view class="listLis">
+      <navigator class="listLi" url="/pages/tourist-detail/tourist-detail?id={{item.id}}" wx:for="{{showLists}}" wx:key = 'key'>
+        <image src="{{url+item.pictureUrl}}" class="bg"></image>
+        <view class="listText">{{item.name}}</view>
+      </navigator>
+      <view class="message">{{message}}</view>
+    </view>
+  </view>
+</view>

@@ -6,7 +6,36 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
 
+=======
+    list:[
+      {
+        name: '推荐路线一',
+        text: '湖笔文化园 - 申浩科技农场',
+        text2: '感受农庄四季美景 品尝江南名肴',
+        starStatus: false
+      },
+      {
+        name: '推荐路线二',
+        text: '湖笔文化园 - 申浩科技农场',
+        text2: '感受农庄四季美景 品尝江南名肴',
+        starStatus: false
+      },
+      {
+        name: '推荐路线三',
+        text: '湖笔文化园 - 申浩科技农场',
+        text2: '感受农庄四季美景 品尝江南名肴',
+        starStatus: false
+      },
+      {
+        name: '推荐路线四',
+        text: '湖笔文化园 - 申浩科技农场',
+        text2: '感受农庄四季美景 品尝江南名肴',
+        starStatus: true
+      }
+    ]
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   },
 
   /**
@@ -27,6 +56,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+<<<<<<< HEAD
+=======
+    // this.getList();
+    this.getIDList();
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
     wx.setNavigationBarTitle({title: app.data.common_page_title.for_strategy});
   },
 
@@ -63,5 +97,67 @@ Page({
    */
   onShareAppMessage: function () {
 
+<<<<<<< HEAD
+=======
+  },
+  starShow: function(e) {
+    let i = e.currentTarget.dataset.index
+    let text = 'list['+i+'].starStatus'
+    console.log(text)
+    this.setData({
+      [text]: true
+    })
+  },
+  starHidder: function (e) {
+    let i = e.currentTarget.dataset.index
+    let text = 'list['+i+'].starStatus'
+    console.log(text)
+    this.setData({
+      [text]: false
+    })
+  },
+  customizedFun: function(){
+    wx.navigateTo({
+      url: "../customized/customized"
+    })
+  },
+  /**
+   * 初始化获取列表
+   */
+  getList: function () {
+    wx.request({
+      url: app.data.request_url+'/api/com/comRoute/getAll?pageNum=1&pageSize=6',
+      method: "get",
+      dataType: "json",
+      data: {},
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        console.log('markers++++',res);
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    })
+  },
+  /**
+   * 根据id获取列表
+   */
+  getIDList: function () {
+    wx.request({
+      url: app.data.request_url+'/api/com/comRoute/getById?id=1',
+      method: "get",
+      dataType: "json",
+      data: {},
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        console.log('markers++++',res);
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    })
+>>>>>>> 17435522891ce0e01e17ce47af4911c25ca71a0d
   }
 })
