@@ -1,4 +1,3 @@
-<!--pages/for-strategy/index.wxml-->
 <view class="bg">
   <view class="topBg">
     <view bindtap="customizedFun" class="topBtn">行程订制</view>

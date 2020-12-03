@@ -1,4 +1,3 @@
-/* compoments/details/details.wxss */
 .detailsBg{
   width: 714rpx;
   height: 492rpx;

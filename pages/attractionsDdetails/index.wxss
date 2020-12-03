@@ -1,8 +1,6 @@
-/* pages/attractionsDdetails/index.wxss */
 .bgImg{
   width: 750rpx;
   height: 386rpx;
-  background-image: url('');
 }
 .contentText{
   width: 750rpx;

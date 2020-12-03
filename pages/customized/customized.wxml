@@ -1,4 +1,3 @@
-<!--pages/customized/customized.wxml-->
 <view class="bg" hidden="{{mapShow}}">
   <view class="text1">订制信息</view>
   <view class="text2 flex">

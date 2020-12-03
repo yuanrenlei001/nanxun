@@ -87,9 +87,6 @@ Page({
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.for_you});
     const myMap = wx.createMapContext('map', this);
-    // myMap.addMarkers({
-    //   markers:list
-    // })
     myMap.getCenterLocation({
       success: (res)=>{
         console.log("zhongxindian", res);
@@ -116,7 +113,7 @@ Page({
         let data = res.data.data;
         let list = data.records;
         let item = list[0]
-        var regex1 = /(?<=\()\S+(?=\))/g;
+        var regex1 =new RegExp('(?<=\()\S+(?=\))','/g');
         let str = '1111(120.374334027394 30.8560762051528)'
         console.log('point',item)
         console.log('point',item.point.match(regex1))
@@ -381,7 +378,6 @@ Page({
         ]
       })
     }
-    // ////////////////
     if(curreIndex === '7'){
       this.setData({
         markers: [

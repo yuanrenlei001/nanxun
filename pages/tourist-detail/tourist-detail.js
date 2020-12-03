@@ -82,7 +82,7 @@ intoMap:function(){
     success: function (res) {  //因为这里得到的是你当前位置的经纬度
       var latitude = res.latitude
       var longitude = res.longitude
-      console.log(res)
+      console.log()
       wx.openLocation({        //所以这里会显示你当前的位置
         latitude: latitude,
         longitude: longitude,

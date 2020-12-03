@@ -1,11 +1,8 @@
-/* pages/foryou/index.wxss */
 .topBar{
   height: 86rpx;
   width: 100%;
   background: #FFC645;
   display: flex;
-  /* line-height: 86rpx; */
-  /* align-items: center; */
 }
 .topText{
   margin-top: 16rpx;
@@ -118,7 +115,6 @@
 .tBg{
   background: #fff;
   width: 100%;
-  /* height: 846rpx; */
 }
 .topH{
   height: 66rpx;

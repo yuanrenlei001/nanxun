@@ -1,4 +1,3 @@
-/* pages/tourist-guide/tourist-guide.wxss */
 .map {width: 100%;height:368rpx;position: relative;}
 .goMap {position: absolute;bottom:24rpx;right:14rpx;
   width: 186rpx;

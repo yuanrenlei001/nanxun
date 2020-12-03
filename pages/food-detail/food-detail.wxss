@@ -1,4 +1,3 @@
-/* pages/tourist-detail/tourist-detail.wxss */
 .swipers {width: 100%;height:386rpx;position: relative;z-index: 1;}
 .swipers image {width: 100%;height:386rpx;}
 

@@ -1,4 +1,3 @@
-<!--compoments/details/details.wxml-->
 <cover-view class="detailsBg">
   <cover-view class="listH" wx:for="{{list}}" wx:key="index">
     <cover-view class="flex">

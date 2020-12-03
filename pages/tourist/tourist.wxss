@@ -1,4 +1,3 @@
-/* pages/tourist/tourist.wxss */
 page {background-color: #EDEDED;}
 .main {
   padding: 36rpx;

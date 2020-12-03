@@ -1,11 +1,11 @@
 // pages/attractionsDdetails/index.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    topImgUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606470208623&di=3254b39da5ce7839ce7a541bf5a45d0c&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fb912bf96dc19b3b23530ae2259b60eb6cf70083f6680b-H9l0ri_fw658'
   },
 
   /**
@@ -26,9 +26,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.setNavigationBarTitle({
-      title: '详情'
-    })
   },
 
   /**

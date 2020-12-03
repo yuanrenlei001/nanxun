@@ -1,4 +1,3 @@
-/* pages/ItineraryDetails/index.wxss */
 .topLine{
   width: 670rpx;
   height: 170rpx;

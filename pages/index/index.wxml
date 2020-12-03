@@ -6,9 +6,13 @@
     <input type="text" />
     <image src="/images/index/search.png"></image>
   </view>
-  <view class="service"><image src="/images/index/service.png"></image></view>
+  <view class="service">
+    
+  <image class="cs_image" src="/images/index/service.png"></image>
+    
+    </view>
+  
 </view>
-
 <!-- 视频 -->
 <view class="video">
   <video 
@@ -92,7 +96,6 @@
     </view> 
     <view class="list">
       <view class="listUl" >
-
         <navigator class="listLi" url="/pages/show-detail/show-detail?id={{item.id}}" wx:for="{{showLists}}"><image src="{{url+item.coverUrl}}"></image> <text>{{item.name}}</text></navigator>
       </view>
     </view>

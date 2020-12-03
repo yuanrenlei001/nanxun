@@ -1,4 +1,3 @@
-/* pages/customized/customized.wxss */
 .bg{
   background: #fff;
   width: 100%;
@@ -114,8 +113,6 @@
   position: absolute;
   bottom: 0;
   z-index: 999;
-  /* padding-left: 52rpx; */
-  /* padding-top: 40rpx; */
 }
 .map_top{
   font-size: 28rpx;

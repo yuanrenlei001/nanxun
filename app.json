@@ -3,9 +3,7 @@
     "pages/index/index",
     "pages/address/address",
     "pages/index-more/index-more",
-    
     "pages/vr/vr",
-  
     "pages/specialty/specialty",
     "pages/specialty-detail/specialty-detail",
     "pages/food/food",
@@ -18,21 +16,18 @@
     "pages/phone/phone",
     "pages/address-detail/address-detail",
     "pages/traffic/traffic",
-    
     "pages/tourist/tourist",
     "pages/voice/voice",
     "pages/ar/ar",
     "pages/food-detail/food-detail",
     "pages/notice-list/notice-list",
- 
     "pages/notice/notice",
     "pages/map/index",
     "pages/for-strategy/index",
     "pages/show-detail/show-detail",
     "pages/scenic/scenic",
-    "pages/222",
-    "pages/ItineraryDetails/index",
-    "pages/attractionsDdetails/index",
+    "pages/itinerarydetails/index",
+    "pages/attractionsddetails/index",
     "pages/login/login",
     "pages/web/web"
   ],
@@ -43,9 +38,6 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
-  "navigateToMiniProgramAppIdList": [
-    "wx24fda5cd9917d177"
-  ],
   "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"

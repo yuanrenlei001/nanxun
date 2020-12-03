@@ -7,7 +7,7 @@
 </view>
 <view class="main">
   <navigator class="list" wx:for="{{showLists}}" url="/pages/web/web?url={{item.vrUrl}}">
-    <view class="listLeft"><image src="{{url+item.coverUrl}}"></image></view>
+    <view class="listLeft"><image src=""></image></view>
     <view class="listRight">
       <view class="listRight01">{{item.name}}</view>
       <view class="listRight02">{{item.intro}}</view>

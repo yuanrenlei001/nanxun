@@ -1,4 +1,3 @@
-<!--compoments/hotel/hotel.wxml-->
 <cover-view class="tab2Model">
   <cover-view class="onD">
     <cover-view class="modelTop">

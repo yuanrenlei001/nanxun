@@ -1,6 +1,4 @@
-<!--pages/attractionsDdetails/index.wxml-->
-
 <view class="test">
-  <view class="bgImg"  style="background-image: url({{topImgUrl}})"></view>
+  <view class="bgImg"></view>
   <view class="contentText"></view>
 </view>

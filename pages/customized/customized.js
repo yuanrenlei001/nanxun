@@ -1,4 +1,5 @@
 // pages/customized/customized.js
+const app = getApp();
 Page({
 
   /**
@@ -46,7 +47,6 @@ Page({
    */
   onLoad: function (options) {
     
-    wx.setNavigationBarTitle({title: '行程订制'});
   },
 
   /**

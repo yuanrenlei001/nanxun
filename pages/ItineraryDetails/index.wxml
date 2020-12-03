@@ -1,4 +1,3 @@
-<!--pages/ItineraryDetails/index.wxml-->
 <view class="topLine">
   <view class="wbr">
     <view class="lineText">行程路线：</view>

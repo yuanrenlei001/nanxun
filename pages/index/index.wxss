@@ -5,6 +5,7 @@ page{
 .address {width: 48rpx;height:48rpx;vertical-align: middle;margin-left: 22rpx;}
 .service {position: absolute;top:0;right:36rpx;height:100%;}
 .service image {width: 52rpx;height:52rpx;vertical-align: middle;}
+.cs_button {position: absolute;top:0;right:36rpx;height:100%;}
 .search {width:346rpx;height:54rpx;line-height: 54rpx;position: absolute;left:210rpx;top:50%;margin-top: -27rpx;
   background: #fff;
   box-shadow: 0px 4px 8px 0px rgba(217, 216, 216, 0.5);
