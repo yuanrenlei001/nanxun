@@ -25,7 +25,7 @@
 <view class="main">
   <!-- 最新公告 -->
   <view class="news" bindtap="goNotice">
-    <image src="/images/index/iconNews.png"></image> 最新公告： <text>柯桥部分景区维修中,具体景点如柯桥部分景区维修中,具体景点如</text>
+    <image src="/images/index/iconNews.png"></image> 最新公告： <text>{{news[0].title}}</text>
   </view>
   <!-- 分类列表 -->
   <view class="indexSort">
@@ -51,10 +51,10 @@
 
 </view>
   <!-- 地图导览 -->
-  <navigator class="indexMap">
+  <view class="indexMap" bindtap="goMap">
     <text>地图导览</text>
     <image src="/images/index/indexMap.png"></image>
-  </navigator>
+  </view>
 
 <view class="main">
   <!-- 最新资讯 -->

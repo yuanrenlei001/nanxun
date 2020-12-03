@@ -1,8 +1,8 @@
 <swiper indicator-dots="{{indicatorDots}}" class="swipers"
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
+        <block wx:for="{{img}}" wx:key="*this">
           <swiper-item>
-            <image src="{{item}}"></image>
+            <image src="{{url+item}}"></image>
           </swiper-item>
         </block>
       </swiper> 
@@ -12,10 +12,8 @@
     <view class="title01">写生基地</view>
   </view>
   <view class="title" style="margin-top:15rpx;">
-    <view class="title01" style="font-size:24rpx;">南西街78号</view>
+    <view class="title01" style="font-size:24rpx;">{{detail.address}}</view>
     <view class="title03"><image src="/images/tourist/address.png"></image> 导航</view>
   </view>
-  <view class="content">
-    双林姑嫂饼是浙江南浔区双林镇的特色传统名点之一。扁圆形，厚薄均匀，表面印模清晰，底面光洁，粉质细腻、油润，呈浅灰色，有麻油香味，酥松爽口，由于体积小面精，一口一块，口即酥溶。选用上等白面粉、黑芝麻、猪板油、砂糖、精盐等精心制作而成。
-  </view>
+  <rich-text class="content" nodes="{{detail.content}}"></rich-text>
 </view>

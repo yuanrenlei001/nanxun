@@ -11,7 +11,7 @@
   <view class="title">
     <view class="title01">{{detail.name}}</view>
     <view class="title02"><image src="/images/tourist/vr.png"></image> VR看景</view>
-    <view class="title03"><image src="/images/tourist/address.png"></image> 导航</view>
+    <view class="title03" bindtap="intoMap"><image src="/images/tourist/address.png"></image> 导航</view>
   </view>
   <view class="text">{{detail.address}}</view>
   <audio poster="{{img[0]}}" name="{{detail.name}}" author="" src="{{url+detail.audioUrl}}" id="myAudio" style="width:100%" controls loop></audio>

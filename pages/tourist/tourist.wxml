@@ -1,9 +1,6 @@
 <view class="main">
   <view class="sort">
     <view class="title">游客服务中心</view>
-    <view class="text">一、提供景区咨询、免费资料取阅、游览六要素相关信息咨询、公用电话、VIP接待引导、行李寄存、、轮椅、拐杖、童车、雨伞租赁、失物查询与登记等服务。</view>
-    <view class="text">二、提供协议旅行社开单及企事业单位签单手续、VIP接待票办理。 三、提供导游服务、自助语音导览器、无线讲解器 四、投诉受理</view>
-    <view class="text">三、提供导游服务、自助语音导览器、无线讲解器 四、投诉受理</view>
-    <view class="text">四、投诉受理</view>
+    <rich-text class="text" nodes="{{showLists[0].intro}}"></rich-text>
   </view>
 </view>

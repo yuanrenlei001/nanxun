@@ -10,7 +10,7 @@
     ></map>
     <view class="top">
   <view class="search">
-    <input type="text" placeholder="搜索景点" bindinput="inputTyping"/>
+    <input type="text" placeholder="搜索景点" bindinput="inputTyping" />
     <image src="/images/index/search.png"></image>
     
 </view>

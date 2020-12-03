@@ -34,6 +34,7 @@ App({
       'address_detail':'写生基地详情',
       'traffic':'交通出行',
       'phone':'景区电话',
+      'web':'VR视频',
       'show_detail':'演出详情'
     },
     // tabbar页面

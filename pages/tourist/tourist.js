@@ -6,7 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    showLists:[],
+    url:app.data.request_img,
+    pageNum:1,
+    pageSize:8,
+    hasMoreData: true,
+    message:'正在加载数据...',
+    img:null
   },
 
   /**
@@ -28,8 +34,43 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.tourist});
+    this.setData({
+      pageNum:1
+    })
+    this.list();
   },
-
+  list(){
+    var pageNum = this.data.pageNum;
+    var pageSize = this.data.pageSize;
+    var that = this;
+    wx.request({
+      url: app.data.request_url+'/api/com/comPlace/getAll?pageNum='+pageNum+'&pageSize='+pageSize+'&type=游客中心',
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        wx.stopPullDownRefresh();
+        var list = res.data.data.records;
+        var arr = []
+        console.log(arr)
+        that.setData({
+          showLists:list,
+        })
+        if(list.length>=pageSize){
+          that.setData({
+            pageNum:that.data.pageNum+1,
+            hasMoreData:true
+          })
+        }
+        
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

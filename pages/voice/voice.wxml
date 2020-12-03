@@ -1,31 +1,16 @@
 <view class="top">
   <view class="search">
-    <input type="text" placeholder="搜索景点"/>
+    <input type="text" placeholder="搜索景点"  bindinput="inputTyping"/>
     <image src="/images/index/search.png"></image>
     
   </view>
 </view>
 <view class="main">
   <view class="ul">
-    <view class="list">
-    <image src="/images/xxx.jpg" class="bg"></image>
+    <navigator class="list" wx:for="{{showLists}}" url="/pages/tourist-detail/tourist-detail?id={{item.id}}">
+    <image src="{{url+img[0]}}" class="bg"></image>
     <image src="/images/play.png" class="play"></image>
-    <view class="text">南浔风景区</view>
-  </view>
-  <view class="list">
-    <image src="/images/xxx.jpg" class="bg"></image>
-    <image src="/images/play.png" class="play"></image>
-    <view class="text">南浔风景区</view>
-  </view>
-  <view class="list">
-    <image src="/images/xxx.jpg" class="bg"></image>
-    <image src="/images/play.png" class="play"></image>
-    <view class="text">南浔风景区</view>
-  </view>
-  <view class="list">
-    <image src="/images/xxx.jpg" class="bg"></image>
-    <image src="/images/play.png" class="play"></image>
-    <view class="text">南浔风景区</view>
-  </view>
+    <view class="text">{{item.name}}</view>
+  </navigator>
   </view>
 </view>

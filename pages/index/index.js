@@ -29,7 +29,8 @@ Page({
     hasMoreData: true,
     url:app.data.request_img,
     message:'正在加载数据...',
-    img:null
+    img:null,
+    news:null
   },
   /**
    * 生命周期函数--监听页面显示
@@ -40,6 +41,7 @@ Page({
       pageNum:1
     })
     this.list();
+    this.news();
   //  查询热门景点
     this.scenic()
   },
@@ -184,6 +186,30 @@ onReachBottom: function () {
       bgColor: getRandomColor()
     })
   },
+  // 最新公告
+  news(){
+    var pageNum = this.data.pageNum;
+    var pageSize = this.data.pageSize;
+    var that = this;
+    wx.request({
+      url: app.data.request_url+'/api/xcx/xcxNotice/getAll',
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        wx.stopPullDownRefresh();
+        var list = res.data.data.records;
+        that.setData({
+          news:list
+        })
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
+  },
   // 跳转最新公告
   goNotice:function(){
     wx.navigateTo({
@@ -240,4 +266,10 @@ onReachBottom: function () {
       url: '../show-list/show-list',
     })
   },
+  // 跳转寻找你
+  goMap:function(){
+    wx.switchTab({
+      url: '../foryou/index',
+    })
+  }
 })

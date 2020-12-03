@@ -74,6 +74,41 @@ Page({
       }
     });
   },
+
+// 导航
+intoMap:function(){
+  wx.getLocation({
+    type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+    success: function (res) {  //因为这里得到的是你当前位置的经纬度
+      var latitude = res.latitude
+      var longitude = res.longitude
+      console.log(res)
+      wx.openLocation({        //所以这里会显示你当前的位置
+        latitude: latitude,
+        longitude: longitude,
+        name: "杭州市余杭区良渚街道",
+        address:"杭州市余杭区良渚街道",
+        scale: 28
+      })
+    }
+  })
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /**
    * 生命周期函数--监听页面隐藏
    */
