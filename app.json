@@ -26,8 +26,8 @@
     "pages/for-strategy/index",
     "pages/show-detail/show-detail",
     "pages/scenic/scenic",
-    "pages/itinerarydetails/index",
-    "pages/attractionsddetails/index",
+    "pages/ItineraryDetails/index",
+    "pages/attractionsDdetails/index",
     "pages/login/login",
     "pages/web/web"
   ],
