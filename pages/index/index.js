@@ -31,6 +31,17 @@ Page({
     img:null,
     news:null
   },
+  onLoad:function(){
+    if(options.url){
+ 
+      let url = decodeURIComponent(options.url);
+ 
+      wx.navigateTo({
+        url
+      })
+ 
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -42,9 +53,29 @@ Page({
     this.list();
     this.news();
   //  查询热门景点
-    this.scenic()
+    this.scenic();
+    // 天气
+    this.Weather();
   },
   onLoad:function(){
+  },
+  Weather(){
+    var that = this;
+    wx.request({
+      url: app.data.request_url+'/api/com/comInfo/getTodayWeather',
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        wx.stopPullDownRefresh();
+        
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
   },
   list(){
     var pageNum = this.data.pageNum;

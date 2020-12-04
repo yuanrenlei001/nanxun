@@ -17,7 +17,7 @@
   <audio poster="{{img[0]}}" name="{{detail.name}}" author="" src="{{url+detail.audioUrl}}" id="myAudio" style="width:100%" controls loop></audio>
   <rich-text class="content" nodes="{{detail.intro}}"></rich-text>
   <view class="bottom">
-    <view class="bottom02"><image src="/images/share.png"></image> 分享</view>
+    <button class="bottom02" open-type="share" bindtap="share" style="    width: 22%;padding: 0;position: relative;float: right;right: 0;"><image src="/images/share.png"></image> 分享</button>
     <view class="bottom01"><image src="/images/un-collection.png"></image> 收藏</view>
   </view>
 </view>

@@ -55,3 +55,8 @@ text-align: justify;
 }
 .bottom view {float:right;}
 .bottom01 {margin-right: 56rpx;}
+
+.bottom02 {
+    background: transparent;
+    font-weight: normal;
+}

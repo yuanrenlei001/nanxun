@@ -1,5 +1,7 @@
 // pages/tourist-detail/tourist-detail.js
 const app = getApp();
+var QQmap = require('../../utils/qqmap-wx-jssdk');
+var qqmapsdk;
 Page({
 
   /**
@@ -17,7 +19,11 @@ Page({
     author: '许巍',
     src: 'http://music.163.com/song/media/outer/url?id=1293886117.mp3',
     detail:null,
-    img:null
+    img:null,
+    location:'',
+    latitude:'',
+    longitude:'',
+    markers:[]
   },
   audioPlay: function () {
     this.audioCtx.play()
@@ -39,7 +45,16 @@ Page({
       id:this.options.id
     })
   },
+// 分享
+share:function(){
+  let url = encodeURIComponent('/pages/tourist-detail/tourist-detail?id='+this.data.id);
+ 
+    return {
+      title: "美景详情",
+      path:`/pages/index/index?url=${url}` 
+    }
 
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -65,7 +80,14 @@ Page({
         wx.stopPullDownRefresh();
         this.setData({
           detail:res.data.data,
-          img:res.data.data.pictureUrl.split(',')
+          img:res.data.data.pictureUrl.split(','),
+          location:res.data.data.address,
+          latitude:res.data.data.latitude,
+          longitude:res.data.data.longitude,
+          markers:[{
+            latitude:res.data.data.latitude,
+          longitude:res.data.data.longitude,
+          }]
         })
       },
       fail: () => {
@@ -77,19 +99,16 @@ Page({
 
 // 导航
 intoMap:function(){
+  var that = this;
   wx.getLocation({
     type: 'gcj02', //返回可以用于wx.openLocation的经纬度
     success: function (res) {  //因为这里得到的是你当前位置的经纬度
-      var latitude = res.latitude
-      var longitude = res.longitude
-      console.log()
       wx.openLocation({        //所以这里会显示你当前的位置
-        latitude: latitude,
-        longitude: longitude,
-        name: "杭州市余杭区良渚街道",
-        address:"杭州市余杭区良渚街道",
-        scale: 28
-      })
+        latitude: parseFloat(that.data.latitude),
+        longitude: parseFloat(that.data.longitude),
+        name:that.data.detail.address,
+        scale: 18
+      });
     }
   })
 },
