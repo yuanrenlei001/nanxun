@@ -1,8 +1,8 @@
 <view class="main">
   <block wx:for='{{trendsList}}' wx:key='index'>
   <view class="box list">
-    <view class="title">新的景点开设</view>
-    <view class="time">2020.10.24</view>
+    <view class="title">{{item.title}}</view>
+    <view class="time">{{item.time}}</view>
    <view class="textFour_box text {{item.seeMore?'three':''}}">{{item.text}}</view>
    <view class="text_toggle_box" wx:if='{{item.seeMore}}' data-index='{{index}}' catchtap='toggleHandler'>
     <image class="open" src="/images/iconMore.png"></image>

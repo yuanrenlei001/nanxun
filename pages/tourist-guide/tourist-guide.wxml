@@ -14,7 +14,7 @@
     <image src="/images/index/search.png"></image>
     
 </view>
-<view class="number">景点 <text style="color:blue;">10 个</text></view>
+<view class="number">景点 <text style="color:blue;">{{total}} 个</text></view>
 </view>
     <view class="goMap">进入地图</view>
   </view>
@@ -36,7 +36,7 @@
         <image src="/images/address.png" class="userImg"></image>
         <text class="name">{{item.address}}</text>
         <view class="zan">
-          <image src="/images/see.png" class="unzan"></image> 浏览数 120
+          <image src="/images/see.png" class="unzan"></image> 浏览数 {{item.viewNum}}
         </view>
       </view>
       </view>

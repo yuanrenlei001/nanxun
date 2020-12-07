@@ -29,7 +29,9 @@ Page({
     url:app.data.request_img,
     message:'正在加载数据...',
     img:null,
-    news:null
+    news:null,
+    whater:'',
+    newList:''
   },
   onLoad:function(){
     if(options.url){
@@ -56,8 +58,30 @@ Page({
     this.scenic();
     // 天气
     this.Weather();
+    // 最新资讯
+    this.newss();
   },
   onLoad:function(){
+  },
+  newss(){
+    var that = this;
+    wx.request({
+      url: app.data.request_url+'/api/xcx/xcxNews/getAll',
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        wx.stopPullDownRefresh();
+        that.setData({
+          newList:res.data.data.records
+        })
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
   },
   Weather(){
     var that = this;
@@ -259,6 +283,12 @@ onReachBottom: function () {
   goMap:function(){
     wx.switchTab({
       url: '../foryou/index.wxml',
+    })
+  },
+  // 最新资讯
+  goUrlNews:function(){
+    wx.navigateTo({
+      url: '/pages/web/web?url='+this.data.newList[0].webUrl,
     })
   }
 })

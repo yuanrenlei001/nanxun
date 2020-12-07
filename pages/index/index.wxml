@@ -67,9 +67,9 @@
       <text class="sortTop01">最新资讯</text>
       <view class="sortTop02" bindtap="noticeList">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
-    <view class="newImg">
-      <image src="/images/index/indexMap.png"></image>
-      <text>南浔新增写生基地</text>
+    <view class="newImg" bindtap="goUrlNews">
+      <image src="{{url+newList[0].coverUrl}}"></image>
+      <text>{{newList[0].title}}</text>
     </view>
   </view>
   <!-- 热门景点 -->

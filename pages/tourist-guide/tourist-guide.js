@@ -32,7 +32,8 @@ Page({
     pageSize:8,
     hasMoreData: true,
     message:'正在加载数据...',
-    img:null
+    img:null,
+    total:0
   },
 
   /**
@@ -81,7 +82,8 @@ Page({
         console.log(arr)
         that.setData({
           showLists:list,
-          img:arr
+          img:arr,
+          total:res.data.data.total
         })
         if(list.length>=pageSize){
           that.setData({

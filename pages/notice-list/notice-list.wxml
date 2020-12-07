@@ -1,15 +1,15 @@
 <view class="top">
   <view class="search">
-    <input type="text" placeholder="搜索南浔最新资讯"/>
+    <input type="text" placeholder="搜索南浔最新资讯" bindinput="inputTyping"/>
     <image src="/images/index/search.png"></image>
 </view>
 </view>
 <view class="list">
-  <navigator class="list_News">
-    <image src="/images/index/indexMap.png"></image>
+  <navigator class="list_News" url="/pages/web/web?url={{item.webUrl}}" wx:for="{{showLists}}">
+    <image src="{{url+item.coverUrl}}"></image>
     <view class="list_text">
-      <view class="list_text01">南浔节假日景点游客人数再创新高</view>
-      <view class="list_text02">十一长假，南浔节假日景点游客人数再创新高！</view>
+      <view class="list_text01">{{item.title}}</view>
+      <view class="list_text02">{{item.digest}}</view>
     </view>
   </navigator>
 </view>

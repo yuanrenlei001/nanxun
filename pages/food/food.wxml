@@ -27,7 +27,7 @@
   <!-- 景点列表 -->
   <view class="main">
   <view class="listUl" wx:if="{{active !== '特产'}}">
-    <navigator class="listLi" url="/pages/food-detail/food-detail?id={{item.id}}" wx:for="{{showLists}}" wx:key='index'>
+    <navigator class="listLi" url="/pages/food-detail/food-detail?id={{item.id}}&sort={{active}}" wx:for="{{showLists}}" wx:key='index'>
       <image src="{{url+img[0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">
@@ -39,7 +39,7 @@
         <image src="/images/address.png" class="userImg"></image>
         <text class="name">{{item.address}}</text>
         <view class="zan">
-          <image src="/images/see.png" class="unzan"></image> 浏览数 120
+          <image src="/images/see.png" class="unzan"></image> 浏览数 {{item.viewNum}}
         </view>
       </view>
       </view>
