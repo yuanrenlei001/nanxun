@@ -1,8 +1,11 @@
 {
   "pages": [
-    "pages/food/food",
-    "pages/for-strategy/index",
     "pages/index/index",
+    "pages/for-strategy/index",
+   
+    "pages/my-collection/my-collection",
+    "pages/food/food",
+    
     "pages/notice-list/notice-list",
     "pages/notice/notice",
     "pages/address/address",
@@ -26,10 +29,11 @@
     "pages/map/index",
     "pages/show-detail/show-detail",
     "pages/scenic/scenic",
-    "pages/ItineraryDetails/index",
-    "pages/attractionsDdetails/index",
+    "pages/itinerarydetails/index",
+    "pages/attractionsddetails/index",
     "pages/login/login",
     "pages/web/web"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

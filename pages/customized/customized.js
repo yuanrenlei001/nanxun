@@ -39,15 +39,73 @@ Page({
         name: '网红打卡',
         status: false
       }
-    ]
+    ],
+    dayNum:'',
+    label:'',
+    touristNum:'',
+    token:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var token = wx.getStorageSync('user_token')
+    this.setData({
+      list:'',
+      dayNum:'',
+      label:'',
+    label:'',
+    touristNum:'',
+    token:token
+    })
+    this.type();
   },
+  // 生成喜好
+  type:function(){
+    var that = this;
+    var url = ''
+    var data={
+
+    }
+    wx.request({
+      url: app.data.request_url+'/api/com/comRoute/getLabelList',
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 
+        'content-type': 'application/x-www-form-urlencoded',
+        'Authorization':'Bearer '+that.data.token
+       },
+      success: res => {
+        wx.stopPullDownRefresh();
+        var list = res.data.data.data;
+        var arr = [];
+        console.log(list)
+        for(var i=0;i<list.length;i++){
+          var obj = {};
+            obj['name'] = list[i]
+            obj['status'] = false
+            arr.push(obj)
+        }
+        that.setData({
+          list:arr
+        })
+        // if(list.length>=pageSize){
+        //   that.setData({
+        //     pageNum:that.data.pageNum+1,
+        //     hasMoreData:true
+        //   })
+        // }
+        
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -98,13 +156,48 @@ Page({
 
   },
   likeClick: function (e){
-    let i = e.currentTarget.dataset.index;
-    let key = 'list['+ i + '].status'
+    let num = e.currentTarget.dataset.index;
+    let label = e.currentTarget.dataset.label;
+    let key = 'list['+ num + '].status'
     this.setData({
-      [key]: !this.data.list[i].status
+      [key]: !this.data.list[num].status
+    })
+    var arr = []
+    for(var i=0;i<this.data.list.length;i++){
+      
+      if(this.data.list[i].status == true){
+        arr.push(this.data.list[i].name)
+      }
+      
+    }
+    this.setData({
+      label:arr.toString()
+    })
+    console.log(this.data.label)
+  },
+  dayNumInput:function(e){
+    this.setData({
+      dayNum:e.detail.value
+    })
+  },
+  touristNumInput:function(e){
+    this.setData({
+      touristNum:e.detail.value
     })
   },
   saveFun: function (){
+    var that = this;
+  var url = ''
+  var data={
+    dayNum:this.data.dayNum,
+    touristNum:this.data.touristNum,
+    label:this.data.label
+  }
+  if(data.dayNum == ''){
+    app.showToast("游玩天数不能为空！");                                      
+  }else if(data.touristNum == ''){
+    app.showToast("游玩人数不能为空！");
+  }else {
     this.setData({
       loading: false
     })
@@ -113,6 +206,47 @@ Page({
         loading: true,
         mapShow: true
       })
+        wx.request({
+    url: app.data.request_url+'/api/xcx/xcxTravel/add',
+    method: "post",
+    data: data,
+    dataType: "json",
+    header: { 
+      'content-type': 'application/x-www-form-urlencoded',
+      'Authorization':'Bearer '+that.data.token
+     },
+    success: res => {
+      wx.stopPullDownRefresh();
+      var id = res.data.message
+      wx.request({
+        url: app.data.request_url+'/api/xcx/xcxTravel/getById?id='+id,
+        method: "get",
+        data: {},
+        dataType: "json",
+        header: { 
+          'content-type': 'application/x-www-form-urlencoded',
+          'Authorization':'Bearer '+that.data.token
+         },
+        success: res => {
+          wx.stopPullDownRefresh();
+          
+        },
+        fail: () => {
+          wx.stopPullDownRefresh();
+          app.showToast("服务器请求出错");
+        }
+      });
+    },
+    fail: () => {
+      wx.stopPullDownRefresh();
+      app.showToast("服务器请求出错");
+    }
+  });
     },1000)
+  }
+
+      
+
+
   }
 })

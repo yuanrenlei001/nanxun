@@ -37,6 +37,7 @@ App({
       'traffic':'交通出行',
       'phone':'景区电话',
       'web':'VR视频',
+      'my_collection':'我的收藏',
       'show_detail':'演出详情'
     },
     // tabbar页面

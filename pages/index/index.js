@@ -290,5 +290,11 @@ onReachBottom: function () {
     wx.navigateTo({
       url: '/pages/web/web?url='+this.data.newList[0].webUrl,
     })
+  },
+  goUrls:function(){
+    wx.navigateToMiniProgram({
+      appId: 'wx0e6ed4f51db9d078',
+      envVersion:'release'
+    })
   }
 })

@@ -127,7 +127,7 @@ favorite:function(){
     'contentFrom':'comPlace',
     'contentId':that.data.detail.id,
     'contentName':that.data.detail.name,
-    'type':that.data.detail.sort,
+    'type':that.data.sort,
   }
   wx.request({
     url: app.data.request_url+'/api/xcx/xcxFavorite/add',
@@ -140,17 +140,18 @@ favorite:function(){
      },
     success: res => {
       wx.stopPullDownRefresh();
-      if(res.data.data == '200'){
+      if(res.data.code == '200'){
+        
         app.showToast("收藏成功！",'success');
         that.init();
-      }else if(res.data.data == '402'){
+      }else if(res.data.code == '402'){
         app.showToast("参数检验失败！");
-      }else if(res.data.data == '403'){
+      }else if(res.data.code == '403'){
         app.showToast("没有相关权限！");
-      }else if(res.data.data == '500'){
+      }else if(res.data.code == '500'){
         app.showToast("操作失败！");
       }
-      else if(res.data.data == '500'){
+      else if(res.data.code == '500'){
         app.showToast("操作失败！");
       }
       else{
@@ -176,12 +177,12 @@ unfavorite:function(){
     'contentFrom':'comPlace',
     'contentId':that.data.detail.id,
     'contentName':that.data.detail.name,
-    'type':that.data.detail.sort,
+    'type':that.data.sort,
     id:that.data.detail.ifFavorite
   }
   wx.request({
     url: app.data.request_url+'/api/xcx/xcxFavorite/delete',
-    method: "post",
+    method: "delete",
     data: data,
     dataType: "json",
     header: { 
@@ -190,13 +191,14 @@ unfavorite:function(){
      },
     success: res => {
       wx.stopPullDownRefresh();
-      if(res.data.data = '200'){
+      if(res.data.code = '200'){
         app.showToast("取消成功！",'success');
-      }else if(res.data.data = '402'){
+        that.init();
+      }else if(res.data.code = '402'){
         app.showToast("参数检验失败！");
-      }else if(res.data.data = '403'){
+      }else if(res.data.code = '403'){
         app.showToast("没有相关权限！");
-      }else if(res.data.data = '500'){
+      }else if(res.data.code = '500'){
         app.showToast("操作失败！");
       }
       else{

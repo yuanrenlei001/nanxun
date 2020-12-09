@@ -13,7 +13,11 @@ Page({
     id:null,
     detail:null,
     url:app.data.request_img,
-    img:null
+    img:null,
+    location:'',
+    latitude:'',
+    longitude:'',
+    markers:[]
   },
 
   /**
@@ -51,7 +55,14 @@ Page({
         if(res.data.data.pictureUrl){
           this.setData({
             detail:res.data.data,
-            img:res.data.data.pictureUrl.split(',')
+            img:res.data.data.pictureUrl.split(','),
+            location:res.data.data.address,
+          latitude:res.data.data.latitude,
+          longitude:res.data.data.longitude,
+          markers:[{
+            latitude:res.data.data.latitude,
+          longitude:res.data.data.longitude,
+          }]
           })
         }else{
           app.showToast("轮播图未上传！");
@@ -64,6 +75,21 @@ Page({
       }
     });
   },
+  // 导航
+intoMap:function(){
+  var that = this;
+  wx.getLocation({
+    type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+    success: function (res) {  //因为这里得到的是你当前位置的经纬度
+      wx.openLocation({        //所以这里会显示你当前的位置
+        latitude: parseFloat(that.data.latitude),
+        longitude: parseFloat(that.data.longitude),
+        name:that.data.detail.address,
+        scale: 18
+      });
+    }
+  })
+},
   /**
    * 生命周期函数--监听页面隐藏
    */
