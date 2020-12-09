@@ -39,7 +39,7 @@
     </view>
     <view class="sort">
       <view class="sortUl">
-        <navigator class="sortLi"><image src="/images/index/icon01.png"></image> <text>门票商城</text></navigator>
+        <view class="sortLi" bindtap="goUrls"><image src="/images/index/icon01.png"></image> <text>门票商城</text></view>
         <navigator class="sortLi" url='/pages/tourist-guide/tourist-guide'><image src="/images/index/icon02.png"></image> <text>美景导游</text></navigator>
         <navigator class="sortLi" url='/pages/food/food'><image src="/images/index/icon03.png"></image> <text>美食餐饮</text></navigator>
         <navigator class="sortLi" url='/pages/specialty/specialty'><image src="/images/index/icon04.png"></image> <text>南浔特产</text></navigator>
@@ -67,9 +67,9 @@
       <text class="sortTop01">最新资讯</text>
       <view class="sortTop02" bindtap="noticeList">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
-    <view class="newImg">
-      <image src="/images/index/indexMap.png"></image>
-      <text>南浔新增写生基地</text>
+    <view class="newImg" bindtap="goUrlNews">
+      <image src="{{url+newList[0].coverUrl}}"></image>
+      <text>{{newList[0].title}}</text>
     </view>
   </view>
   <!-- 热门景点 -->

@@ -2,13 +2,15 @@
 App({
   data:{
     // 用户登录缓存key
-    cache_user_login_key: "null",
+    cache_user_login_key: "cache_user_login_key",
     
     // 用户信息缓存key
-    cache_user_info_key: "null",
+    cache_user_info_key: "cache_user_info_key",
 
     // 用户站点信息缓存key
-    cache_user_merchant_key: "null",
+    cache_user_merchant_key: "cache_user_merchant_key",
+    // 用户token
+    user_token:'user_token',
     // 页面标题
     common_page_title:{
       'index':'浔开心',
@@ -35,6 +37,7 @@ App({
       'traffic':'交通出行',
       'phone':'景区电话',
       'web':'VR视频',
+      'my_collection':'我的收藏',
       'show_detail':'演出详情'
     },
     // tabbar页面
@@ -53,9 +56,12 @@ App({
 
   },
   // 获取用户信息,信息不存在则唤醒授权
-  get_user_info(object, method) {
-    var user = this.get_user_cache_info();
-    if (user == false) {
+  get_user_info(object, method) { 
+    console.log(object)
+    console.log(method)
+    var user = this.get_user_cache_info() || null;
+    console.log(user)
+    if (user == null) {
       // 唤醒用户授权
       this.user_login(object, method);
 
@@ -69,7 +75,7 @@ App({
    */
   get_user_cache_info() {
     let user = wx.getStorageSync(this.data.cache_user_info_key);
-    // console.log(user)
+    console.log(user)
     if (user == '') {
       return false;
     }
@@ -102,9 +108,9 @@ App({
     });
   },
   user_login(object, method) {
-    var openid = wx.getStorageSync(this.data.cache_user_login_key);
-    console.log(openid == '')
-    if (openid == ''){
+    var openid = wx.getStorageSync(this.data.cache_user_login_key) || null;
+    console.log(openid)
+    if (openid == null){
       console.log(1)
       var self = this;
       // 加载loding
@@ -125,9 +131,14 @@ App({
                 wx.hideLoading();
                 if (res.data.code == 200) {
                   var data = res.data.data;
+                  console.log(res.data.message)
                     wx.setStorage({
                       key: self.data.cache_user_login_key,
-                      data: data.openid
+                      data: data.openId
+                    });
+                    wx.setStorage({
+                      key: self.data.user_token,
+                      data: res.data.message
                     });
                     self.login_to_auth();
                   // if ((data.is_user_exist || 0) == 1) {

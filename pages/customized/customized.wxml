@@ -2,12 +2,12 @@
   <view class="text1">订制信息</view>
   <view class="text2 flex">
     计划游玩
-    <input class="inputL"  placeholder="输入游玩天数"/>
+    <input class="inputL"  placeholder="输入游玩天数" bindinput="dayNumInput" value='{{dayNum}}'/>
     天
   </view>
   <view class="text3 flex">
     游玩人数  
-    <input class="inputL"  placeholder="输入游玩人数"/>
+    <input class="inputL"  placeholder="输入游玩人数" bindinput="touristNumInput" value='{{touristNum}}'/>
     人
   </view>
   <view class="text4">喜好：</view>
@@ -15,12 +15,14 @@
     <view class="selsctV {{item.status? 'likeColorActive' : 'likeColor' }}" 
     wx:for="{{list}}" wx:key="index"
     bindtap="likeClick"
-    data-index="{{index}}"
+    data-label = '{{item.name}}'
+    data-index = '{{index}}'
     >
     {{item.name}}
   </view>
   </view>
   <view class="text5">
+    <text style='maigin-right:30rpx;'>只看景点 </text>
     <switch color="#FFC645" checked="true"></switch>
   </view>
   <view class="btn" bindtap="saveFun">

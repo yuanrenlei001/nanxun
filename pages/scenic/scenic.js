@@ -42,7 +42,7 @@ Page({
     var pageSize = this.data.pageSize;
     var that = this;
     wx.request({
-      url: app.data.request_url+'/api/com/comPlace/getAll?pageNum='+pageNum+'&pageSize='+pageSize,
+      url: app.data.request_url+'/api/com/comPlace/getAll?pageNum='+pageNum+'&pageSize='+pageSize+'&type=景点',
       method: "get",
       data: {},
       dataType: "json",
@@ -74,7 +74,7 @@ addList(){
   var that = this;
   console.log(pageNum)
   wx.request({
-    url: app.data.request_url+'/api/com/comPlace/getAll?pageNum='+pageNum+'&pageSize='+pageSize,
+    url: app.data.request_url+'/api/com/comPlace/getAll?pageNum='+pageNum+'&pageSize='+pageSize+'&type:=景点',
     method: "get",
     data: {},
     dataType: "json",
@@ -109,6 +109,42 @@ addList(){
     }
   });
 },
+  // 搜索
+  inputTyping:function(e){
+    var value  = e.detail.value
+    var that = this;
+    var pageNum = 1;
+    var pageSize = 20;
+    var type = this.data.active;
+    wx.request({
+      url: app.data.request_url+'/api/com/comPlace/getAll?pageNum=1&pageSize=20&keyword='+value+'&type=景点',
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        wx.stopPullDownRefresh();
+        var list = res.data.data.records;
+      var arr = []
+      for(var i=0;i<list.length;i++){
+        if(list[i].pictureUrl){
+          var img = list[i].pictureUrl.split(',');
+          arr.push(img)
+        }
+      }
+      console.log(arr)
+      console.log(list)
+      that.setData({
+        showLists:list,
+        img:arr
+      })
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
+  },
 /**
  * 页面上拉触底事件的处理函数
  */

@@ -8,34 +8,12 @@ Page({
    */
   data: {
       show:true,
-      trendsList:[
-        {
-         auto: false,
-         seeMore: false,
-         text: '小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟',
-        },
-        {
-         auto: false,
-         seeMore: false,
-         text: '小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟',
-        },
-         {
-         auto: false,
-         seeMore: false,
-          text: '小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟',
-        },
-        {
-         auto: false,
-         seeMore: false,
-         text: '小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟',
-        },
-        {
-         auto: false,
-         seeMore: false,
-         text: '小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟小老弟',
-        },
-       ]
-     
+      trendsList:'',
+       url:app.data.request_img,
+       pageNum:1,
+       pageSize:8,
+       hasMoreData: true,
+       message:'正在加载数据...'
   },
 
   /**
@@ -47,7 +25,6 @@ Page({
     query.selectAll('.textFour_box').fields({
      size: true,
     }).exec(function (res) {
-     console.log(res[0], '所有节点信息');
      let lineHeight = 26; //固定高度值 单位：PX
      for (var i = 0; i < res[0].length; i++) {
       if ((res[0][i].height / lineHeight) > 3) {
@@ -102,8 +79,102 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.notice});
+    this.setData({
+      pageNum:1
+    })
+    this.list();
   },
-
+  list(){
+    var pageNum = this.data.pageNum;
+    var pageSize = this.data.pageSize;
+    var that = this;
+    wx.request({
+      url: app.data.request_url+'/api/xcx/xcxNotice/getAll?pageNum='+pageNum+'&pageSize='+pageSize,
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        wx.stopPullDownRefresh();
+        var list = res.data.data.records;
+        var arr = []
+        for(var i=0;i<list.length;i++){
+          var obj = {};
+          obj['auto'] = false;
+          obj['seeMore'] = false;
+          obj['text'] = list[i].content;
+          obj['name'] = list[i].title;
+          obj['time'] = list[i].fromTime;
+          arr.push(obj)
+        }
+        
+        console.log(arr)
+        that.setData({
+          trendsList:arr,
+        })
+        if(list.length>=pageSize){
+          that.setData({
+            pageNum:that.data.pageNum+1,
+            hasMoreData:true
+          })
+        }
+        
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
+  },
+  // 加载更多
+addList(){
+  var pageNum = this.data.pageNum;
+  var pageSize = this.data.pageSize;
+  var that = this;
+  console.log(pageNum)
+  wx.request({
+    url: app.data.request_url+'/api/xcx/xcxNotice/getAll?pageNum='+pageNum+'&pageSize='+pageSize,
+    method: "get",
+    data: {},
+    dataType: "json",
+    header: { 'content-type': 'application/x-www-form-urlencoded' },
+    success: res => {
+      wx.stopPullDownRefresh();
+      var list = res.data.data.records
+      var arr = []
+      for(var i=0;i<list.length;i++){
+        var obj = {};
+        obj['auto'] = false;
+        obj['seeMore'] = false;
+        obj['text'] = list[i].content;
+        obj['name'] = list[i].title;
+        obj['time'] = list[i].fromTime;
+        arr.push(obj)
+      }
+      
+      console.log(arr)
+      that.setData({
+        trendsList:that.data.trendsList.concat(arr),
+      })
+      console.log(list)
+      if(list.length>=pageSize){
+        that.setData({
+          pageNum:that.data.pageNum+1,
+          hasMoreData:true
+        })
+      }else{
+        that.setData({
+          hasMoreData:false
+        })
+      }
+      
+    },
+    fail: () => {
+      wx.stopPullDownRefresh();
+      app.showToast("服务器请求出错");
+    }
+  });
+},
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -129,7 +200,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (this.data.hasMoreData) {
+      this.addList();
+    } else {
+        wx.showToast({
+            title: '没有更多数据',
+        })
+    }
   },
 
   /**

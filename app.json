@@ -2,12 +2,18 @@
   "pages": [
     "pages/map/index",
     "pages/index/index",
+    "pages/for-strategy/index",
+   
+    "pages/my-collection/my-collection",
+    "pages/food/food",
+    
+    "pages/notice-list/notice-list",
+    "pages/notice/notice",
     "pages/address/address",
     "pages/index-more/index-more",
     "pages/vr/vr",
     "pages/specialty/specialty",
     "pages/specialty-detail/specialty-detail",
-    "pages/food/food",
     "pages/tourist-guide/tourist-guide",
     "pages/tourist-detail/tourist-detail",
     "pages/show-list/show-list",
@@ -23,14 +29,15 @@
     "pages/food-detail/food-detail",
     "pages/notice-list/notice-list",
     "pages/notice/notice",
-    
     "pages/for-strategy/index",
+    "pages/map/index",
     "pages/show-detail/show-detail",
     "pages/scenic/scenic",
-    "pages/ItineraryDetails/index",
-    "pages/attractionsDdetails/index",
+    "pages/itinerarydetails/index",
+    "pages/attractionsddetails/index",
     "pages/login/login",
     "pages/web/web"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
