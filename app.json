@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/map/index",
     "pages/index/index",
+    "pages/map/index",
     "pages/for-strategy/index",
    
     "pages/my-collection/my-collection",
@@ -27,14 +27,8 @@
     "pages/voice/voice",
     "pages/ar/ar",
     "pages/food-detail/food-detail",
-    "pages/notice-list/notice-list",
-    "pages/notice/notice",
-    "pages/for-strategy/index",
-    "pages/map/index",
     "pages/show-detail/show-detail",
     "pages/scenic/scenic",
-    "pages/itinerarydetails/index",
-    "pages/attractionsddetails/index",
     "pages/login/login",
     "pages/web/web"
     
