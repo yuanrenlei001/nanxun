@@ -93,7 +93,9 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       success: res => {
         wx.stopPullDownRefresh();
-        
+        that.setData({
+          whater:res.data.data.wea
+        })
       },
       fail: () => {
         wx.stopPullDownRefresh();

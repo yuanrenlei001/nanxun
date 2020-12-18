@@ -1,12 +1,15 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/map/index",
     "pages/for-strategy/index",
+    "pages/index/index",
+    "pages/ticket/ticket",
+    "pages/ticket-detail/ticket-detail",
    
+    
+    "pages/map/index",
+    
     "pages/my-collection/my-collection",
     "pages/food/food",
-    
     "pages/notice-list/notice-list",
     "pages/notice/notice",
     "pages/address/address",

@@ -1,7 +1,7 @@
 <!-- 头部 -->
 <view class="top">
   <image src="/images/index/top-address.png" class="address"></image>
-  <text>天气</text>
+  <text>{{whater}}</text>
   <view class="search">
     <input type="text" />
     <image src="/images/index/search.png"></image>

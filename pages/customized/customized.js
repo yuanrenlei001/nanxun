@@ -79,25 +79,35 @@ Page({
        },
       success: res => {
         wx.stopPullDownRefresh();
-        var list = res.data.data.data;
-        var arr = [];
-        console.log(list)
-        for(var i=0;i<list.length;i++){
-          var obj = {};
-            obj['name'] = list[i]
-            obj['status'] = false
-            arr.push(obj)
+        if(res.data.code == '200'){
+          var list = res.data.data.data;
+          var arr = [];
+          console.log(list)
+          for(var i=0;i<list.length;i++){
+            var obj = {};
+              obj['name'] = list[i]
+              obj['status'] = false
+              arr.push(obj)
+          }
+          that.setData({
+            list:arr
+          })
+        }else if(res.data.code == '402'){
+          app.showToast("参数检验失败！");
+        }else if(res.data.code == '403'){
+          app.showToast("没有相关权限！");
+        }else if(res.data.code == '500'){
+          app.showToast("操作失败！");
         }
-        that.setData({
-          list:arr
-        })
-        // if(list.length>=pageSize){
-        //   that.setData({
-        //     pageNum:that.data.pageNum+1,
-        //     hasMoreData:true
-        //   })
-        // }
-        
+        else if(res.data.code == '500'){
+          app.showToast("操作失败！");
+        }
+        else{
+          if(res.data.code =='401'){
+            console.log(1)
+            app.user_auth_login(this,'favorite')
+          }
+        }
       },
       fail: () => {
         wx.stopPullDownRefresh();

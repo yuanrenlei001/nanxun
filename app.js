@@ -38,7 +38,9 @@ App({
       'phone':'景区电话',
       'web':'VR视频',
       'my_collection':'我的收藏',
-      'show_detail':'演出详情'
+      'show_detail':'演出详情',
+      'ticket':'酒店名宿',
+      'ticket_detail':'酒店名宿详情',
     },
     // tabbar页面
       tabbar_pages: [

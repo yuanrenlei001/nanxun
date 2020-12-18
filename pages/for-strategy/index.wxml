@@ -3,12 +3,12 @@
     <view bindtap="customizedFun" class="topBtn">行程订制</view>
   </view>
   <view class="contentBg">
-    <view class="blockBg" wx:for="{{list}}" wx:key="index">
-      <image class="topImg" src="/images/strategy/fj.jpg"></image>
+    <view class="blockBg" wx:for="{{showLists}}" wx:key="index">
+      <image class="topImg" src="{{url+item.pictureUrl}}"></image>
       <view class="textB">
         <view class="textLine1">{{item.name}}</view>
-        <view class="textLine2 mt6">{{item.text}}</view>
-        <view class="textLine3 mt6">{{item.text2}}</view>
+        <view class="textLine2 mt6">{{item.intro}}</view>
+        <!-- <view class="textLine3 mt6">{{item.text2}}</view> -->
       </view>
       <view class="buttonImg">
         <image bindtap="starShow"  wx:if="{{!item.starStatus}}" data-index="{{index}}" class="star" src="/images/map/star.png"></image>

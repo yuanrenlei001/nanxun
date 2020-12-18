@@ -51,12 +51,13 @@ page{
   height: 90rpx;
   line-height: 90rpx;
 }
-
+.cr-888 {text-align: center;}
 /**
 授权登录
 */
 .user-login {
 padding-top: 30%;
+text-align: center;
 }
 .user-login button {
 margin-top: 30rpx;

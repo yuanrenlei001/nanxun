@@ -1,0 +1,21 @@
+<view class="map">
+    <view class="sort">
+      <view bindtap="sort" data-type='度假酒店'  class="{{active =='度假酒店' ? 'active':''}}">度假酒店</view>
+      <view bindtap="sort" data-type='精品民宿' class="{{active =='精品民宿' ? 'active':''}}" >精品民宿</view>
+    </view>
+  </view>
+
+
+  <!-- 景点列表 -->
+  <view class="main">
+  <view class="listUl">
+    <navigator class="listLi" url="/pages/ticket-detail/ticket-detail?id={{item.id}}&sort={{active}}" wx:for="{{showLists}}" wx:key='index'>
+      <image src="{{url+item.pictureUrl}}" class="bg"></image>
+      <view class="listText">
+        <view class="title">
+          <text class="titleNname">{{item.name}}</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
