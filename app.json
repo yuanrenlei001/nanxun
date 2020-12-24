@@ -4,10 +4,7 @@
     "pages/index/index",
     "pages/ticket/ticket",
     "pages/ticket-detail/ticket-detail",
-   
-    
     "pages/map/index",
-    
     "pages/my-collection/my-collection",
     "pages/food/food",
     "pages/notice-list/notice-list",
@@ -33,8 +30,9 @@
     "pages/show-detail/show-detail",
     "pages/scenic/scenic",
     "pages/login/login",
-    "pages/web/web"
-    
+    "pages/web/web",
+    "pages/webMap/map",
+    "pages/handPainted/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

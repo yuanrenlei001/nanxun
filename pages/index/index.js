@@ -210,7 +210,6 @@ goscenic(e){
   })
 },
 onReachBottom: function () {
-  
   if (this.data.hasMoreData) {
     this.addList();
   } else {

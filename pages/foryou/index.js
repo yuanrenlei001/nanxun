@@ -86,18 +86,30 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.for_you});
-    const myMap = wx.createMapContext('map', this);
-    myMap.getCenterLocation({
-      success: (res)=>{
-        console.log("zhongxindian", res);
-      }
+    // const myMap = wx.createMapContext('map', this);
+    // myMap.getCenterLocation({
+    //   success: (res)=>{
+    //     console.log("zhongxindian", res);
+    //   }
+    // })
+    // myMap.getScale({
+    //   success: (res)=>{
+    //     console.log(res)
+    //   }
+    // })
+    // this.getMarks();
+    // this.gooutUrl();
+  },
+  gooutUrl: function () {
+    console.log('2321312wdsa')
+    wx.navigateTo({
+      url: '/pages/webMap/map', //
+      success: function () {
+
+      },       //成功后的回调；
+      fail: function () { },         //失败后的回调；
+      complete: function () { }      //结束后的回调(成功，失败都会执行)
     })
-    myMap.getScale({
-      success: (res)=>{
-        console.log(res)
-      }
-    })
-    this.getMarks();
   },
   /**
    * 获取markers模块信息
@@ -150,7 +162,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log('wolalalalalalala')
   },
 
   /**

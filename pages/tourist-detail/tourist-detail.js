@@ -41,7 +41,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this,this.setData({
+    this.setData({
       id:this.options.id
     })
     this.init()
