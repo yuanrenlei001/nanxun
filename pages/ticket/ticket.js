@@ -92,9 +92,18 @@ Page({
       success: res => {
         wx.stopPullDownRefresh();
         var list = res.data.data.records;
+        var arr = []
+        for(var i=0;i<list.length;i++){
+          if(list[i].pictureUrl){
+            var img = list[i].pictureUrl.split(',');
+            arr.push(img)
+          }
+        }
         that.setData({
           showLists:list,
+          img:arr
         })
+        console.log(arr)
         if(list.length>=pageSize){
           that.setData({
             pageNum:that.data.pageNum+1,

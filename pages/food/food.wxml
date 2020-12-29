@@ -9,26 +9,27 @@
       enable-scroll = '{{scroll}}'
     ></map>
     <view class="sort">
-      <view bindtap="sort" data-type='餐馆'  class="{{active =='餐馆' ? 'active':''}}">餐馆</view>
-      <view bindtap="sort" data-type='特产' class="{{active =='特产' ? 'active':''}}" >特产</view>
-      <view bindtap="sort" data-type='酒吧' class="{{active =='酒吧' ? 'active':''}}" >酒吧</view>
+      <view bindtap="sort" data-type='美食餐饮'  class="{{active =='美食餐饮' ? 'active':''}}">美食餐饮</view>
+      <!-- <view bindtap="sort" data-type='特产' class="{{active =='特产' ? 'active':''}}" >特产</view> -->
+      <view bindtap="sort" data-type='休闲娱乐' class="{{active =='休闲娱乐' ? 'active':''}}" >休闲娱乐</view>
     </view>
     <view class="top">
   <view class="search">
-    <input type="text" placeholder="搜索美食餐饮" bindinput="inputTyping"/>
+    <input type="text" wx:if="{{active =='美食餐饮'}}" placeholder="搜索美食餐饮" bindinput="inputTyping"/>
+    <input type="text" wx:if="{{active =='休闲娱乐'}}" placeholder="搜索休闲娱乐" bindinput="inputTyping"/>
     <image src="/images/index/search.png"></image>
     
 </view>
 </view>
-    <view class="goMap">进入地图</view>
+    <view class="goMap" bindtap="goMap">进入地图</view>
   </view>
 
 
   <!-- 景点列表 -->
   <view class="main">
   <view class="listUl" wx:if="{{active !== '特产'}}">
-    <navigator class="listLi" url="/pages/food-detail/food-detail?id={{item.id}}&sort={{active}}" wx:for="{{showLists}}" wx:key='index'>
-      <image src="{{url+img[0]}}" class="bg"></image>
+    <navigator class="listLi" url="/pages/food-detail/food-detail?id={{item.id}}&sort={{active}}" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'>
+      <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">
           <text class="titleNname">{{item.name}}</text>
@@ -36,8 +37,8 @@
         </view>
         <view class="type" wx:if="{{item.if}}"> {{item.label}}</view>
       <view class="bottom">
-        <image src="/images/address.png" class="userImg"></image>
-        <text class="name">{{item.address}}</text>
+        <image wx:if="{{item.address !=='' && item.address !==null}}" src="/images/address.png" class="userImg"></image>
+        <text class="name" wx:if="{{item.address !=='' && item.address !==null}}">{{item.address}}</text>
         <view class="zan">
           <image src="/images/see.png" class="unzan"></image> 浏览数 {{item.viewNum}}
         </view>

@@ -6,8 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    latitude: 23.099994,
-    longitude: 113.324520,
+    latitude: 30.84979,
+    longitude: 120.41847,
     zoom:false,
     compass:false,
     scroll:false,
@@ -26,7 +26,7 @@ Page({
       longitude: 113.304520,
       iconPath: '/image/location.png'
     }],
-    active:'餐馆',
+    active:'美食餐饮',
     showLists:[],
     url:app.data.request_img,
     pageNum:1,
@@ -43,7 +43,12 @@ Page({
   onLoad: function (options) {
 
   },
-
+ // 跳转寻找你 
+ goMap:function(){
+  wx.switchTab({
+    url: '../foryou/index',
+  })
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -58,7 +63,7 @@ Page({
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.food});
     this.setData({
-      active:'餐馆',
+      active:'美食餐饮',
       specialty:null,
       pageNum:1,
     pageSize:8,

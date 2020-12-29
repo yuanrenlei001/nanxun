@@ -55,3 +55,4 @@ text-align: justify;
   width:32rpx;height:32rpx;margin-right: 16rpx;vertical-align: sub;
 }
 .bottom01 {text-align: left;width: 200rpx;}
+.daohang {background: #45ADDD;color: #fff;padding: 3px 10px;border-radius: 5px;margin-left: 20rpx;}

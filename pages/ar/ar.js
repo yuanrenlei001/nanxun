@@ -18,7 +18,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
+    
   },
 
   /**
@@ -27,7 +28,15 @@ Page({
   onReady: function () {
 
   },
-
+goAr:function(){
+  wx.showModal({
+    title: '提示',
+    content: '为了增强体验效果，建议下载AR看南浔APP哦',
+    success(res) {
+      
+    }
+  });
+},
   /**
    * 生命周期函数--监听页面显示
    */

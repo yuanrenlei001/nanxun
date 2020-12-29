@@ -11,7 +11,8 @@ Page({
     pageNum:1,
     pageSize:8,
     hasMoreData: true,
-    message:'正在加载数据...'
+    message:'正在加载数据...',
+    img:''
   },
 
   /**
@@ -50,8 +51,18 @@ Page({
       success: res => {
         wx.stopPullDownRefresh();
         var list = res.data.data.records;
+        var arr= []
+        for(var i=0;i<list.length;i++){
+          if(list[i].pictureUrl){
+            var img = list[i].pictureUrl.split(',');
+            console.log(img)
+            arr.push(img)
+          }
+        
+        }
         that.setData({
           showLists:list,
+          img:arr
         })
         if(list.length>=pageSize){
           that.setData({
@@ -82,6 +93,13 @@ addList(){
     success: res => {
       wx.stopPullDownRefresh();
       var list = res.data.data.records;
+      var arr = []
+      for(var i=0;i<list.length;i++){
+        if(list[i].pictureUrl){
+          var img = list[i].pictureUrl.split(',');
+          arr.push(img)
+        }
+      }
       // var arr = []
       // for(var i=0;i<list.length;i++){
       //     arr.push(list[i])
@@ -89,7 +107,8 @@ addList(){
       // that.showLists.push(arr)
       console.log(list)
       that.setData({
-        showLists:that.data.showLists.concat(list)
+        showLists:that.data.showLists.concat(list),
+        img:that.data.img.concat(img),
       })
       if(list.length>=pageSize){
         that.setData({

@@ -9,12 +9,21 @@
   <!-- 景点列表 -->
   <view class="main">
   <view class="listUl">
-    <navigator class="listLi" url="/pages/ticket-detail/ticket-detail?id={{item.id}}&sort={{active}}" wx:for="{{showLists}}" wx:key='index'>
-      <image src="{{url+item.pictureUrl}}" class="bg"></image>
+    <navigator class="listLi" url="/pages/ticket-detail/ticket-detail?id={{item.id}}&sort={{active}}" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'>
+      <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">
           <text class="titleNname">{{item.name}}</text>
+          
         </view>
+        <view class="type" wx:if="{{item.if}}"> {{item.label}}</view>
+      <view class="bottom">
+        <image wx:if="{{item.address !=='' && item.address !==null}}" src="/images/address.png" class="userImg"></image>
+        <text class="name" wx:if="{{item.address !=='' && item.address !==null}}">{{item.address}}</text>
+        <view class="zan">
+          <image src="/images/see.png" class="unzan"></image> 浏览数 {{item.viewNum}}
+        </view>
+      </view>
       </view>
     </navigator>
   </view>

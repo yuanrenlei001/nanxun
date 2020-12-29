@@ -51,7 +51,7 @@ Page({
     var that = this;
     var url = ''
     wx.request({
-      url: app.data.request_url+'/api/com/comSpecialty/getAll?pageNum='+pageNum+'&pageSize='+pageSize+'&type=特产',
+      url: app.data.request_url+'/api/com/comSpecialty/getAll?pageNum='+pageNum+'&pageSize='+pageSize,
       method: "get",
       data: {},
       dataType: "json",
@@ -63,6 +63,7 @@ Page({
         for(var i=0;i<list.length;i++){
           if(list[i].pictureUrl){
             var img = list[i].pictureUrl.split(',');
+            console.log(img)
             arr.push(img)
           }
         

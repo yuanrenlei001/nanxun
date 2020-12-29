@@ -10,8 +10,8 @@
   <!-- 景点列表 -->
   <view class="main">
   <view class="listUl">
-    <navigator class="listLi" url="/pages/specialty-detail/specialty-detail?id={{item.id}}" wx:for="{{showLists}}" wx:key='index'>
-      <image src="{{url+img[0]}}" class="bg"></image>
+    <navigator class="listLi" url="/pages/specialty-detail/specialty-detail?id={{item.id}}" wx:for-index='bindex' wx:for="{{showLists}}" wx:key='index'>
+      <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">
           <text class="titleNname">{{item.name}}</text>

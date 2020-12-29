@@ -122,7 +122,6 @@ intoMap:function(){
 favorite:function(){
   var that = this;
   var token = wx.getStorageSync('user_token')
-  console.log(token)
   var data = {
     'contentFrom':'comPlace',
     'contentId':that.data.detail.id,
@@ -140,6 +139,7 @@ favorite:function(){
      },
     success: res => {
       wx.stopPullDownRefresh();
+      console.log(res.data.code)
       if(res.data.code == '200'){
         
         app.showToast("收藏成功！",'success');
@@ -157,7 +157,7 @@ favorite:function(){
       else{
         if(res.data.code =='401'){
           console.log(1)
-          app.user_auth_login(this,'favorite')
+          app.user_login_copy(this, "favorite");
         }
       }
       
@@ -203,7 +203,7 @@ unfavorite:function(){
       }
       else{
         if(res.data.code =='401'){
-          app.user_auth_login(this,'favorite')
+          app.user_login_copy(this, "favorite");
         }
       }
       

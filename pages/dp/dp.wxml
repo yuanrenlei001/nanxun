@@ -1,0 +1,23 @@
+<view class="top">
+  <view class="search">
+    <input type="text" placeholder="搜索南浔古镇商铺" bindinput="inputTyping"/>
+    <image src="/images/index/search.png"></image>
+    
+</view>
+</view>
+
+
+  <!-- 景点列表 -->
+  <view class="main">
+  <view class="listUl">
+    <navigator class="listLi" url="/pages/dp-detail/index?id={{item.id}}" wx:for="{{showLists}}" wx:key='index'>
+      <image src="{{url+img[0]}}" class="bg"></image>
+      <view class="listText">
+        <view class="title">
+          <text class="titleNname">{{item.name}}</text>
+        </view>
+      </view>
+    </navigator>
+    
+  </view>
+</view>

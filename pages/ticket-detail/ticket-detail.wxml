@@ -2,7 +2,7 @@
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
         <block wx:for="{{img}}" wx:key="this">
           <swiper-item>
-            <image src="{{url+img}}"></image>
+            <image src="{{url+item}}"></image>
           </swiper-item>
         </block>
       </swiper> 
@@ -16,8 +16,8 @@
     <view class="bottom01" wx:if="{{detail.ifFavorite !== 0}}" bindtap="unfavorite"><image src="/images/collection.png"></image>取消收藏</view>
   </view>
   </view>
-  <view class="text">{{detail.address}} <text bindtap="intoMap" style="color:#45ADDD;">导航</text></view>
+  <view class="text">{{detail.address}} <text bindtap="intoMap" class="daohang">导航</text></view>
   <view class="text" bindtap="phone">电话：{{detail.tel}}</view>
   <view class="content">{{detail.intro}}</view>
-  <view class="content" wx:for="{{img}}"><image src="{{url+img}}"></image></view>
+  <view class="content" wx:for="{{img}}"><image src="{{url+item}}"></image></view>
 </view>

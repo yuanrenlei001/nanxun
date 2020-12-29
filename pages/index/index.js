@@ -25,13 +25,15 @@ Page({
     showLists:[],
     pageNum:1,
     pageSize:8,
-    hasMoreData: true,
+    hasMoreData: false,
     url:app.data.request_img,
     message:'正在加载数据...',
     img:null,
     news:null,
     whater:'',
-    newList:''
+    newList:'',
+    imgss:'',
+    ycimg:''
   },
   onLoad:function(){
     if(options.url){
@@ -74,7 +76,7 @@ Page({
       success: res => {
         wx.stopPullDownRefresh();
         that.setData({
-          newList:res.data.data.records
+          newList:res.data.data
         })
       },
       fail: () => {
@@ -94,7 +96,7 @@ Page({
       success: res => {
         wx.stopPullDownRefresh();
         that.setData({
-          whater:res.data.data.wea
+          whater:res.data.data
         })
       },
       fail: () => {
@@ -116,14 +118,26 @@ Page({
       success: res => {
         wx.stopPullDownRefresh();
         var list = res.data.data.records;
+        var arr=[]
+      for(var i=0;i<list.length;i++){
+        if(list[i].pictureUrl){
+          var img = list[i].pictureUrl.split(',');
+          console.log(img)
+          arr.push(img)
+        }
+      
+      }
         that.setData({
           showLists:list,
+          ycimg:arr
         })
+        console.log(list.length)
         if(list.length>=pageSize){
           that.setData({
             pageNum:that.data.pageNum+1,
             hasMoreData:true
           })
+          console.log(that.data.pageNum+1)
         }
         
       },
@@ -153,9 +167,17 @@ addList(){
       //     arr.push(list[i])
       // }
       // that.showLists.push(arr)
-      console.log(list)
+      var arr = []
+        for(var i=0;i<list.length;i++){
+          if(list[i].pictureUrl){
+            var img = list[i].pictureUrl.split(',');
+            arr.push(img)
+          }
+        }
+      console.log(img)
       that.setData({
         showLists:that.data.showLists.concat(list),
+        ycimg:that.data.ycimg.concat(img),
       })
       if(list.length>=pageSize){
         that.setData({
@@ -188,9 +210,19 @@ scenic(){
     header: { 'content-type': 'application/x-www-form-urlencoded' },
     success: res => {
       wx.stopPullDownRefresh();
-      var list = res.data.data.records;
+      var list = res.data.data;
+      var arr=[]
+      for(var i=0;i<list.length;i++){
+        if(list[i].pictureUrl){
+          var img = list[i].pictureUrl.split(',');
+          console.log(img)
+          arr.push(img)
+        }
+      
+      }
       that.setData({
         imgList:list,
+        imgss:arr,
         texts:list[0].name,
         titles:list[0].intro
       })
@@ -280,10 +312,15 @@ onReachBottom: function () {
       url: '../show-list/show-list',
     })
   },
-  // 跳转寻找你
+  // 跳转寻找你 
   goMap:function(){
     wx.switchTab({
-      url: '../foryou/index.wxml',
+      url: '../foryou/index',
+    })
+  },
+  search:function(){
+    wx.navigateTo({
+      url:'/pages/search/search'
     })
   },
   // 最新资讯
@@ -294,7 +331,7 @@ onReachBottom: function () {
   },
   goUrls:function(){
     wx.navigateToMiniProgram({
-      appId: 'wx0e6ed4f51db9d078',
+      appId: 'wx10ffa35365b728b8',
       envVersion:'release'
     })
   }

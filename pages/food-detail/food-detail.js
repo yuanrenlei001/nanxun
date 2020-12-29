@@ -106,12 +106,14 @@ share:function(){
 // 导航
 intoMap:function(){
   var that = this;
+  console.log(parseFloat(that.data.detail.latitude))
+  console.log(parseFloat(that.data.detail.longitude))
   wx.getLocation({
     type: 'gcj02', //返回可以用于wx.openLocation的经纬度
     success: function (res) {  //因为这里得到的是你当前位置的经纬度
       wx.openLocation({        //所以这里会显示你当前的位置
-        latitude: parseFloat(that.data.latitude),
-        longitude: parseFloat(that.data.longitude),
+        latitude: parseFloat(that.data.detail.latitude),
+        longitude: parseFloat(that.data.detail.longitude),
         name:that.data.detail.address,
         scale: 18
       });
@@ -157,7 +159,7 @@ favorite:function(){
       else{
         if(res.data.code =='401'){
           console.log(1)
-          app.user_auth_login(this,'favorite')
+          app.user_login_copy(this, "favorite");
         }
       }
       
@@ -191,7 +193,7 @@ unfavorite:function(){
      },
     success: res => {
       wx.stopPullDownRefresh();
-      if(res.data.code = '200'){
+      if(res.data.code == '200'){
         app.showToast("取消成功！",'success');
         that.init();
       }else if(res.data.code = '402'){
@@ -203,7 +205,7 @@ unfavorite:function(){
       }
       else{
         if(res.data.code =='401'){
-          app.user_auth_login(this,'favorite')
+          app.user_login_copy(this, "favorite");
         }
       }
       

@@ -7,7 +7,7 @@
 .main {background: #fff;position: relative;
   top:-34rpx;
   z-index: 2;
-  min-height:500rpx;
+  min-height:300rpx;
   border-radius: 32rpx;
   padding: 60rpx;
 }
@@ -58,3 +58,14 @@ text-align: justify;
 .bottom01 {text-align: left;}
 .bottom02 {text-align: center;}
 .bottom03 {text-align: right;}
+.dp {border-top: 28rpx solid #F1F1F1;padding: 0 36rpx;padding-bottom: 80rpx;}
+.dpTtile {height:80rpx;line-height: 80rpx;}
+.dpTtile text:first-child {float:left;font-size: 36rpx;color: #000;}
+.dpTtile text:last-child {float:right;font-size: 20rpx;color: #333;}
+.dpList {width: 213rpx;float:left;margin-right: 16rpx;}
+.dpList image {width: 213rpx;height:160rpx;border-radius: 10rpx;}
+.dpList01 {font-size: 24rpx;color: #000;font-weight: bold;}
+.dpList02 {font-size: 16rpx;color:#333;}
+.dpList03 {font-size: 16rpx;color:#F30001;text-align: right;}
+.ul {width: 100%;position: relative;overflow: hidden;}
+.dpSort {width: 120%;position: relative;overflow: hidden;}

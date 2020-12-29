@@ -1,6 +1,6 @@
 <view class="main">
-  <view class="sort">
-    <view class="title">游客服务中心</view>
-    <rich-text class="text" nodes="{{showLists[0].intro}}"></rich-text>
+  <view class="sort" wx:for="{{showLists}}">
+    <view class="title">{{item.name}}</view>
+    <view class="text">{{item.remarks}}</view>
   </view>
 </view>

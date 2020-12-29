@@ -14,7 +14,7 @@
 .search image {width:30rpx;height:30rpx;position: absolute;top:50%;left:26rpx;margin-top: -15rpx;}
 .search input {line-height: 54rpx;height:54rpx;}
 .top {height: 104rpx;width: 100%;line-height: 104rpx;position: relative;}
-
+.myAudio {position: absolute;top:0;left:0;}
 .main {
   padding: 0 36rpx;
   overflow: hidden;

@@ -60,6 +60,13 @@
   font-size: 16rpx;
   font-weight: 500;
   line-height: 22rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp:3;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  width: 80%;
 }
 .textLine3{
   font-size: 14rpx;
@@ -76,8 +83,4 @@
 .star{
   width: 28rpx;
   height: 28rpx;
-}
-.ml36{
-  margin-left: 36rpx;
-  margin-right: 18rpx;
 }

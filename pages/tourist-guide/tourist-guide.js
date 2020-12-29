@@ -57,7 +57,8 @@ Page({
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.tourist_guide});
     this.setData({
-      pageNum:1
+      pageNum:1,
+      img:null
     })
     this.list();
   },
@@ -76,8 +77,11 @@ Page({
         var list = res.data.data.records;
         var arr = []
         for(var i=0;i<list.length;i++){
-          var img = list[i].pictureUrl.split(',');
-          arr.push(img)
+          if(list[i].pictureUrl){
+            var img = list[i].pictureUrl.split(',');
+            arr.push(img)
+          }
+          
         }
         console.log(arr)
         that.setData({
@@ -183,7 +187,12 @@ Page({
   onUnload: function () {
 
   },
-
+ // 跳转寻找你 
+ goMap:function(){
+  wx.switchTab({
+    url: '../foryou/index',
+  })
+},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

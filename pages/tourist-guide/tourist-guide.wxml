@@ -16,15 +16,15 @@
 </view>
 <view class="number">景点 <text style="color:blue;">{{total}} 个</text></view>
 </view>
-    <view class="goMap">进入地图</view>
+    <view class="goMap" bindtap="goMap">进入地图</view>
   </view>
 
 
   <!-- 景点列表 -->
   <view class="main">
   <view class="listUl">
-    <navigator class="listLi" url="/pages/tourist-detail/tourist-detail?id={{item.id}}" wx:for="{{showLists}}" wx:key='index' wx:for-index='bindex'>
-      <image src="{{url+img[0]}}" class="bg"></image>
+    <navigator class="listLi" url="/pages/tourist-detail/tourist-detail?id={{item.id}}"  wx:for="{{showLists}}" wx:key='index' wx:for-index='bindex'>
+      <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">
           <text class="titleNname">{{item.name}}</text>
@@ -33,8 +33,8 @@
         </view>
         <view class="type" wx:if="{{item.label}}"><text style="color:#999;"></text> {{item.label}}</view>
       <view class="bottom">
-        <image src="/images/address.png" class="userImg"></image>
-        <text class="name">{{item.address}}</text>
+        <image wx:if="{{item.address !=='' && item.address !==null}}" src="/images/address.png" class="userImg"></image>
+        <text class="name" wx:if="{{item.address !=='' && item.address !==null}}">{{item.address}}</text>
         <view class="zan">
           <image src="/images/see.png" class="unzan"></image> 浏览数 {{item.viewNum}}
         </view>

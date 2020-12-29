@@ -20,6 +20,7 @@ Page({
     console.log(e.detail)
   },
   user_auth_code(auth_data) {
+    console.log(1)
     if ((auth_data.encryptedData || null) != null && (auth_data.iv || null) != null) {
       app.user_auth_login(this, 'user_auth_back_event', auth_data);
     } else {
@@ -27,8 +28,8 @@ Page({
     }
   },
   user_auth_back_event() {
+    console.log(22)
     var user = app.get_user_cache_info();
-    console.log(user)
     this.setData({user: user || null});
 
     if (app.user_is_need_login(user) == false)

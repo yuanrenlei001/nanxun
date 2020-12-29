@@ -1,8 +1,8 @@
 <swiper indicator-dots="{{indicatorDots}}" class="swipers"
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
+        <block wx:for="{{img}}" wx:key="*this">
           <swiper-item>
-            <image src="{{url+img}}"></image>
+            <image src="{{url+item}}"></image>
           </swiper-item>
         </block>
       </swiper> 
@@ -12,4 +12,17 @@
     <view class="title01">{{detail.name}}</view>
   </view>
   <rich-text class="content" nodes="{{detail.intro}}"></rich-text>
+</view>
+<view class="dp">
+  <view class="dpTtile"><text>推荐店铺</text><text bindtap="goUrl">更多</text></view>
+  <view class="ul">
+    <view class="dpSort">
+  <navigator class="dpList" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'>
+    <image data-index="{{bindex}}" src="{{url+showListsImg[bindex][0]}}"></image>
+    <view class="dpList01">{{item.name}}</view>
+    <view class="dpList02"> </view>
+    <view class="dpList03">浏览量：{{item.viewNum}}</view>
+  </navigator>
+  </view>
+  </view>
 </view>

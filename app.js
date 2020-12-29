@@ -24,8 +24,8 @@ App({
       'show_list':'演出列表',
       'tourist_guide':'景点',
       'tourist_detail':'美景详情',
-      'food':'美食餐饮',
-      'food_detail':'美食详情',
+      'food':'景区商铺',
+      'food_detail':'商铺详情',
       'specialty':'景区特产',
       'specialty_detail':'特产详情',
       'ar':'AR看史',
@@ -36,11 +36,14 @@ App({
       'address_detail':'写生基地详情',
       'traffic':'交通出行',
       'phone':'景区电话',
-      'web':'VR视频',
+      'web':'乐游南浔',
       'my_collection':'我的收藏',
       'show_detail':'演出详情',
       'ticket':'酒店名宿',
       'ticket_detail':'酒店名宿详情',
+      'web_map':'地图',
+      'dp':'店铺',
+      'dp_detail':'店铺详情',
     },
     // tabbar页面
       tabbar_pages: [
@@ -63,6 +66,7 @@ App({
     console.log(method)
     var user = this.get_user_cache_info() || null;
     console.log(user)
+    
     if (user == null) {
       // 唤醒用户授权
       this.user_login(object, method);
@@ -96,24 +100,80 @@ App({
             wx.getStorage({
               key: self.data.cache_user_info_key,
               success (res) {
-                if (typeof object === 'object' && (method || null) != null) {
-                  object[method]();
-                }
+                 // wx.navigateBack();
+       var page = getCurrentPages()  ;// 获取当前页面栈
+ 
+ var beforePage = page[page.length - 2]; // 跳转页面的栈
+ wx.navigateBack({
+     success: function () {
+       beforePage.onLoad(); // 执行前一个页面的onLoad方法
+ 
+    }
+ 
+ })
               }
             })
           },
         })
       },
       fail: function () {
+        console.log(123)
         self.user_login(object, method);
       }
     });
+  },
+  user_login_copy(){
+    var self = this;
+      // 加载loding
+      wx.showLoading({ title: "授权中..." });
+
+      wx.login({
+        success: (res) => {
+          if (res.code) {
+            console.log(res.code)
+
+            wx.request({
+              url: this.data.request_url+'/api/xcx/xcxUser/login',
+              method: 'POST',
+              data: { code: res.code },
+              dataType: 'json',
+              header: { 'content-type': 'application/x-www-form-urlencoded' },
+              success: (res) => {
+                wx.hideLoading();
+                if (res.data.code == 200) {
+                  var data = res.data.data;
+                  console.log(res.data.message)
+                    wx.setStorage({
+                      key: self.data.cache_user_login_key,
+                      data: data.openId
+                    });
+                    wx.setStorage({
+                      key: self.data.user_token,
+                      data: res.data.message
+                    });
+                    self.login_to_auth();
+                } else {
+                  wx.hideLoading();
+                  self.showToast(res.data.msg);
+                }
+              },
+              fail: () => {
+                wx.hideLoading();
+                self.showToast('服务器请求出错');
+              },
+            });
+          }
+        },
+        fail: (e) => {
+          wx.hideLoading();
+          self.showToast('授权失败');
+        }
+      });
   },
   user_login(object, method) {
     var openid = wx.getStorageSync(this.data.cache_user_login_key) || null;
     console.log(openid)
     if (openid == null){
-      console.log(1)
       var self = this;
       // 加载loding
       wx.showLoading({ title: "授权中..." });
@@ -143,26 +203,6 @@ App({
                       data: res.data.message
                     });
                     self.login_to_auth();
-                  // if ((data.is_user_exist || 0) == 1) {
-                  //   wx.setStorage({
-                  //     key: self.data.cache_user_info_key,
-                  //     data: data,
-                  //     success: (res) => {
-                  //       if (typeof object === 'object' && (method || null) != null) {
-                  //         object[method]();
-                  //       }
-                  //     },
-                  //     fail: () => {
-                  //       self.showToast('用户信息缓存失败');
-                  //     }
-                  //   });
-                  // } else {
-                  //   wx.setStorage({
-                  //     key: self.data.cache_user_login_key,
-                  //     data: data.openid
-                  //   });
-                  //   self.login_to_auth();
-                  // }
                 } else {
                   wx.hideLoading();
                   self.showToast(res.data.msg);
@@ -225,6 +265,36 @@ App({
         title: msg,
         duration: 3000
       });
+    }
+  },
+  alert(e)
+  {
+    var msg = e.msg || null;
+    if (msg != null)
+    {
+      var title = e.title || '';
+      var is_show_cancel = (e.is_show_cancel == 0) ? false : true;
+      var cancel_text = e.cancel_text || '取消';
+      var confirm_text = e.confirm_text || '确认';
+      var cancel_color = e.cancel_color || '#000000';
+      var confirm_color = e.confirm_color || '#576B95';
+
+      wx.showModal({
+        title: title,
+        content: msg,
+        showCancel: is_show_cancel,
+        cancelText: cancel_text,
+        cancelColor: cancel_color,
+        confirmText: confirm_text,
+        confirmColor: confirm_color,
+        success(res) {
+          if ((e.object || null) != null && typeof e.object === 'object' && (e.method || null) != null) {
+            e.object[e.method](res.confirm ? 1 : 0);
+          }
+        }
+      });
+    } else {
+      self.showToast('提示信息为空 alert');
     }
   },
   globalData: {

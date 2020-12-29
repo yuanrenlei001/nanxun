@@ -34,20 +34,19 @@
   <view class="maskColorText">正在努力规划行程中……</view>
 </view>
 <view hidden="{{!mapShow}}">
-  <map class="map"
-  latitude="{{latitude}}"
-      longitude="{{longitude}}"
-  ></map>
+  <map latitude="{{latitude}}" longitude="{{longitude}}" show-location="true" show-compass="true" show-scale="true" 	 class="map" scale="15"
+  polyline="{{polyline}}"
+  markers="{{markers}}" />
   <cover-view class="footerBlock">
     <cover-view style="margin-left: 52rpx;margin-top: 40rpx;">
-      <cover-view class="map_top">小莲庄-嘉业藏书楼-南浔张氏旧宅建筑群</cover-view>
-      <cover-view class="address">3个景点|全程21公里</cover-view>
+      <cover-view class="map_top">{{address}}</cover-view>
+      <cover-view class="address">{{showList.pointList.length}}个景点|全程21公里</cover-view>
       <cover-view class="route"></cover-view>
       <cover-view class="flex">
         <cover-view class="introduce">景点介绍</cover-view>
-        <cover-view class="more">更多</cover-view>
+        <cover-view class="more" bindtap="goUrl">更多</cover-view>
       </cover-view>
-      <cover-view class="footerText">小莲庄是始建于清光绪年间的古典园林建筑。属于南浔首富刘镛（字贯经）的私家园林、家庙及义庄所在……</cover-view>
+      <cover-view class="footerText">{{showList.intro}}</cover-view>
     </cover-view>
   </cover-view>
 </view>

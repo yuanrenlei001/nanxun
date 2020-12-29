@@ -7,10 +7,11 @@
 </view>
 <view class="main">
   <view class="ul">
-    <navigator class="list" wx:for="{{showLists}}" url="/pages/tourist-detail/tourist-detail?id={{item.id}}">
-    <image src="{{url+img[0]}}" class="bg"></image>
+    <navigator class="list" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'>
+      <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
     <image src="/images/play.png" class="play"></image>
     <view class="text">{{item.name}}</view>
+    <audio poster="{{url+img[bindex][0]}}" name="{{item.name}}" author="" src="{{url+item.audioUrl}}" id="myAudio" class="myAudio" style="width:100%" controls loop></audio>
   </navigator>
   </view>
 </view>

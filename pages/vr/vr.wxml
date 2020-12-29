@@ -6,8 +6,8 @@
   </view>
 </view>
 <view class="main">
-  <navigator class="list" wx:for="{{showLists}}" url="/pages/web/web?url={{item.vrUrl}}">
-    <view class="listLeft"><image src=""></image></view>
+  <navigator class="list" url="/pages/web/web?url={{item.vrUrl}}"   wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'>
+    <view class="listLeft"><image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" ></image></view>
     <view class="listRight">
       <view class="listRight01">{{item.name}}</view>
       <view class="listRight02">{{item.intro}}</view>

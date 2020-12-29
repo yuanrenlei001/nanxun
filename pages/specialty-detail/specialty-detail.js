@@ -18,6 +18,12 @@ Page({
     id:null,
     detail:null,
     url:app.data.request_img,
+    pageNum:1,
+    pageSize:3,
+    hasMoreData: true,
+    message:'正在加载数据...',
+    showLists:'',
+    showListsImg:''
   },
   audioPlay: function () {
     this.audioCtx.play()
@@ -38,7 +44,8 @@ Page({
     console.log(options)
     this.setData({
       id:this.options.id
-    })
+    });
+    this.list()
   },
 
   /**
@@ -79,6 +86,45 @@ Page({
         app.showToast("服务器请求出错");
       }
     });
+  },
+  list(){
+    var pageNum = this.data.pageNum;
+    var pageSize = this.data.pageSize;
+    var that =this;
+    wx.request({
+      url: app.data.request_url+'/api/com/comPlace/getAll?type='+'商铺'+'&pageNum='+pageNum+'&pageSize='+pageSize,
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        wx.stopPullDownRefresh();
+        var list = res.data.data.records;
+        var arr = []
+        for(var i=0;i<list.length;i++){
+          if(list[i].pictureUrl){
+            var img = list[i].pictureUrl.split(',');
+            console.log(img)
+            arr.push(img)
+          }
+        
+        }
+        console.log(arr)
+        that.setData({
+          showLists:list,
+          showListsImg:arr
+        })
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
+  },
+  goUrl:function(){
+    wx.navigateTo({
+      url:'/pages/dp/dp'
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

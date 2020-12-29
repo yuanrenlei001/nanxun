@@ -13,6 +13,7 @@ page{
   border: 2px solid #E0E0E0;
 }
 .search image {width:30rpx;height:30rpx;position: absolute;top:50%;left:26rpx;margin-top: -15rpx;}
+.search input {height:54rpx;line-height: 54rpx;}
 .top {height: 104rpx;width: 100%;line-height: 104rpx;position: relative;}
 
 .list {padding: 0 26rpx;}

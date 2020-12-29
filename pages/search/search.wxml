@@ -1,0 +1,32 @@
+<view class="top">
+  <view class="search">
+    <input type="text" placeholder="搜索南浔景点" bindinput="inputTyping"/>
+    <image src="/images/index/search.png"></image>
+</view>
+</view>
+<view class="sort" wx:if="{{list}}" wx:for="{{list}}">
+  <navigator class="list" wx:if="{{item.type=='度假酒店' || item.type=='精品民宿'}}" url="/pages/ticket-detail/ticket-detail?id={{item.id}}">
+    <image class="list01" src="/images/gz.png"></image>
+    <view class="list02">{{item.name}}</view>
+    <view class="list03">类型：{{item.type}}</view>
+    <image class="list04" src="/images/right.png"></image>
+  </navigator>
+  <navigator class="list" wx:if="{{item.type=='美食餐饮' || item.type=='休闲娱乐'}}" url="/pages/food-detail/food-detail?id={{item.id}}" >
+    <image class="list01" src="/images/cy.png"></image>
+    <view class="list02">{{item.name}}</view>
+    <view class="list03">类型：{{item.type}}</view>
+    <image class="list04" src="/images/right.png"></image>
+  </navigator>
+  <navigator class="list" wx:if="{{item.type=='商铺'}}" url="/pages/dp-detail/index?id={{item.id}}" >
+    <image class="list01" src="/images/dian.png"></image>
+    <view class="list02">{{item.name}}</view>
+    <view class="list03">类型：{{item.type}}</view>
+    <image class="list04" src="/images/right.png"></image>
+  </navigator>
+  <navigator class="list" wx:if="{{item.type=='写生基地'}}" url="/pages/address-detail/address-detail={{item.id}}" >
+    <image class="list01" src="/images/gz.png"></image>
+    <view class="list02">{{item.name}}</view>
+    <view class="list03">类型：{{item.type}}</view>
+    <image class="list04" src="/images/right.png"></image>
+  </navigator>
+</view>
