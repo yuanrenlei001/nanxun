@@ -12,7 +12,8 @@ Page({
     pageSize:20,
     hasMoreData: true,
     message:'正在加载数据...',
-    img:null
+    img:null,
+    audioCtx:''
   },
 
   /**
@@ -28,7 +29,32 @@ Page({
   onReady: function () {
 
   },
-
+  play:function(e){
+    var id = e.target.dataset.index;
+    wx.createAudioContext('myAudio'+id).play()
+    var list = this.data.showLists;
+    for(var i=0;i<list.length;i++){
+      if(list[i].id == id){
+        list[i].play = true;
+      }
+    }
+    this.setData({
+      showLists:list
+    })
+  },
+  stop:function(e){
+    var id = e.target.dataset.index;
+    wx.createAudioContext('myAudio'+id).pause()
+    var list = this.data.showLists;
+    for(var i=0;i<list.length;i++){
+      if(list[i].id == id){
+        list[i].play = false;
+      }
+    }
+    this.setData({
+      showLists:list
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -52,14 +78,15 @@ Page({
       success: res => {
         wx.stopPullDownRefresh();
         var list = res.data.data.records;
-        var arr = []
+        var arr = [];
         for(var i=0;i<list.length;i++){
+          list[i]['play'] = false;
           if(list[i].pictureUrl){
             var img = list[i].pictureUrl.split(',');
             arr.push(img)
           }
         }
-        console.log(arr)
+        console.log(list)
         that.setData({
           showLists:list,
           img:arr

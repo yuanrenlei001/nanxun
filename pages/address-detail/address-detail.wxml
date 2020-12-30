@@ -15,5 +15,5 @@
     <view class="title01" style="font-size:24rpx;">{{detail.address}}</view>
     <view class="title03" bindtap="intoMap"><image src="/images/tourist/address.png"></image> 导航</view>
   </view>
-  <rich-text class="content" nodes="{{detail.content}}"></rich-text>
+  <rich-text class="content" nodes="{{detail.intro}}"></rich-text>
 </view>

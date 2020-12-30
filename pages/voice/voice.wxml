@@ -9,9 +9,10 @@
   <view class="ul">
     <navigator class="list" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'>
       <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
-    <image src="/images/play.png" class="play"></image>
+    <image src="/images/play.png" class="play" data-index="{{item.id}}" wx:if="{{item.play==false}}" bindtap="play"></image>
+    <image src="/images/stop.png" class="play" data-index="{{item.id}}" wx:if="{{item.play==true}}" bindtap="stop"></image>
     <view class="text">{{item.name}}</view>
-    <audio poster="{{url+img[bindex][0]}}" name="{{item.name}}" author="" src="{{url+item.audioUrl}}" id="myAudio" class="myAudio" style="width:100%" controls loop></audio>
+    <audio poster="{{url+img[bindex][0]}}" name="{{item.name}}" author="" src="{{url+item.audioUrl}}" id="myAudio{{item.id}}" class="myAudio" style="width:100%" controls loop></audio>
   </navigator>
   </view>
 </view>
