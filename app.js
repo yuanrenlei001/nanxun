@@ -44,6 +44,7 @@ App({
       'web_map':'地图',
       'dp':'店铺',
       'dp_detail':'店铺详情',
+      'rg':'智能客服',
     },
     // tabbar页面
       tabbar_pages: [

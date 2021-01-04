@@ -12,7 +12,7 @@
         <navigator class="sortLi" url='/pages/show-list/show-list'><image src="/images/index/icon09.png"></image> <text>演出活动</text></navigator>
         <navigator class="sortLi" url='/pages/voice/voice'><image src="/images/index/voice.png"></image> <text>语音导览</text></navigator>
         <navigator class="sortLi" url='/pages/tourist/tourist'><image src="/images/index/icon13.png"></image> <text>游客中心</text></navigator>
-        <navigator class="sortLi" url='/pages/address/address'><image src="/images/index/icon-address.png"></image> <text>写生基地</text></navigator>
+        <navigator class="sortLi" url="/pages/address-detail/address-detail?id=420"><image src="/images/index/icon-address.png"></image> <text>写生基地</text></navigator>
         <navigator class="sortLi" url='/pages/traffic/traffic'><image src="/images/index/icon11.png"></image> <text>交通出行</text></navigator>
         <navigator class="sortLi" url='/pages/phone/phone'><image src="/images/index/icon-phone.png"></image> <text>景区电话</text></navigator>
   </view>

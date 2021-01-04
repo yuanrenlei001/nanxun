@@ -58,3 +58,10 @@ text-align: justify;
 .bottom01 {text-align: left;}
 .bottom02 {text-align: center;}
 .bottom03 {text-align: right;}
+.time {color: #F49068;font-size: 24rpx;width: 80%;
+  white-space:nowrap; 
+text-overflow:ellipsis; 
+-o-text-overflow:ellipsis; 
+overflow: hidden;
+line-height: 46rpx;
+}

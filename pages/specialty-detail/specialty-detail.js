@@ -45,7 +45,6 @@ Page({
     this.setData({
       id:this.options.id
     });
-    this.list()
   },
 
   /**
@@ -76,6 +75,21 @@ Page({
             detail:res.data.data,
             img:res.data.data.pictureUrl.split(',')
           })
+          var list = res.data.data.placeList;
+        var arr = []
+        for(var i=0;i<list.length;i++){
+          if(list[i].pictureUrl){
+            var img = list[i].pictureUrl.split(',');
+            console.log(img)
+            arr.push(img)
+          }
+        
+        }
+        console.log(arr)
+        this.setData({
+          showLists:list,
+          showListsImg:arr
+        })
         }else{
           app.showToast("轮播图未上传！");
         }

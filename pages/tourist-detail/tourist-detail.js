@@ -23,20 +23,10 @@ Page({
     location:'',
     latitude:'',
     longitude:'',
-    markers:[]
+    markers:[],
+    play:true
   },
-  audioPlay: function () {
-    this.audioCtx.play()
-  },
-  audioPause: function () {
-    this.audioCtx.pause()
-  },
-  audio14: function () {
-    this.audioCtx.seek(14)
-  },
-  audioStart: function () {
-    this.audioCtx.seek(0)
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -55,6 +45,21 @@ share:function(){
       path:`/pages/index/index?url=${url}` 
     }
 
+},
+play:function(e){
+  var play = this.data.play;
+  console.log(play)
+  if(play){
+    this.setData({
+      play:false
+    })
+    wx.createAudioContext('myAudio').play()
+  }else{
+    this.setData({
+      play:true
+    })
+    wx.createAudioContext('myAudio').pause()
+  }
 },
 // 收藏
 favorite:function(){
@@ -90,7 +95,7 @@ favorite:function(){
       }
       else{
         if(res.data.code =='401'){
-          app.get_user_info(this, "favorite");
+          app.user_login_copy(this, "favorite");
         }
       }
       
@@ -137,7 +142,7 @@ unfavorite:function(){
       }
       else{
         if(res.data.code =='401'){
-          app.get_user_info(this, "favorite");
+          app.user_login_copy(this, "favorite");
         }
       }
       

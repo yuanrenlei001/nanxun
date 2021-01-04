@@ -11,5 +11,7 @@
   <view class="title">
     <view class="title01">{{detail.name}}</view>
   </view>
+  <view class="time">{{detail.startTime==null?'暂无演出时间':detail.startTime}}</view>
+  <view class="time">{{detail.address==null?'暂无演出地点':detail.address}}</view>
   <rich-text class="content" nodes="{{detail.intro}}"></rich-text>
 </view>

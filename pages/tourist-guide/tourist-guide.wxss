@@ -77,8 +77,11 @@ box-shadow: 0px 0px 16px 4px rgba(217, 216, 216, 0.5);
 .collection {width: 32rpx;height:32rpx;position: absolute;top:0;right:34rpx;}
 .type {
   
-
-
+width: 80%;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow: hidden;
 
 color: #FF7B53;
 font-size: 20rpx;

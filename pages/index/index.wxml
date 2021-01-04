@@ -16,7 +16,7 @@
     <input type="text" disabled="disabled"/>
     <image src="/images/index/search.png"></image>
   </view>
-  <view class="service">
+  <view class="service" bindtap="goRg">
     
   <image class="cs_image" src="/images/index/service.png"></image>
     
@@ -39,7 +39,7 @@
 <view class="main">
   <!-- 最新公告 -->
   <view class="news" bindtap="goNotice">
-    <image src="/images/index/iconNews.png"></image> 最新公告： <text>{{news[0].title}}</text>
+    <image src="/images/index/iconNews.png"></image> 最新公告：  <text>{{news[0].title}}</text>
   </view>
   <!-- 分类列表 -->
   <view class="indexSort">

@@ -334,5 +334,10 @@ onReachBottom: function () {
       appId: 'wx10ffa35365b728b8',
       envVersion:'release'
     })
+  },
+  goRg:function(){
+    wx.navigateTo({
+      url: '/pages/rg/rg'
+    })
   }
 })

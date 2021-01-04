@@ -110,8 +110,8 @@ intoMap:function(){
     type: 'gcj02', //返回可以用于wx.openLocation的经纬度
     success: function (res) {  //因为这里得到的是你当前位置的经纬度
       wx.openLocation({        //所以这里会显示你当前的位置
-        latitude: parseFloat(that.data.latitude),
-        longitude: parseFloat(that.data.longitude),
+        latitude: parseFloat(that.data.detail.latitude),
+        longitude: parseFloat(that.data.detail.longitude),
         name:that.data.detail.address,
         scale: 18
       });
@@ -126,7 +126,7 @@ favorite:function(){
     'contentFrom':'comPlace',
     'contentId':that.data.detail.id,
     'contentName':that.data.detail.name,
-    'type':that.data.sort,
+    'type':'住宿',
   }
   wx.request({
     url: app.data.request_url+'/api/xcx/xcxFavorite/add',
@@ -177,7 +177,7 @@ unfavorite:function(){
     'contentFrom':'comPlace',
     'contentId':that.data.detail.id,
     'contentName':that.data.detail.name,
-    'type':that.data.sort,
+    'type':'住宿',
     id:that.data.detail.ifFavorite
   }
   wx.request({
@@ -191,14 +191,14 @@ unfavorite:function(){
      },
     success: res => {
       wx.stopPullDownRefresh();
-      if(res.data.code = '200'){
+      if(res.data.code == '200'){
         app.showToast("取消成功！",'success');
         that.init();
-      }else if(res.data.code = '402'){
+      }else if(res.data.code == '402'){
         app.showToast("参数检验失败！");
-      }else if(res.data.code = '403'){
+      }else if(res.data.code == '403'){
         app.showToast("没有相关权限！");
-      }else if(res.data.code = '500'){
+      }else if(res.data.code == '500'){
         app.showToast("操作失败！");
       }
       else{

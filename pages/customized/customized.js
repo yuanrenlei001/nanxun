@@ -207,9 +207,9 @@ Page({
     })
   },
   goUrl:function(){
-    var url = this.data.url+this.data.showList.detailsUrl
+    var url = this.data.showList.detailsUrl
     wx.navigateTo({
-      url: "/pages/web/web?url="+url,
+      url: "/pages/webs/webs?url="+url,
     })
   },
   saveFun: function (){
@@ -256,93 +256,98 @@ Page({
          },
         success: res => {
           wx.stopPullDownRefresh();
-          var list = res.data.data;
-          var data = res.data.data.pointList;
-          var arr = []
-          for(var i=0;i<list.pointList.length;i++){
-              arr.push(list.pointList[i].name)
-          }
-              // 获取当前地理位置
-    wx.getLocation({
-      type: 'wgs84',
-      success: function (res) {
-        var latitude = res.latitude
-        var longitude = res.longitude
-        var markers = new Array();
-        var add = []
-                for (var i = 0; i < data.length; i++) {
-                  var obj ={};
-                  var name = data[i].name; //名称
-                  var lat = data[i].latitude; //经度
-                  var lon = data[i].longitude;//纬度
-                  obj['latitude'] = data[i].latitude;
-                  obj['longitude'] = data[i].longitude;
-                  add.push(obj)
-                  var info = {
-                    id: 0,
-                    iconPath: "/images/dw.png",
-                    latitude: '',
-                    longitude: '',
-                    width: 20,
-                    height: 25,
-                    title: "",
-                  };
-                  info.id = i
-                  info.latitude = lat
-                  info.longitude = lon
-                  info.title = name
-    
-                  markers.push(info);
-                }
-                var form = add[0].latitude+','+add[0].longitude
-                var last = add.slice(-1);
-                qqmapsdk.direction({
-                  mode:'walking',
-                  from: form,
-                  to: last[0].latitude+','+last[0].longitude, 
-                  success:function(res){
-                    console.log(res)
-                    console.log(res);
-                      var ret = res;
-                      var coors = ret.result.routes[0].polyline, pl = [];
-                      //坐标解压（返回的点串坐标，通过前向差分进行压缩）
-                      var kr = 1000000;
-                      for (var i = 2; i < coors.length; i++) {
-                        coors[i] = Number(coors[i - 2]) + Number(coors[i]) / kr;
-                      }
-                      //将解压后的坐标放入点串数组pl中
-                      for (var i = 0; i < coors.length; i += 2) {
-                        pl.push({ latitude: coors[i], longitude: coors[i + 1] })
-                      }
-                      console.log(pl)
-                      //设置polyline属性，将路线显示出来,将解压坐标第一个数据作为起点
-                      that.setData({
-                        latitude:pl[0].latitude,
-                        longitude:pl[0].longitude,
-                        polyline: [{
-                          points: pl,
-                          color: '#FF0000DD',
-                          width: 4,
-                          dottedLine: true,
-                          borderWidth:2
-                        }]
-                      })
+          if(res.data.code =='401'){
+            console.log(1)
+            app.user_login_copy(this, "favorite");
+          }else{
+            var list = res.data.data;
+            var data = res.data.data.pointList;
+            var arr = []
+            for(var i=0;i<list.pointList.length;i++){
+                arr.push(list.pointList[i].name)
+            }
+                // 获取当前地理位置
+      wx.getLocation({
+        type: 'wgs84',
+        success: function (res) {
+          var latitude = res.latitude
+          var longitude = res.longitude
+          var markers = new Array();
+          var add = []
+                  for (var i = 0; i < data.length; i++) {
+                    var obj ={};
+                    var name = data[i].name; //名称
+                    var lat = data[i].latitude; //经度
+                    var lon = data[i].longitude;//纬度
+                    obj['latitude'] = data[i].latitude;
+                    obj['longitude'] = data[i].longitude;
+                    add.push(obj)
+                    var info = {
+                      id: 0,
+                      iconPath: "/images/dw.png",
+                      latitude: '',
+                      longitude: '',
+                      width: 20,
+                      height: 25,
+                      title: "",
+                    };
+                    info.id = i
+                    info.latitude = lat
+                    info.longitude = lon
+                    info.title = name
+      
+                    markers.push(info);
                   }
-                })
-                var str = JSON.stringify(markers);
-            that.setData(
-              {
-                latitude: latitude,
-                longitude: longitude,
-                markers: markers,
-              }
-            )
-      }
-    })
-          this.setData({
-            showList:list,
-            address:arr.join('-')
-          })
+                  var form = add[0].latitude+','+add[0].longitude
+                  var last = add.slice(-1);
+                  qqmapsdk.direction({
+                    mode:'walking',
+                    from: form,
+                    to: last[0].latitude+','+last[0].longitude, 
+                    success:function(res){
+                      console.log(res)
+                      console.log(res);
+                        var ret = res;
+                        var coors = ret.result.routes[0].polyline, pl = [];
+                        //坐标解压（返回的点串坐标，通过前向差分进行压缩）
+                        var kr = 1000000;
+                        for (var i = 2; i < coors.length; i++) {
+                          coors[i] = Number(coors[i - 2]) + Number(coors[i]) / kr;
+                        }
+                        //将解压后的坐标放入点串数组pl中
+                        for (var i = 0; i < coors.length; i += 2) {
+                          pl.push({ latitude: coors[i], longitude: coors[i + 1] })
+                        }
+                        console.log(pl)
+                        //设置polyline属性，将路线显示出来,将解压坐标第一个数据作为起点
+                        that.setData({
+                          latitude:pl[0].latitude,
+                          longitude:pl[0].longitude,
+                          polyline: [{
+                            points: pl,
+                            color: '#FF0000DD',
+                            width: 4,
+                            dottedLine: true,
+                            borderWidth:2
+                          }]
+                        })
+                    }
+                  })
+                  var str = JSON.stringify(markers);
+              that.setData(
+                {
+                  latitude: latitude,
+                  longitude: longitude,
+                  markers: markers,
+                }
+              )
+        }
+      })
+            this.setData({
+              showList:list,
+              address:arr.join('-')
+            })
+          }
         },
         fail: () => {
           wx.stopPullDownRefresh();

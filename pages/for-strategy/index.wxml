@@ -3,7 +3,7 @@
     <view bindtap="customizedFun" class="topBtn">行程订制</view>
   </view>
   <view class="contentBg">
-    <navigator class="blockBg" wx:for="{{showLists}}" wx:key="index" url="/pages/web/web?url={{url+item.detailsUrl}}">
+    <navigator class="blockBg" wx:for="{{showLists}}" wx:key="index" url="/pages/webs/webs?url={{item.detailsUrl}}">
       <image class="topImg" src="{{url+item.pictureUrl}}"></image>
       <view class="textB">
         <view class="textLine1">{{item.name}}</view>

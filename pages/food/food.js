@@ -63,7 +63,6 @@ Page({
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.food});
     this.setData({
-      active:'美食餐饮',
       specialty:null,
       pageNum:1,
     pageSize:8,

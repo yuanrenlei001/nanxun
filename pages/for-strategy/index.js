@@ -36,7 +36,7 @@ Page({
     url:app.data.request_img,
     pageNum:1,
     pageSize:8,
-    hasMoreData: true,
+    hasMoreData: false,
     message:'正在加载数据...',
     img:null,
     total:0
@@ -83,9 +83,10 @@ Page({
         that.setData({
           showLists:list
         })
-        if(list.length>=pageSize){
-          that.setData({
-            pageNum:that.data.pageNum+1,
+        if(list.total>=pageSize){
+
+          this.setData({
+            pageNum:this.data.pageNum+1,
             hasMoreData:true
           })
         }

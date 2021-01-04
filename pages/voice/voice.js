@@ -31,11 +31,13 @@ Page({
   },
   play:function(e){
     var id = e.target.dataset.index;
-    wx.createAudioContext('myAudio'+id).play()
     var list = this.data.showLists;
     for(var i=0;i<list.length;i++){
-      if(list[i].id == id){
+      wx.createAudioContext('myAudio'+list[i].id).pause()
+      list[i].play = false;
+      if(list[i].id === id){
         list[i].play = true;
+        wx.createAudioContext('myAudio'+id).play()
       }
     }
     this.setData({

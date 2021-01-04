@@ -144,9 +144,9 @@ addTC(){
     var that = this;
     var pageNum = 1;
     var pageSize = 20;
-    var type = this.data.active;
+    var type = '';
     wx.request({
-      url: app.data.request_url+'/api/com/comSpecialty/getAll?pageNum='+pageNum+'&pageSize='+pageSize+'&type=特产'+'&keyword='+value,
+      url: app.data.request_url+'/api/com/comSpecialty/getAll?pageNum='+pageNum+'&pageSize='+pageSize+'&keyword='+value,
       method: "get",
       data: {},
       dataType: "json",

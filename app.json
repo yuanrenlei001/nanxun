@@ -1,17 +1,12 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/rg/rg",
     "pages/voice/voice",
-    
-    
-    
     "pages/tourist-guide/tourist-guide",
-    
     "pages/search/search",
-    
     "pages/dp/dp",
     "pages/for-strategy/index",
-    
     "pages/ticket/ticket",
     "pages/ticket-detail/ticket-detail",
     "pages/map/index",
@@ -42,7 +37,8 @@
     "pages/webMap/map",
     "pages/handPainted/index",
     "pages/web-map/web-map",
-    "pages/dp-detail/index"
+    "pages/dp-detail/index",
+    "pages/webs/webs"
   ],
   "window": {
     "backgroundTextStyle": "light",

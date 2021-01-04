@@ -11,7 +11,7 @@ Page({
     pageNum:1,
     pageSize:8,
     hasMoreData: true,
-    message:'正在加载数据...',
+    message:'',
     img:''
   },
 

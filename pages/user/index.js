@@ -46,7 +46,12 @@ Page({
   onHide: function () {
 
   },
-
+  goUrls:function(){
+    wx.navigateToMiniProgram({
+      appId: 'wx10ffa35365b728b8',
+      envVersion:'release'
+    })
+  },
   /**
    * 生命周期函数--监听页面卸载
    */

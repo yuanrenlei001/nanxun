@@ -85,7 +85,7 @@ addList(){
   var that = this;
   console.log(pageNum)
   wx.request({
-    url: app.data.request_url+'/api/com/comPlace/getAll?pageNum='+pageNum+'&pageSize='+pageSize+'&type:=景点',
+    url: app.data.request_url+'/api/com/comPlace/getAll?pageNum='+pageNum+'&pageSize='+pageSize+'&type=景点',
     method: "get",
     data: {},
     dataType: "json",

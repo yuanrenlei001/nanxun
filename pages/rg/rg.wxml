@@ -1,0 +1,41 @@
+<view class="main">
+  <view class="listLeft list">
+    <view class="user"><image src="/images/rg.png"></image></view>
+    <view class="text">
+      <view>您好，欢迎来到南浔古镇，南浔古镇，天下难寻，祝您旅途愉快！</view>
+      <view>门票、车船票订票、特产购买请点击</view>
+      <view><text bindtap="goUrl">景区商城</text></view>
+      <view>了解景区开发时间请点击 <text data-type='景区开放时间' bindtap="question">景区开放时间</text></view>
+      <view>景区导览请点击 <text bindtap="goMap">浔找你</text></view>
+      <view> 还有问题？试试 <text data-type='人工服务热线' bindtap="question">人工服务热线</text></view>
+    </view>
+  </view>
+  <view wx:for="{{list}}" style="margin-bottom:100rpx;">
+    <view wx:if="{{item.type == '人工服务热线'}}">
+      <view class="listRight list">
+      <view class="time">{{item.time}}</view>
+      <view class="user"><image src="/images/rg.png"></image></view>
+      <view class="text"><view>人工服务热线</view></view>
+    </view>
+    <view class="listLeft list">
+      <view class="time">{{item.time}}</view>
+      <view class="user"><image src="/images/rg.png"></image></view>
+      <view class="text">
+        <view  wx:for="{{item.phone}}" wx:for-item="phone" wx:key="index">{{phone.text}}：<text bindtap="tel" data-phone="{{phone.tel}}">{{phone.tel}}</text></view>
+      </view>
+    </view>
+    </view>
+    <view wx:if="{{item.type == '景区开放时间'}}">
+      <view class="listRight list">
+      <view class="time">{{item.time}}</view>
+      <view class="user"><image src="/images/rg.png"></image></view>
+      <view class="text"><view>景区开放时间</view></view>
+    </view>
+    <view class="listLeft list">
+      <view class="time">{{item.time}}</view>
+      <view class="user"><image src="/images/rg.png"></image></view>
+      <view class="text"><view>{{item.text}}</view></view>
+    </view>
+    </view>
+  </view>
+</view>
