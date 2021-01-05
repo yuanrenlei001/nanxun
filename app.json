@@ -38,7 +38,10 @@
     "pages/handPainted/index",
     "pages/web-map/web-map",
     "pages/dp-detail/index",
-    "pages/webs/webs"
+    "pages/webs/webs",
+    "pages/Navigation/Navigation",
+    "pages/webVr/webVr",
+    "pages/share/share"
   ],
   "window": {
     "backgroundTextStyle": "light",
