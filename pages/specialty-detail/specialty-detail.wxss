@@ -47,7 +47,7 @@ audio {
 font-size: 24rpx;
 font-weight: 300;
 color: #333333;
-line-height: 34px;
+line-height: 38rpx;
 text-align: justify;
 }
 .bottom {margin-top: 50rpx;}

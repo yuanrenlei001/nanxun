@@ -17,7 +17,7 @@
   <view class="dpTtile"><text>推荐店铺</text><text bindtap="goUrl">更多</text></view>
   <view class="ul">
     <view class="dpSort">
-  <navigator class="dpList" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'>
+  <navigator class="dpList"  wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index' url="/pages/food-detail/food-detail?id={{item.id}}">
     <image data-index="{{bindex}}" src="{{url+showListsImg[bindex][0]}}"></image>
     <view class="dpList01">{{item.name}}</view>
     <view class="dpList02"> </view>

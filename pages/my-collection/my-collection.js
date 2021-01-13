@@ -60,7 +60,6 @@ Page({
     wx.setNavigationBarTitle({title: app.data.common_page_title.my_collection});
     var token = wx.getStorageSync('user_token')
     this.setData({
-      active:'景点',
       specialty:null,
       pageNum:1,
     pageSize:8,

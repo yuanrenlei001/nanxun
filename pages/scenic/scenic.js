@@ -64,6 +64,7 @@ Page({
           showLists:list,
           img:arr
         })
+        console.log(that.data.img)
         if(list.length>=pageSize){
           that.setData({
             pageNum:that.data.pageNum+1,
@@ -105,11 +106,11 @@ addList(){
       //     arr.push(list[i])
       // }
       // that.showLists.push(arr)
-      console.log(list)
       that.setData({
         showLists:that.data.showLists.concat(list),
-        img:that.data.img.concat(img),
+        img:that.data.img.concat(arr),
       })
+      console.log(that.data.img)
       if(list.length>=pageSize){
         that.setData({
           pageNum:that.data.pageNum+1,

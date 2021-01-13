@@ -14,12 +14,12 @@
 .search {width:300rpx;height:54rpx;line-height: 54rpx;position: absolute;left:50%;top:50%;margin-top: -27rpx;
   background: #fff;
   margin-left: -190rpx;
-  box-shadow: 0px 4px 8px 0px rgba(217, 216, 216, 0.5);
+  box-shadow: 0px 4rpx 8rpx 0px rgba(217, 216, 216, 0.5);
   border-radius: 57px;
   padding-left: 80rpx;
   font-size: 24rpx;
   color: #333;
-  border: 2px solid #E0E0E0;
+  border: 1px solid #E0E0E0;
 }
 .number {position: absolute;top:0;right:30rpx;font-size: 24rpx;}
 .search image {width:30rpx;height:30rpx;position: absolute;top:50%;left:26rpx;margin-top: -15rpx;}
@@ -33,7 +33,7 @@
   background: #FFFFFF;
   
 box-shadow: 0px 0px 16px 4px rgba(217, 216, 216, 0.5);
-  border-radius: 16px;
+  border-radius: 12rpx;
   overflow: hidden;
   margin-bottom: 10rpx;
 }
@@ -54,9 +54,9 @@ box-shadow: 0px 0px 16px 4px rgba(217, 216, 216, 0.5);
   overflow: hidden;
   display: block;
 }
-.zan {position: absolute;bottom:-30rpx;right:0;font-size: 14rpx;
+.zan {position: absolute;bottom:-30rpx;right:-30rpx;font-size: 14rpx;
   color: rgba(51, 51, 51, 0.42);
-  font-size: 20rpx;
+  font-size: 20rpx; 
 }
 .zan image {width: 20rpx;height:20rpx;vertical-align: middle;}
 .titleNname {font-size: 24rpx;color: #333330;margin-right: 8rpx;}

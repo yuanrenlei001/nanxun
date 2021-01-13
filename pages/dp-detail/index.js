@@ -76,7 +76,10 @@ Page({
             img:res.data.data.pictureUrl.split(',')
           })
         }else{
-          app.showToast("轮播图未上传！");
+          this.setData({
+            detail:res.data.data,
+            img:['/old-town/com/place/defaultStore.jpg']
+          })
         }
         
       },

@@ -11,5 +11,5 @@ page {background-color: #F1F1F1;}
 .listRight .text {margin-left: 140rpx;position: relative;background: #fff;width:410rpx;border-radius: 20rpx;padding: 30rpx;text-align: justify;
   font-size: 24rpx;color: #333;
 }
-.listLeft .time {line-height: 80rpx;margin-right: 140rpx;text-align: right;}
-.listRight .time {line-height: 80rpx;margin-left: 140rpx;}
+.listLeft .time {line-height: 80rpx;text-align: center;font-size: 24rpx;color: #999;}
+.listRight .time {line-height: 80rpx;text-align: center;font-size: 24rpx;color: #999;}

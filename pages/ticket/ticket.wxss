@@ -1,4 +1,4 @@
-.map {width: 100%;height:94rpx;position: relative;border-bottom: 1px solid #D9D8D8;}
+.map {width: 100%;height:368rpx;position: relative;border-bottom: 1px solid #D9D8D8;}
 .goMap {position: absolute;bottom:24rpx;right:14rpx;
   width: 186rpx;
   height: 58rpx;
@@ -19,7 +19,7 @@
   padding-left: 80rpx;
   font-size: 24rpx;
   color: #333;
-  border: 2px solid #E0E0E0;
+  border: 1px solid #E0E0E0;
 }
 .number {position: absolute;top:0;right:30rpx;font-size: 24rpx;}
 .search image {width:30rpx;height:30rpx;position: absolute;top:50%;left:26rpx;margin-top: -15rpx;}
@@ -33,7 +33,7 @@
   background: #FFFFFF;
   
 box-shadow: 0px 0px 16px 4px rgba(217, 216, 216, 0.5);
-  border-radius: 16px;
+  border-radius: 16rpx;
   overflow: hidden;
   margin-bottom: 10rpx;
 }
@@ -43,7 +43,7 @@ box-shadow: 0px 0px 16px 4px rgba(217, 216, 216, 0.5);
   height:140rpx;
   position: relative;
 }
-.bottom {padding: 0 30rpx;position: absolute;bottom:30rpx;left:0;width: 70%;}
+.bottom {padding: 0 30rpx;position: absolute;bottom:40rpx;left:0;width: 70%;}
 .userImg {width: 16rpx;height:20rpx;vertical-align: middle;
   position: absolute;bottom:0;left:30rpx;}
 .name {font-size: 18rpx;padding-left: 30rpx;
@@ -54,7 +54,7 @@ box-shadow: 0px 0px 16px 4px rgba(217, 216, 216, 0.5);
   overflow: hidden;
   display: block;
 }
-.zan {position: absolute;bottom:-30rpx;right:0;font-size: 14rpx;
+.zan {position: absolute;bottom:-30rpx;right:-30rpx;font-size: 14rpx;
   color: rgba(51, 51, 51, 0.42);
   font-size: 20rpx;
 }
@@ -62,7 +62,7 @@ box-shadow: 0px 0px 16px 4px rgba(217, 216, 216, 0.5);
 .titleNname {font-size: 24rpx;color: #333330;margin-right: 8rpx;}
 .titleJuli {
   color: rgba(51, 51, 51, 0.42);
-  font-size: 20rpx;
+  font-size: 30rpx;
 }
 .collection {width: 32rpx;height:32rpx;position: absolute;top:0;right:34rpx;}
 .type {

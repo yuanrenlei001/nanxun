@@ -14,7 +14,7 @@
     <view wx:if="{{item.type == '人工服务热线'}}">
       <view class="listRight list">
       <view class="time">{{item.time}}</view>
-      <view class="user"><image src="/images/rg.png"></image></view>
+      <view class="user"><image src="{{user.userInfo.avatarUrl}}"></image></view>
       <view class="text"><view>人工服务热线</view></view>
     </view>
     <view class="listLeft list">
@@ -28,7 +28,7 @@
     <view wx:if="{{item.type == '景区开放时间'}}">
       <view class="listRight list">
       <view class="time">{{item.time}}</view>
-      <view class="user"><image src="/images/rg.png"></image></view>
+      <view class="user"><image src="{{user.userInfo.avatarUrl}}"></image></view>
       <view class="text"><view>景区开放时间</view></view>
     </view>
     <view class="listLeft list">

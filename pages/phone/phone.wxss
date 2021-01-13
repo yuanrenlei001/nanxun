@@ -1,2 +1,5 @@
-.title {height:120rpx;text-align: center;font-size: 52rpx;line-height: 120rpx;}
-.sort {height:80rpx;text-align: center;font-size: 32rpx;line-height:80rpx;}
+.title {height:120rpx;text-align: left;font-size: 38rpx;line-height: 120rpx;padding-left: 82rpx;}
+.sort {height:80rpx;text-align: left;font-size: 32rpx;line-height:80rpx;padding-left: 82rpx;}
+page {background-color: #ededed;padding: 30rpx 36rpx;}
+.main {background: #fff;width: 90%;height:95vh;border-radius: 12rpx;}
+.title image {width: 32rpx;height:32rpx;margin-right: 10rpx;}

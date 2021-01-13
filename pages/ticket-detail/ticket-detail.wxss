@@ -47,12 +47,24 @@ audio {
 font-size: 24rpx;
 font-weight: 300;
 color: #333333;
-line-height: 34px;
+line-height: 38rpx;
 text-align: justify;
 }
 .bottom {position: absolute;top:0;right:0;width: 200rpx;}
 .bottom image {
   width:32rpx;height:32rpx;margin-right: 16rpx;vertical-align: sub;
 }
-.bottom01 {text-align: left;width: 200rpx;}
-.daohang {background: #45ADDD;color: #fff;padding: 3px 10px;border-radius: 5px;margin-left: 20rpx;}
+.bottom01 {text-align: left;width: 200rpx;text-align: right;}
+.daohang {margin-left: 20rpx;
+  width: 108rpx;
+  height:34rpx;
+  padding: 1px 3px;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 34rpx;
+  background: #45ADDD;
+  color: #fff;
+  border-radius: 17rpx;
+  display: inline-block;
+}
+.daohang image {width: 24rpx;height:30rpx;vertical-align: middle;}

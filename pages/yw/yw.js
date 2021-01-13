@@ -197,14 +197,9 @@ addList(){
     })
   },
   customizedFun: function(){
-    var user = app.get_user_info(this, "init"),
-    self=this;
-    if(user){
-      wx.navigateTo({
-        url: "../customized/customized"
-      })
-    }
-    
+    wx.navigateTo({
+      url: "../customized/customized"
+    })
   },
   /**
    * 初始化获取列表

@@ -21,11 +21,11 @@
     
 </view>
 </view>
-    <view class="goMap" bindtap="goMap">进入地图</view>
+    <!-- <view class="goMap" bindtap="goMap">进入地图</view> -->
   </view>
 
 
-  <!-- 景点列表 -->
+  <!-- 景点  列表 -->
   <view class="main">
   <view class="listUl" wx:if="{{active !== '特产'}}">
     <navigator class="listLi" url="/pages/food-detail/food-detail?id={{item.id}}&sort={{active}}" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'>

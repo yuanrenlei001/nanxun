@@ -44,8 +44,8 @@
   <!-- 分类列表 -->
   <view class="indexSort">
     <view class="sortTop">
-      <text class="sortTop01">乐游南浔</text>
-      <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view>
+      <text class="sortTop01" style="margin-left: 30rpx;">乐游南浔</text>
+      <!-- <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view> -->
     </view>
     <view class="sort">
       <view class="sortUl">
@@ -56,7 +56,7 @@
         <navigator class="sortLi" url="/pages/ticket/ticket"><image src="/images/index/icon05.png"></image> <text>酒店民宿</text></navigator>
         <navigator class="sortLi" url='/pages/ar/ar'><image src="/images/index/icon06.png"></image> <text>AR看史</text></navigator>
         <navigator class="sortLi" url='/pages/vr/vr'><image src="/images/index/icon07.png"></image> <text>VR看景</text></navigator>
-        <navigator class="sortLi" url='/pages/for-strategy/index' open-type="switchTab"><image src="/images/index/icon08.png"></image> <text>游玩攻略</text></navigator>
+        <navigator class="sortLi" url='/pages/yw/yw'><image src="/images/index/icon08.png"></image> <text>游玩攻略</text></navigator>
         <navigator class="sortLi" url='/pages/show-list/show-list'><image src="/images/index/icon09.png"></image> <text>活动演出</text></navigator>
         <navigator class="sortLi" url="/pages/index-more/index-more"><image src="/images/index/icon10.png"></image> <text>更多</text></navigator>
       </view>
@@ -88,14 +88,21 @@
       <text class="sortTop01">热门景点</text>
       <view class="sortTop02" bindtap="goScenic">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
-    <swiper class="swiperContent" previous-margin='50px' next-margin='50px' bindchange="swiperChange"  autoplay circular>
+    <!-- <swiper class="swiperContent" previous-margin='50px' next-margin='50px' bindchange="swiperChange"  autoplay circular>
       <swiper-item wx:for='{{imgList}}' wx:for-index='bindex' wx:key='index'>
         <image bindtap="goscenic" data-index="{{bindex}}" data-id='{{item.id}}' class='le-img {{nowIdx==index?"le-active":""}}' src='{{url+imgss[bindex][0]}}'></image>
       </swiper-item>
-    </swiper>
+    </swiper> -->
+    <swiper style="display: flex;flex-direction: column;justify-content: center;align-items: center;overflow:unset;width:100%;height:210rpx;" bindchange="changeSwiper1" previous-margin="150rpx" next-margin="150rpx">
+        <block wx:for="{{imgList}}" wx:key='index'>
+          <swiper-item class=" {{currentIndex1 == index ? 'swiperItemActive1': 'swiperItem1'}}"  >
+            <image mode="aspectFill" src='{{url+imgss[index][0]}}' wx:for-index='bindex' wx:key='index' data-index="{{bindex}}" class="imageItem1 {{currentIndex1 == index ? 'active1': ''}}"> </image>
+          </swiper-item>
+        </block>
+      </swiper>
     <view class="text">
-      <view class="swTitle">{{titles}}</view>
-      <view class="swText">{{texts}}</view>
+      <view class="swTitle">{{texts}}</view>
+      <view class="swText">{{titles}}</view>
     </view>
   </view>
   <!-- 演出列表 -->
@@ -106,7 +113,7 @@
     </view> 
     <view class="list">
       <view class="listUl" >
-        <navigator class="listLi" url="/pages/show-detail/show-detail?id={{item.id}}" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'><image data-index="{{bindex}}"  src="{{url+imgss[bindex][0]}}"></image> <text>{{item.name}}</text></navigator>
+        <navigator class="listLi" url="/pages/show-detail/show-detail?id={{item.id}}" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'><image data-index="{{bindex}}"   src="{{url+ycimg[bindex][0]}}"></image> <text>{{item.name}}</text></navigator>
       </view>
     </view>
   </view>

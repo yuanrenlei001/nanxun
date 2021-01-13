@@ -11,9 +11,9 @@
   <view class="title">
     <view class="title01">写生基地</view>
   </view>
-  <view class="title" style="margin-top:15rpx;">
-    <view class="title01" style="font-size:24rpx;">{{detail.address}}</view>
-    <view class="title03" bindtap="intoMap"><image src="/images/tourist/address.png"></image> 导航</view>
+  <view class="title" style="margin-top:15rpx;margin-bottom: 18rpx;">
+    <view class="title04">{{detail.address}}</view>
+    <view class="title03" bindtap="intoMap"><image src="/images/nav.png"></image> 导航</view>
   </view>
   <rich-text class="content" nodes="{{detail.intro}}"></rich-text>
 </view>

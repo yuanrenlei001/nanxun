@@ -16,7 +16,7 @@
 </view>
 <view class="number">景点 <text style="color:blue;">{{total}} 个</text></view>
 </view>
-    <view class="goMap" bindtap="goMap">进入地图</view>
+    <!-- <view class="goMap" bindtap="goMap">进入地图</view> -->
   </view>
 
 
@@ -24,7 +24,7 @@
   <view class="main">
   <view class="listUl">
     <navigator class="listLi" url="/pages/tourist-detail/tourist-detail?id={{item.id}}"  wx:for="{{showLists}}" wx:key='index' wx:for-index='bindex'>
-      <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
+      <image data-index="{{bindex}}"  src="{{url+img[bindex][0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">
           <text class="titleNname">{{item.name}}</text>

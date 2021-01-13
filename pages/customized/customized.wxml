@@ -37,16 +37,24 @@
   <map latitude="{{latitude}}" longitude="{{longitude}}" show-location="true" show-compass="true" show-scale="true" 	 class="map" scale="15"
   polyline="{{polyline}}"
   markers="{{markers}}" />
-  <cover-view class="footerBlock">
-    <cover-view style="margin-left: 52rpx;margin-top: 40rpx;">
-      <cover-view class="map_top">{{address}}</cover-view>
-      <cover-view class="address">{{showList.pointList.length}}个景点|全程21公里</cover-view>
-      <cover-view class="route"></cover-view>
-      <cover-view class="flex">
-        <cover-view class="introduce">景点介绍</cover-view>
-        <cover-view class="more" bindtap="goUrl">更多</cover-view>
-      </cover-view>
-      <cover-view class="footerText">{{showList.intro}}</cover-view>
-    </cover-view>
-  </cover-view>
 </view>
+<view class="footerBlock" hidden="{{!mapShow}}">
+    <view style="margin-left: 52rpx;margin-top: 40rpx;">
+      <view class="map_top">{{address}}</view>
+      <view class="address">{{showList.pointList.length}}个景点|全程21公里</view>
+      <view class="route" style="width:93%;padding: 20rpx 0;">
+        <view style="display: flex;position: relative;height:134rpx;">
+          <view class="hr"></view>
+          <view class="ul" wx:for="{{showList.pointList}}" style="position: relative;">
+            <view><image src="{{url+item.pictureUrl}}"  class="imges"></image ></view>
+            <view class="namess">{{item.name}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="flex">
+        <view class="introduce">景点介绍</view>
+        <view class="more" bindtap="goUrl">更多</view>
+      </view>
+      <view class="footerText">{{showList.intro}}</view>
+    </view>
+  </view>

@@ -6,8 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    latitude: 23.099994,
-    longitude: 113.324520,
+    latitude: 30.84979,
+    longitude: 120.41847,
     zoom:false,
     compass:false,
     scroll:false,

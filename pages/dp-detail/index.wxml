@@ -2,7 +2,7 @@
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
         <block wx:for="{{img}}" wx:key="this">
           <swiper-item>
-            <image src="{{url+img}}"></image>
+            <image src="{{url+item}}"></image>
           </swiper-item>
         </block>
       </swiper> 

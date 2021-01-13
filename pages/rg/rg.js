@@ -7,7 +7,8 @@ Page({
    */
   data: {
       list:[],
-      text:''
+      text:'',
+      user:''
   },
 
   /**
@@ -21,7 +22,10 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var user = wx.getStorageSync('cache_user_info_key')
+    this.setData({
+      user:user
+    })
   },
 
   goUrl:function(){

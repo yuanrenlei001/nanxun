@@ -15,9 +15,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentIndex: 0,
+    currentIndex1: 0,
+    currentIndex2: 0,
     videoUrl:'https://nanxun.zjtoprs.com/minio/old-town/com/info/propagandafilm1.mp4',
     imgList:[],
-    currentIndex: 0,
     swiperH: '',//swiper高度
     　　nowIdx: 0,//当前swiper索引
     texts:'',
@@ -33,7 +35,13 @@ Page({
     whater:'',
     newList:'',
     imgss:'',
-    ycimg:''
+    ycimg:'',
+    imgList1: [
+      {img: "/images/strategy/fj.jpg"},
+      {img: "/images/strategy/fj.jpg"},
+      {img: "/images/strategy/fj.jpg"},
+      
+    ],
   },
   onLoad:function(){
     if(options.url){
@@ -62,6 +70,14 @@ Page({
     this.Weather();
     // 最新资讯
     this.newss();
+  },
+  changeSwiper1: function (e) {
+    console.log(e.detail.current)
+    this.setData({
+      currentIndex1: e.detail.current,
+      texts:this.data.imgList[e.detail.current].name,
+      titles:this.data.imgList[e.detail.current].intro
+    })
   },
   onLoad:function(){
   },
@@ -177,7 +193,7 @@ addList(){
       console.log(img)
       that.setData({
         showLists:that.data.showLists.concat(list),
-        ycimg:that.data.ycimg.concat(img),
+        ycimg:that.data.ycimg.concat(arr),
       })
       if(list.length>=pageSize){
         that.setData({
@@ -215,7 +231,6 @@ scenic(){
       for(var i=0;i<list.length;i++){
         if(list[i].pictureUrl){
           var img = list[i].pictureUrl.split(',');
-          console.log(img)
           arr.push(img)
         }
       

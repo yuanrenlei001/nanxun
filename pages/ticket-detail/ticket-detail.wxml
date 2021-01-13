@@ -12,11 +12,11 @@
     <view class="title01">{{detail.name}}</view>
     <view class="bottom">
     <!-- <button class="bottom02" open-type="share" bindtap="share" style="font-weight:normal;background: transparent;width: 33.333%;padding: 0;position: relative;float: left;left: 0;"><image src="/images/share.png"></image> 分享</button> -->
-    <view class="bottom01" wx:if="{{detail.ifFavorite == 0}}" bindtap="favorite"><image src="/images/un-collection.png"></image> 收藏</view>
-    <view class="bottom01" wx:if="{{detail.ifFavorite !== 0}}" bindtap="unfavorite"><image src="/images/collection.png"></image>取消收藏</view>
+    <view class="bottom01" wx:if="{{detail.ifFavorite == 0}}" bindtap="favorite"><image src="/images/un-collection.png"></image></view>
+    <view class="bottom01" wx:if="{{detail.ifFavorite !== 0}}" bindtap="unfavorite"><image src="/images/collection.png"></image></view>
   </view>
   </view>
-  <view class="text">{{detail.address}} <text bindtap="intoMap" class="daohang">导航</text></view>
+  <view class="text">{{detail.address}} <view bindtap="intoMap" class="daohang"> <image src="/images/nav.png"></image> 导航</view></view>
   <view class="text" bindtap="phone">电话：{{detail.tel}}</view>
   <view class="content">{{detail.intro}}</view>
   <view class="content" wx:for="{{img}}"><image src="{{url+item}}"></image></view>

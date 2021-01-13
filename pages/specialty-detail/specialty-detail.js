@@ -75,13 +75,18 @@ Page({
             detail:res.data.data,
             img:res.data.data.pictureUrl.split(',')
           })
-          var list = res.data.data.placeList;
+          var list = []
+          for(var n=0;n<3;n++){
+              list.push(res.data.data.placeList[n])
+          }
         var arr = []
         for(var i=0;i<list.length;i++){
           if(list[i].pictureUrl){
             var img = list[i].pictureUrl.split(',');
             console.log(img)
             arr.push(img)
+          }else{
+            arr.push(['/old-town/com/place/defaultStore.jpg'])
           }
         
         }
@@ -136,8 +141,9 @@ Page({
     });
   },
   goUrl:function(){
+    var list = this.data.detail.placeList
     wx.navigateTo({
-      url:'/pages/dp/dp'
+      url:'/pages/dp/dp?data='+JSON.stringify(list)
     })
   },
   /**
