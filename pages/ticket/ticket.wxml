@@ -1,13 +1,4 @@
   <view class="map">
-    <map
-      id="myMap"
-      style="width: 100%; height: 368rpx;"
-      latitude="{{latitude}}"
-      longitude="{{longitude}}"
-      enable-zoom='{{zoom}}'
-      show-compass='{{compass}}'
-      enable-scroll = '{{scroll}}'
-    ></map>
     <view class="sort">
       <view bindtap="sort" data-type='度假酒店'  class="{{active =='度假酒店' ? 'active':''}}">度假酒店</view>
       <view bindtap="sort" data-type='精品民宿' class="{{active =='精品民宿' ? 'active':''}}" >精品民宿</view>

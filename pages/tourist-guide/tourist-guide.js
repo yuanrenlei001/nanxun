@@ -131,7 +131,7 @@ Page({
         console.log(list)
         that.setData({
           showLists:that.data.showLists.concat(list),
-          img:that.data.img.concat(img),
+          img:that.data.img.concat(arr),
         })
         if(list.length>=pageSize){
           that.setData({

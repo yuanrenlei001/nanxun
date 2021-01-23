@@ -44,6 +44,7 @@ Page({
     ],
   },
   onLoad:function(){
+    
     if(options.url){
  
       let url = decodeURIComponent(options.url);
@@ -53,11 +54,24 @@ Page({
       })
  
     }
+    
+  },
+  getWifiEnv: function () {
+    var that = this
+    wx.getNetworkType({
+      success: function (res) {
+        if (res.networkType == 'wifi') {
+          that.videoContext.play()
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getWifiEnv();
+    this.videoContext = wx.createVideoContext('myVideo')
     wx.setNavigationBarTitle({title: app.data.common_page_title.index});
     this.setData({
       pageNum:1

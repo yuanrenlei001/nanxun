@@ -1,26 +1,15 @@
 <view class="map">
-    <map
-      id="myMap"
-      style="width: 100%; height: 368rpx;"
-      latitude="{{latitude}}"
-      longitude="{{longitude}}"
-      enable-zoom='{{zoom}}'
-      show-compass='{{compass}}'
-      enable-scroll = '{{scroll}}'
-    ></map>
     <view class="top">
   <view class="search">
     <input type="text" placeholder="搜索景点" bindinput="inputTyping" />
     <image src="/images/index/search.png"></image>
     
 </view>
-<view class="number">景点 <text style="color:blue;">{{total}} 个</text></view>
 </view>
-    <!-- <view class="goMap" bindtap="goMap">进入地图</view> -->
   </view>
 
 
-  <!-- 景点列表 -->
+  <!-- 景 点列表 -->
   <view class="main">
   <view class="listUl">
     <navigator class="listLi" url="/pages/tourist-detail/tourist-detail?id={{item.id}}"  wx:for="{{showLists}}" wx:key='index' wx:for-index='bindex'>

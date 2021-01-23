@@ -212,6 +212,12 @@ Page({
       url: "/pages/webs/webs?url="+url,
     })
   },
+  goUrls:function(e){
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: "/pages/tourist-detail/tourist-detail?id="+id
+    })
+  },
   saveFun: function (){
     var that = this;
   var url = ''

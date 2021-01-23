@@ -45,7 +45,7 @@
       <view class="route" style="width:93%;padding: 20rpx 0;">
         <view style="display: flex;position: relative;height:134rpx;">
           <view class="hr"></view>
-          <view class="ul" wx:for="{{showList.pointList}}" style="position: relative;">
+          <view class="ul" wx:for="{{showList.pointList}}" style="position: relative;" data-id="{{item.id}}" bindtap="goUrls">
             <view><image src="{{url+item.pictureUrl}}"  class="imges"></image ></view>
             <view class="namess">{{item.name}}</view>
           </view>

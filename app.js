@@ -30,6 +30,7 @@ App({
       'specialty_detail':'特产详情',
       'ar':'AR看史',
       'vr':'VR看景',
+      'search':'搜索',
       'voice':'语音导览',
       'tourist':'游客中心',
       'address':'写生基地',

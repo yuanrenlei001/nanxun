@@ -18,7 +18,8 @@ Page({
     src: 'http://music.163.com/song/media/outer/url?id=1293886117.mp3',
     id:null,
     detail:null,
-    img:null
+    img:null,
+    distance:''
   },
   audioPlay: function () {
     this.audioCtx.play()
@@ -40,7 +41,17 @@ Page({
       id:this.options.id
     })
   },
-
+  distance: function (la1, lo1, la2, lo2) {
+    var La1 = la1 * Math.PI / 180.0;
+    var La2 = la2 * Math.PI / 180.0;
+    var La3 = La1 - La2;
+    var Lb3 = lo1 * Math.PI / 180.0 - lo2 * Math.PI / 180.0;
+    var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(La3 / 2), 2) + Math.cos(La1) * Math.cos(La2) * Math.pow(Math.sin(Lb3 / 2), 2)));
+    s = s * 6378.137;
+    s = Math.round(s * 10000) / 10000;
+    s = s.toFixed(2);
+    return s;
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -56,6 +67,7 @@ Page({
     this.init()
   },
   init(){
+    var that =this;
     wx.request({
       url: app.data.request_url+'/api/com/comActivity/getById?id='+this.data.id,
       method: "get",
@@ -64,6 +76,19 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       success: res => {
         wx.stopPullDownRefresh();
+        var _latitude = res.data.data.latitude;
+          var _longitude = res.data.data.longitude;
+          wx.getLocation({
+            type: 'gcj02',
+            success: function (res) {
+              console.log("当前坐标信息：", res)
+             var distance = that.distance(res.latitude, res.longitude,_latitude,_longitude);
+             that.setData({
+              distance:distance
+             })
+             console.log(distance)
+            }
+          })
         this.setData({
           detail:res.data.data,
           img:res.data.data.pictureUrl.split(',')

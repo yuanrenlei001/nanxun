@@ -95,10 +95,14 @@ Page({
         for(var i=0;i<list.length;i++){
           if(list[i].pictureUrl){
             var img = list[i].pictureUrl.split(',');
+            console.log(img)
             arr.push(img)
+          }else{
+            arr.push(['/old-town/com/place/defaultStore.jpg'])
           }
          
         }
+        
         console.log(arr)
         that.setData({
           showLists:list,
@@ -137,7 +141,10 @@ Page({
         for(var i=0;i<list.length;i++){
           if(list[i].pictureUrl){
             var img = list[i].pictureUrl.split(',');
+            console.log(img)
             arr.push(img)
+          }else{
+            arr.push(['/old-town/com/place/defaultStore.jpg'])
           }
         }
         console.log(arr)

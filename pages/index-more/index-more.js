@@ -29,7 +29,12 @@ Page({
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.index_more});
   },
-
+  goUrls:function(){
+    wx.navigateToMiniProgram({
+      appId: 'wx10ffa35365b728b8',
+      envVersion:'release'
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

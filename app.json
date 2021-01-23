@@ -48,7 +48,7 @@
     "backgroundTextStyle": "light",
     "onReachBottomDistance": 5,
     "navigationBarBackgroundColor": "#FFC645",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "乐游南浔",
     "navigationBarTextStyle": "black"
   },
   "permission": {

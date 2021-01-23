@@ -113,7 +113,7 @@
     </view> 
     <view class="list">
       <view class="listUl" >
-        <navigator class="listLi" url="/pages/show-detail/show-detail?id={{item.id}}" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'><image data-index="{{bindex}}"   src="{{url+ycimg[bindex][0]}}"></image> <text>{{item.name}}</text></navigator>
+        <navigator class="listLi" url="/pages/show-detail/show-detail?id={{item.id}}" wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'><image data-index="{{bindex}}"  mode="aspectFill"  src="{{url+ycimg[bindex][0]}}"></image> <text>{{item.name}}</text></navigator>
       </view>
     </view>
   </view>

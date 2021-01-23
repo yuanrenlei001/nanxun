@@ -3,19 +3,16 @@
     <view bindtap="customizedFun" class="topBtn">行程订制</view>
   </view>
   <view class="contentBg">
-    <navigator class="blockBg" wx:for="{{showLists}}" wx:key="index" url="/pages/webs/webs?url={{item.detailsUrl}}">
+    <view class="blockBg" wx:for="{{showLists}}" wx:key="index">
+      <navigator  url="/pages/webs/webs?url={{item.detailsUrl}}">
       <image class="topImg" src="{{url+item.pictureUrl}}"></image>
       <view class="textB">
         <view class="textLine1">{{item.name}}</view>
-        <!-- <view class="textLine2 mt6">{{item.intro}}</view> -->
-        <!-- <view class="textLine3 mt6">{{item.text2}}</view> -->
-      </view>
-      <view class="buttonImg">
-        <!-- <image bindtap="starShow"  wx:if="{{!item.starStatus}}" data-index="{{index}}" class="star" src="/images/map/star.png"></image> -->
-        <!-- <image bindtap="starHidder" wx:if="{{item.starStatus}}" data-index="{{index}}" class="star" src="/images/map/star1.png"></image> -->
-        <!-- <image class="star ml36" src="/images/map/share.png"></image> -->
-        <button open-type="share" bindtap="share" style="    width: 22%;padding: 0;position: relative;float: right;right: 0;background-color:transparent;"><image class="star" src="/images/share.png"></image></button>
       </view>
     </navigator>
+    <view class="buttonImg">
+        <button open-type="share" bindtap="share" style="    width: 22%;padding: 0;position: relative;float: right;right: 0;background-color:transparent;z-index:999999;"><image class="star" src="/images/share.png"></image></button>
+      </view>
+    </view>
   </view>
 </view>
