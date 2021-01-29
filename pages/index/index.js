@@ -25,6 +25,7 @@ Page({
     texts:'',
     titles:'',
     showLists:[],
+    wea:'',
     pageNum:1,
     pageSize:8,
     hasMoreData: false,
@@ -356,6 +357,12 @@ onReachBottom: function () {
   goUrlNews:function(){
     wx.navigateTo({
       url: '/pages/web/web?url='+this.data.newList[0].webUrl,
+    })
+  },
+  gowae:function(e){
+    var data = JSON.stringify(e.currentTarget.dataset.type);
+    wx.navigateTo({
+      url:'/pages/weather/index?data='+data
     })
   },
   goUrls:function(){

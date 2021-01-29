@@ -1,4 +1,4 @@
-// pages/webMap/map.js
+// pages/weather/index.js
 const app = getApp();
 Page({
 
@@ -6,14 +6,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    weather:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({title: app.data.common_page_title.weather});
+    this.setData({
+      weather:JSON.parse(options.data)
+    })
+    console.log(this.data.weather)
   },
 
   /**

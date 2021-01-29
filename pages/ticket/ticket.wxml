@@ -13,7 +13,7 @@
       <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">
-          <text class="titleNname">{{item.name}}</text>
+          <text class="titleNname">{{item.name}} <text style="font-size:16rpx;"> {{distance[bindex]}}km</text></text>
           
         </view>
         <view class="type" wx:if="{{item.if}}"> {{item.label}}</view>

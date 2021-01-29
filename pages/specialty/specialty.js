@@ -27,13 +27,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.specialty});
     this.setData({
       specialty:null,
@@ -44,6 +37,10 @@ Page({
     })
     this.specialtys();
   },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
   // 特产
   specialtys:function(){
     var pageNum = this.data.pageNum;

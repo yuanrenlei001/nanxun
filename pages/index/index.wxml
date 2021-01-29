@@ -1,7 +1,8 @@
 <!-- 头部 -->
 <view class="top">
   <image src="/images/index/top-address.png" class="address"></image>
-  <text class="city">{{whater.city}}</text>
+  <view bindtap="gowae" data-type="{{whater}}">
+    <text class="city">{{whater.city}}</text>
   <view class="whater" wx:if="{{whater.wea_img == 'xue'}}"><image src="/images/xue.png"></image></view>
   <view class="whater" wx:if="{{whater.wea_img == 'lei'}}"><image src="/images/ly.png"></image></view>
   <view class="whater" wx:if="{{whater.wea_img == 'shachen'}}"><image src="/images/sc.png"></image></view>
@@ -12,6 +13,7 @@
   <view class="whater" wx:if="{{whater.wea_img == 'yin'}}"><image src="/images/yin.png"></image></view>
   <view class="whater" wx:if="{{whater.wea_img == 'qing'}}"><image  src="/images/qing.png"></image></view>
   <text class="wendu">{{whater.tem+'℃'}}</text>
+  </view>
   <view class="search" bindtap="search">
     <input type="text" disabled="disabled"/>
     <image src="/images/index/search.png"></image>

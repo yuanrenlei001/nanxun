@@ -1,10 +1,10 @@
-<view class="top">
+<!-- <view class="top">
   <view class="search">
     <input type="text" placeholder="搜索南浔古镇商铺" bindinput="inputTyping"/>
     <image src="/images/index/search.png"></image>
     
 </view>
-</view>
+</view> -->
 
 
   <!-- 景点列表 -->

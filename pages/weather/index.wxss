@@ -1,0 +1,12 @@
+/* pages/weather/index.wxss */
+.top {width:100%;height:662rpx;position: relative;color: #fff;}
+.bg {width:100%;height:662rpx;position: absolute;top:0;left:0;z-index: -1;}
+.icon01 {font-size: 40rpx;width: 100%;text-align: center;padding-top: 100rpx;}
+.icon02 {font-size: 40rpx;width: 100%;text-align: center;line-height: 100rpx;}
+.icon03 {width: 100%;text-align: center;line-height: 100rpx;}
+.icon03 image {width: 128rpx;height:128rpx;}
+.icon04 {font-size: 40rpx;width: 100%;text-align: center;line-height: 100rpx;}
+.icon05 {font-size: 80rpx;width: 100%;text-align: center;}
+.main {padding: 30rpx 98rpx 0 98rpx;}
+.main image {width: 56rpx;height:56rpx;font-size: 28rpx;color: #333;vertical-align: middle;margin-right: 30rpx;}
+.main view {height:75rpx;}

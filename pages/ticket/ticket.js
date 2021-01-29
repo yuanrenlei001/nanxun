@@ -35,7 +35,12 @@ Page({
     message:'正在加载数据...',
     img:null,
     specialty:null,
-    token:''
+    token:'',
+    latitude:'',
+    longitude:'',
+    distance:'',
+    mylatitude:'',
+    mylongitude:'',
   },
 
   /**
@@ -44,19 +49,22 @@ Page({
   onLoad: function (options) {
 
   },
-
+  distance: function (la1, lo1, la2, lo2) {
+    var La1 = la1 * Math.PI / 180.0;
+    var La2 = la2 * Math.PI / 180.0;
+    var La3 = La1 - La2;
+    var Lb3 = lo1 * Math.PI / 180.0 - lo2 * Math.PI / 180.0;
+    var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(La3 / 2), 2) + Math.cos(La1) * Math.cos(La2) * Math.pow(Math.sin(Lb3 / 2), 2)));
+    s = s * 6378.137;
+    s = Math.round(s * 10000) / 10000;
+    s = s.toFixed(2);
+    return s;
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function (e) {
     this.mapCtx = wx.createMapContext('myMap')
-   
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.ticket});
     var token = wx.getStorageSync('user_token')
     this.setData({
@@ -69,6 +77,10 @@ Page({
     })
     this.list(this.data.active);
   },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
   // 餐馆/酒吧
   list:function(e){
     var pageNum = this.data.pageNum;
@@ -91,24 +103,42 @@ Page({
       success: res => {
         wx.stopPullDownRefresh();
         var list = res.data.data.records;
-        var arr = []
-        for(var i=0;i<list.length;i++){
-          if(list[i].pictureUrl){
-            var img = list[i].pictureUrl.split(',');
-            arr.push(img)
+        wx.getLocation({
+          type: 'gcj02',
+          success: function (res) {
+           that.setData({
+            mylatitude:res.latitude,
+            mylongitude:res.longitude,
+           })
+           console.log(that.data)
           }
-        }
-        that.setData({
-          showLists:list,
-          img:arr
         })
-        console.log(arr)
-        if(list.length>=pageSize){
+        var arr = []
+        var arrjl = [];
+        setTimeout(function(){
+          for(var i=0;i<list.length;i++){
+            var _latitude = list[i].latitude;
+            var _longitude = list[i].longitude;
+            var distance = that.distance(that.data.mylatitude,that.data.mylongitude,_latitude,_longitude);
+            arrjl.push(distance)
+            if(list[i].pictureUrl){
+              var img = list[i].pictureUrl.split(',');
+              arr.push(img)
+            }
+          }
           that.setData({
-            pageNum:that.data.pageNum+1,
-            hasMoreData:true
+            showLists:list,
+            img:arr,
+            distance:arrjl
           })
-        }
+          if(list.length>=pageSize){
+            that.setData({
+              pageNum:that.data.pageNum+1,
+              hasMoreData:true
+            })
+          }
+        },800)
+        
         
       },
       fail: () => {
@@ -131,9 +161,15 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       success: res => {
         wx.stopPullDownRefresh();
+        
         var list = res.data.data.records;
         var arr = []
+        var arrjl = []
         for(var i=0;i<list.length;i++){
+          var _latitude = list[i].latitude;
+            var _longitude = list[i].longitude;
+            var distance = that.distance(that.data.mylatitude,that.data.mylongitude,_latitude,_longitude);
+            arrjl.push(distance)
           if(list[i].pictureUrl){
             var img = list[i].pictureUrl.split(',');
             arr.push(img)
@@ -148,6 +184,8 @@ Page({
         console.log(list)
         that.setData({
           showLists:that.data.showLists.concat(list),
+          img:that.data.img.concat(arr),
+          distance:that.data.distance.concat(arrjl),
         })
         console.log(this.data.showLists)
         if(list.length>=pageSize){
@@ -178,7 +216,8 @@ Page({
       pageNum:1,
       pageSize:8,
       hasMoreData: true,
-      img:null
+      img:null,
+      showLists:''
     })
       this.list(e.currentTarget.dataset.type)
     

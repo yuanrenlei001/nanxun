@@ -1,0 +1,25 @@
+<view class="top">
+  <image src="/images/tqbg.png" class="bg"></image>
+  <view class="icon01">{{weather.date}}</view>
+  <view class="icon02">{{weather.city}}</view>
+  <view class="icon03" wx:if="{{weather.wea_img == 'xue'}}"><image src="/images/xue2.png"></image></view>
+  <view class="icon03" wx:if="{{weather.wea_img == 'lei'}}"><image src="/images/lei2.png"></image></view>
+  <view class="icon03" wx:if="{{weather.wea_img == 'shachen'}}"><image src="/images/shachen2.png"></image></view>
+  <view class="icon03" wx:if="{{weather.wea_img == 'wu'}}"><image src="/images/wu2.png"></image></view>
+  <view class="icon03" wx:if="{{weather.wea_img == 'bingbao'}}"><image src="/images/bingbao2.png"></image></view>
+  <view class="icon03" wx:if="{{weather.wea_img == 'yun'}}"><image src="/images/yun2.png"></image></view>
+  <view class="icon03" wx:if="{{weather.wea_img == 'yu'}}"><image src="/images/yu2.png"></image></view>
+  <view class="icon03" wx:if="{{weather.wea_img == 'yin'}}"><image src="/images/ying2.png"></image></view>
+  <view class="icon03" wx:if="{{weather.wea_img == 'qing'}}"><image  src="/images/qing2.png"></image></view>
+  <view class="icon04">{{weather.wea}}</view>
+  <view class="icon05">{{weather.tem}}℃</view>
+</view>
+<view class="main">
+  <view><image src="/images/tq01.png"></image> 空气等级：{{weather.air_level}}</view>
+  <view><image src="/images/tq02.png"></image> 湿度：{{weather.humidity}}</view>
+  <view><image src="/images/tq03.png"></image> 风速：{{weather.win_meter}}</view>
+  <view><image src="/images/tq04.png"></image> 可见度：{{weather.visibility}}</view>
+  <view><image src="/images/tq05.png"></image> 气压：{{weather.pressure}}pa</view>
+  <view><image src="/images/tq06.png"></image> PM2.5: {{weather.air_pm25}}</view>
+  <view style="font-size: 24rpx;text-align: justify;">{{weather.air_tips}}</view>
+</view>

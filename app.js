@@ -45,6 +45,7 @@ App({
       'web_map':'地图',
       'dp':'店铺',
       'dp_detail':'店铺详情',
+      'weather':'天气',
       'rg':'智能客服',
     },
     // tabbar页面
@@ -61,6 +62,17 @@ App({
   },
   onLaunch: function () {
 
+  },
+  distance: function (la1, lo1, la2, lo2) {
+    var La1 = la1 * Math.PI / 180.0;
+    var La2 = la2 * Math.PI / 180.0;
+    var La3 = La1 - La2;
+    var Lb3 = lo1 * Math.PI / 180.0 - lo2 * Math.PI / 180.0;
+    var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(La3 / 2), 2) + Math.cos(La1) * Math.cos(La2) * Math.pow(Math.sin(Lb3 / 2), 2)));
+    s = s * 6378.137;
+    s = Math.round(s * 10000) / 10000;
+    s = s.toFixed(2);
+    return s;
   },
   // 获取用户信息,信息不存在则唤醒授权
   get_user_info(object, method) { 

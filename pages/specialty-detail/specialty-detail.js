@@ -76,10 +76,13 @@ Page({
             img:res.data.data.pictureUrl.split(',')
           })
           var list = []
-          for(var n=0;n<3;n++){
+          var len = res.data.data.placeList.length;
+          if(len>=3){len =3}
+          for(var n=0;n<len;n++){
               list.push(res.data.data.placeList[n])
           }
         var arr = []
+        console.log(list)
         for(var i=0;i<list.length;i++){
           if(list[i].pictureUrl){
             var img = list[i].pictureUrl.split(',');
