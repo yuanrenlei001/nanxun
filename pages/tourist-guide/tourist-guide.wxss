@@ -21,6 +21,7 @@
   color: #333;
   border: 1px solid #E0E0E0;
 }
+.juli {position: absolute;top:10rpx;right:42rpx;font-size: 16rpx;color: #5476DF;}
 .number {position: absolute;top:0;right:30rpx;font-size: 24rpx;}
 .search image {width:30rpx;height:30rpx;position: absolute;top:50%;left:26rpx;margin-top: -15rpx;}
 .search input {line-height: 54rpx;height:54rpx;}

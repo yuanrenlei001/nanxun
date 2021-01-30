@@ -45,8 +45,9 @@ padding-left: 60rpx;
   overflow: hidden;
   border-radius: 12rpx;}
 
-.sortTop {height:94rpx;line-height: 94rpx;}
+.sortTop {height:94rpx;line-height: 94rpx;position: relative;}
 .sortTop01 {font-size: 32rpx;color: #333;font-weight: 500;}
+.iconLeft {width: 10rpx;height:30rpx;position: absolute;top:50%;left:-20rpx;display: block;background:#56A9EB;margin-top: -15rpx;}
 .sortTop02 {float:right;
 
   font-size: 20rpx;

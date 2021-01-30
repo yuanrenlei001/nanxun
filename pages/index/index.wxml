@@ -46,7 +46,7 @@
   <!-- 分类列表 -->
   <view class="indexSort">
     <view class="sortTop">
-      <text class="sortTop01" style="margin-left: 30rpx;">乐游南浔</text>
+      <text class="iconLeft"  style="left:12rpx;"></text><text class="sortTop01" style="margin-left: 30rpx;">乐游南浔</text>
       <!-- <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view> -->
     </view>
     <view class="sort">
@@ -76,7 +76,7 @@
   <!-- 最新资讯 -->
   <view class="indexNews">
     <view class="sortTop">
-      <text class="sortTop01">最新资讯</text>
+      <text class="iconLeft"></text><text class="sortTop01">最新资讯</text>
       <view class="sortTop02" bindtap="noticeList">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
     <view class="newImg" bindtap="goUrlNews">
@@ -87,7 +87,7 @@
   <!-- 热门景点 -->
   <view class="indexJd">
     <view class="sortTop">
-      <text class="sortTop01">热门景点</text>
+      <text class="iconLeft"></text><text class="sortTop01">热门景点</text>
       <view class="sortTop02" bindtap="goScenic">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
     <!-- <swiper class="swiperContent" previous-margin='50px' next-margin='50px' bindchange="swiperChange"  autoplay circular>
@@ -110,7 +110,7 @@
   <!-- 演出列表 -->
   <view class="indexList">
     <view class="sortTop">
-      <text class="sortTop01">必看演出</text>
+      <text class="iconLeft"></text><text class="sortTop01">必看演出</text>
       <view class="sortTop02" bindtap="showList">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
     <view class="list">
