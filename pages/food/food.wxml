@@ -23,8 +23,9 @@
       <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">
-          <text class="titleNname">{{item.name}} <text style="font-size:16rpx;"> {{distance[bindex]}}km</text></text>
-          
+          <view class="titleNname">{{item.name}}</view>
+          <!-- right: 42rpx; -->
+          <view style="font-size:16rpx;position: absolute;line-height: 19px;color: #5476DF;">  距您 {{distance[bindex]}}km</view>
         </view>
         <view class="type" wx:if="{{item.if}}"> {{item.label}}</view>
       <view class="bottom">
@@ -48,4 +49,12 @@
     </navigator>
     
   </view>
+</view>
+<view class="baseline" wx:if="{{baseLoading}}">
+  <view>正在努力加载</view>
+</view>
+<view class="baseline" wx:if="{{baselineShow}}">
+  <view class="leftLine"></view>
+  <view>我是有底线的</view>
+  <view class="rightLine"></view>
 </view>

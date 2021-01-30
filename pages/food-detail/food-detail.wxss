@@ -50,11 +50,6 @@ color: #333333;
 line-height: 34px;
 text-align: justify;
 }
-.bottom {margin-top: 50rpx;}
-.bottom image {
+.bottomImg {
   width:32rpx;height:32rpx;margin-right: 16rpx;vertical-align: sub;
 }
-.bottom view {float:left;width: 33.33%;}
-.bottom01 {text-align: left;}
-.bottom02 {text-align: center;}
-.bottom03 {text-align: right;}

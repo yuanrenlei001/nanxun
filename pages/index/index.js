@@ -18,7 +18,7 @@ Page({
     currentIndex: 0,
     currentIndex1: 0,
     currentIndex2: 0,
-    videoUrl:'https://nanxun.zjtoprs.com/minio/old-town/com/info/propagandafilm1.mp4',
+    videoUrl:'https://nanxun.zjtoprs.com/minio/old-town/xcx/propaganda/南浔3分钟形象片.mp4',
     imgList:[],
     swiperH: '',//swiper高度
     　　nowIdx: 0,//当前swiper索引
@@ -29,6 +29,8 @@ Page({
     pageNum:1,
     pageSize:8,
     hasMoreData: false,
+    baselineShow: false,
+    baseLoading: false,
     url:app.data.request_img,
     message:'正在加载数据...',
     img:null,
@@ -220,6 +222,9 @@ addList(){
           hasMoreData:false
         })
       }
+      this.setData({
+        baseLoading: false
+      })
       
     },
     fail: () => {
@@ -272,13 +277,22 @@ goscenic(e){
   })
 },
 onReachBottom: function () {
+
   if (this.data.hasMoreData) {
+    this.setData({
+      baseLoading: true
+    })
     this.addList();
   } else {
-      wx.showToast({
-          title: '没有更多数据',
-      })
+    this.setData({
+      baselineShow: true
+    })
   }
+  // else {
+  //     wx.showToast({
+  //         title: '没有更多数据',
+  //     })
+  // }
 },
     //swiper滑动事件
     swiperChange: function (e) {

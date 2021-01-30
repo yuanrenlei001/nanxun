@@ -8,6 +8,8 @@ Page({
   data: {
     latitude: 30.84979,
     longitude: 120.41847,
+    baselineShow: false,
+    baseLoading: false,
     zoom:false,
     compass:false,
     scroll:false,
@@ -180,7 +182,9 @@ Page({
             hasMoreData:false
           })
         }
-        
+        this.setData({
+          baseLoading: false
+        })
       },
       fail: () => {
         wx.stopPullDownRefresh();
@@ -242,10 +246,13 @@ Page({
    */
   onReachBottom: function () {
     if (this.data.hasMoreData) {
+      this.setData({
+        baseLoading: true
+      })
       this.addList();
     } else {
-        wx.showToast({
-            title: '没有更多数据',
+        this.setData({
+          baselineShow: true
         })
     }
   },

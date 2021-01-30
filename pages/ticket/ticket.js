@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    baselineShow: false,
+    baseLoading: false,
     latitude: 30.84979,
     longitude: 120.41847,
     zoom:false,
@@ -198,7 +200,9 @@ Page({
             hasMoreData:false
           })
         }
-        
+        this.setData({
+          baseLoading: false
+        })
       },
       fail: () => {
         wx.stopPullDownRefresh();
@@ -211,6 +215,8 @@ Page({
 
   sort:function(e){
     this.setData({
+      baselineShow: false,
+      baseLoading: false,
       active:e.currentTarget.dataset.type,
       specialty:null,
       pageNum:1,
@@ -290,12 +296,14 @@ Page({
    */
   onReachBottom: function () {
     if (this.data.hasMoreData) {
-      
-        this.addList();
+      this.setData({
+        baseLoading: true
+      })
+      this.addList();
     } else {
-        wx.showToast({
-            title: '没有更多数据',
-        })
+      this.setData({
+        baselineShow: true
+      })
     }
   },
 

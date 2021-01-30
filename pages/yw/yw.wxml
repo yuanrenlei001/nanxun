@@ -3,7 +3,7 @@
     <view bindtap="customizedFun" class="topBtn">行程订制</view>
   </view>
   <view class="contentBg">
-    <navigator class="blockBg" wx:for="{{showLists}}" wx:key="index" url="/pages/webs/webs?url={{item.detailsUrl}}">
+    <navigator class="blockBg" wx:for="{{showLists}}" wx:key="index" url="/pages/webs/webs?url={{item.detailsUrl}}" wx:if="{{item.ifShow !== 0}}">
       <image class="topImg" src="{{url+item.pictureUrl}}"></image>
       <view class="textB">
         <view class="textLine1">{{item.name}}</view>
@@ -18,4 +18,12 @@
       </view>
     </navigator>
   </view>
+  <view class="baseline" wx:if="{{baseLoading}}">
+  <view>正在努力加载</view>
+</view>
+<view class="baseline" wx:if="{{baselineShow}}">
+  <view class="leftLine"></view>
+  <view>我是有底线的</view>
+  <view class="rightLine"></view>
+</view>
 </view>

@@ -3,7 +3,7 @@
   <view class="sortUl">
         <view class="sortLi" bindtap="goUrls"><image src="/images/index/icon01.png"></image> <text>门票商城</text></view>
         <navigator class="sortLi" url='/pages/tourist-guide/tourist-guide'><image src="/images/index/icon02.png"></image> <text>美景导游</text></navigator>
-        <navigator class="sortLi" url='/pages/food/food'><image src="/images/index/icon03.png"></image> <text>美食餐饮</text></navigator>
+        <navigator class="sortLi" url='/pages/food/food'><image src="/images/index/icon03.png"></image> <text>景区商铺</text></navigator>
         <navigator class="sortLi" url='/pages/specialty/specialty'><image src="/images/index/icon04.png"></image> <text>南浔特产</text></navigator>
         <navigator class="sortLi" url="/pages/ticket/ticket"><image src="/images/index/icon05.png"></image> <text>酒店民宿</text></navigator>
         <navigator class="sortLi" url='/pages/ar/ar'><image src="/images/index/icon06.png"></image> <text>AR看史</text></navigator>

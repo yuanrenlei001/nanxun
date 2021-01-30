@@ -1,0 +1,21 @@
+.baseline{
+  text-align: center;
+  line-height: 80px;
+  font-size: 24rpx;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftLine {
+  width: 100px;
+  height: 1px;
+  background: #c3c3c3;
+  margin-right: 5px;
+}
+.rightLine{
+  width: 100px;
+  height: 1px;
+  background: #c3c3c3;
+  margin-left: 5px;
+}

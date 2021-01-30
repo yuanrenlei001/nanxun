@@ -19,7 +19,7 @@ page {background-color: #ededed;}
   white-space:nowrap; 
   text-overflow:ellipsis; 
   -o-text-overflow:ellipsis; 
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .title04 {font-size: 28rpx;color: #666;width: 70%;
   white-space:nowrap; 

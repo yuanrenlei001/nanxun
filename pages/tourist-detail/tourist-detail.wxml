@@ -13,11 +13,13 @@
     <view class="title02" bindtap="goUrl"><image src="/images/tourist/vr.png"></image> VR看景</view>
     <view class="title03" bindtap="intoMap"><image src="/images/tourist/address.png"></image> 导航</view>
   </view>
-  <view class="text" >{{detail.address == null?'暂无地址':detail.address}} {{distance}}km</view>
+  <view class="text" >{{detail.address == null?'暂无地址':detail.address}} 距我 {{distance}}km</view>
   <audio poster="{{url+img[0]}}" bindtap="play" name="{{detail.name}}" author="" src="{{url+detail.audioUrl}}" id="myAudio" style="width:100%" controls loop></audio>
   <rich-text class="content" nodes="{{detail.intro}}"></rich-text>
   <view class="bottom">
-    <button class="bottom02" open-type="share" bindtap="share" style="    width: 22%;padding: 0;position: relative;float: right;right: 0;"><image src="/images/share.png"></image> 分享</button>
+    <view style="background: #F7B500;width: 180rpx;height: 100%;">
+      <button class="bottom02" open-type="share" bindtap="share" style="line-height: 92rpx;width: 100%;font-size: 20rpx;padding: 0;position: relative;float: right;right: 0;"><image src="/images/share.png"></image> 分享</button>
+    </view>
     <view class="bottom01" wx:if="{{detail.ifFavorite == 0}}" bindtap="favorite"><image src="/images/un-collection.png"></image> 收藏</view>
     <view class="bottom01" wx:if="{{detail.ifFavorite !== 0}}" bindtap="unfavorite"><image src="/images/collection.png"></image>取消收藏</view>
   </view>

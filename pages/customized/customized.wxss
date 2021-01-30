@@ -27,7 +27,7 @@
 }
 .namess {
   position: absolute;
-    bottom: 0;
+    bottom: -10rpx;
     width: 100%;
 }
 .text2{

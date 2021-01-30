@@ -120,3 +120,11 @@
     </view>
   </view>
 </view>
+<view class="baseline" wx:if="{{baseLoading}}">
+  <view>正在努力加载</view>
+</view>
+<view class="baseline" wx:if="{{baselineShow}}">
+  <view class="leftLine"></view>
+  <view>我是有底线的</view>
+  <view class="rightLine"></view>
+</view>

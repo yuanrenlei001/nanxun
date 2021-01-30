@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    baselineShow: false,
+    baseLoading: false,
     list:[
       {
         name: '推荐路线一',
@@ -132,7 +134,9 @@ addList(){
           hasMoreData:false
         })
       }
-      
+      this.setData({
+        baseLoading: false
+      })
     },
     fail: () => {
       wx.stopPullDownRefresh();
@@ -166,11 +170,14 @@ addList(){
    */
   onReachBottom: function () {
     if (this.data.hasMoreData) {
+      this.setData({
+        baseLoading: true
+      })
       this.addList();
     } else {
-        wx.showToast({
-            title: '没有更多数据',
-        })
+      this.setData({
+        baselineShow: true
+      })
     }
   },
 

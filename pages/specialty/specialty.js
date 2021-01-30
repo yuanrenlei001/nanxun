@@ -7,6 +7,8 @@ Page({
    */
   data: {
     showLists:[],
+    baselineShow: false,
+    baseLoading: false,
     url:app.data.request_img,
     pageNum:1,
     pageSize:8,
@@ -127,7 +129,9 @@ addTC(){
           hasMoreData:false
         })
       }
-      
+      this.setData({
+        baseLoading: false
+      })
     },
     fail: () => {
       wx.stopPullDownRefresh();
@@ -197,11 +201,14 @@ addTC(){
    */
   onReachBottom: function () {
     if (this.data.hasMoreData) {
-        this.addTC();
+      this.setData({
+        baseLoading: true
+      })
+      this.addTC();
     } else {
-        wx.showToast({
-            title: '没有更多数据',
-        })
+      this.setData({
+        baselineShow: true
+      })
     }
   },
 

@@ -9,7 +9,7 @@
 
 <view class="main">
   <view class="title">
-    <view class="title01">写生基地  {{distance}}km</view>
+    <view class="title01">写生基地  距我 {{distance}}km</view>
   </view>
   <view class="title" style="margin-top:15rpx;margin-bottom: 18rpx;">
     <view class="title04">{{detail.address}}</view>

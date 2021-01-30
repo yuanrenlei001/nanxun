@@ -11,6 +11,8 @@ Page({
     zoom:false,
     compass:false,
     scroll:false,
+    baselineShow: false,
+    baseLoading: false,
     markers: [{
       id: 1,
       latitude: 23.099994,
@@ -208,7 +210,9 @@ distance: function (la1, lo1, la2, lo2) {
             hasMoreData:false
           })
         }
-        
+        this.setData({
+          baseLoading: false
+        })
       },
       fail: () => {
         wx.stopPullDownRefresh();
@@ -304,7 +308,9 @@ addTC(){
           hasMoreData:false
         })
       }
-      
+      this.setData({
+        baseLoading: false
+      })
     },
     fail: () => {
       wx.stopPullDownRefresh();
@@ -315,6 +321,8 @@ addTC(){
 
   sort:function(e){
     this.setData({
+      baseLoading: false,
+      baselineShow: false,
       active:e.currentTarget.dataset.type,
       specialty:null,
       pageNum:1,
@@ -398,15 +406,17 @@ addTC(){
    */
   onReachBottom: function () {
     if (this.data.hasMoreData) {
-      
+      this.setData({
+        baseLoading: true
+      })
       if(this.data.active !=='特产'){
         this.addList();
       }else{
         this.addTC();
       }
     } else {
-        wx.showToast({
-            title: '没有更多数据',
+        this.setData({
+          baselineShow: true
         })
     }
   },
