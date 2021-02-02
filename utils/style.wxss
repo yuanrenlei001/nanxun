@@ -19,3 +19,4 @@
   background: #c3c3c3;
   margin-left: 5px;
 }
+isPhoneX {padding-bottom:68rpx;}

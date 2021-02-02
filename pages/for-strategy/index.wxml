@@ -3,7 +3,8 @@
     <view bindtap="customizedFun" class="topBtn">行程订制</view>
   </view>
   <view class="contentBg">
-    <view class="blockBg" wx:for="{{showLists}}" wx:key="index" wx:if="{{item.ifShow !== 0}}">
+    <view class="ul">
+      <view class="blockBg" wx:for="{{showLists}}" wx:key="index" wx:if="{{item.ifShow !== 0}}">
       <navigator  url="/pages/webs/webs?url={{item.detailsUrl}}">
       <image class="topImg" src="{{url+item.pictureUrl}}"></image>
       <view class="textB">
@@ -12,8 +13,17 @@
     </navigator>
     <view class="buttonImg">
         <button open-type="share" bindtap="share" style="width: 20%;padding: 0;position: relative;float: right;right: 0;background-color:transparent;z-index:999999;"><image class="star" src="/images/share.png"></image></button>
-        <button open-type="share" bindtap="share" style="width: 10%;padding: 0;position: relative;float: right;right: 0;background-color:transparent;z-index:999999;"><image class="star" src="/images/un-collection.png"></image></button>
+        <view  bindtap="favorite" style="width: 20%;padding: 0;position: relative;float: right;right: 10rpx;background-color:transparent;z-index:999999;"><image class="star" src="/images/un-collection.png"></image></view>
       </view>
     </view>
+    </view>
   </view>
+</view>
+<view class="baseline" wx:if="{{baseLoading}}">
+  <view>正在努力加载</view>
+</view>
+<view class="baseline" wx:if="{{baselineShow}}">
+  <view class="leftLine"></view>
+  <view>我是有底线的</view>
+  <view class="rightLine"></view>
 </view>

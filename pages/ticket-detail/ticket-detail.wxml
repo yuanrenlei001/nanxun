@@ -19,8 +19,8 @@
   <view class="text">{{detail.address}} 距我 {{distance}}km<view bindtap="intoMap" class="daohang"> <image src="/images/nav.png"></image> 导航</view></view>
   <view class="text" bindtap="phone">电话：{{detail.tel}}</view>
   <view class="content">{{detail.intro}}</view>
-  <view class="content" wx:for="{{img}}"><image src="{{url+item}}"></image></view>
-  <view class="footerBg" wx:if="{{detail.buyUrl}}">
+  <view class="content" wx:for="{{img}}"><image style="width:100%;" src="{{url+item}}"></image></view>
+  <view class="footerBg" wx:if="{{detail.buyUrl}}" style='padding-bottom:{{ isIphoneX ? 34 : 0 }}px;'>
     <view class="btns" data-url="{{detail.buyUrl}}" bindtap="yd">立即预定</view>
   </view>
 </view>

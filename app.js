@@ -3,6 +3,7 @@ App({
   data:{
     // 用户登录缓存key
     cache_user_login_key: "cache_user_login_key",
+    cache_system_info_key:'cache_system_info_key',
     
     // 用户信息缓存key
     cache_user_info_key: "cache_user_info_key",
@@ -11,6 +12,7 @@ App({
     cache_user_merchant_key: "cache_user_merchant_key",
     // 用户token
     user_token:'user_token',
+    isPhoneX:'123',
     // 页面标题
     common_page_title:{
       'index':'浔开心',
@@ -61,8 +63,18 @@ App({
     request_img: "https://nanxun.zjtoprs.com/minio",
   },
   onLaunch: function () {
-
+    // wx.getSystemInfo({
+    //   success (res) {
+    //     let { model:modelmes} = res;
+    //     let _this = this;
+    //     let iphoneArr = new Set(['iPhone X', 'iPhone 11', 'iPhone 11 Pro Max']); //机型
+    //     console.log(_this.data)
+    //     // if(iphoneArr.has(modelmes)) _this.globalData.isIphoneX = true; 
+    //   }
+    // })
   },
+ 
+  
   distance: function (la1, lo1, la2, lo2) {
     var La1 = la1 * Math.PI / 180.0;
     var La2 = la2 * Math.PI / 180.0;
@@ -310,6 +322,15 @@ App({
     } else {
       self.showToast('提示信息为空 alert');
     }
+  },
+  set_system_info() {
+    var system_info = wx.getSystemInfoSync();
+    console.log(system_info)
+    wx.setStorage({
+      key: this.data.cache_system_info_key,
+      data: system_info
+    });
+    return system_info;
   },
   globalData: {
     userInfo: null

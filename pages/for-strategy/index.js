@@ -39,7 +39,9 @@ Page({
     hasMoreData: false,
     message:'正在加载数据...',
     img:null,
-    total:0
+    total:0,
+    baselineShow: false,
+    baseLoading: false,
   },
 
   /**
@@ -89,6 +91,10 @@ Page({
             pageNum:this.data.pageNum+1,
             hasMoreData:true
           })
+        }else{
+          this.setData({
+            baselineShow: true
+          })
         }
         
       },
@@ -132,6 +138,9 @@ addList(){
           hasMoreData:false
         })
       }
+      this.setData({
+        baseLoading: false
+      })
       
     },
     fail: () => {
@@ -168,9 +177,9 @@ addList(){
     if (this.data.hasMoreData) {
       this.addList();
     } else {
-        wx.showToast({
-            title: '没有更多数据',
-        })
+      this.setData({
+        baselineShow: true
+      })
     }
   },
 
@@ -199,15 +208,25 @@ addList(){
   customizedFun: function(){
     var user = app.get_user_info(this, "init"),
     self=this;
-    if(user){
+      wx.checkSession({
+       success:function(res){
+        console.log(res,'登录未过期')
+           if(user){
       wx.navigateTo({
         url: "../customized/customized"
       })
     }
+       },
+       fail:function(res){
+        console.log(res,'登录过期')
+        app.user_login_copy(this, "favorite");
+       }
+      })
+ 
     
   },
   /**
-   * 初始化获取列表
+   * 初始化获 取列表
    */
   getList: function () {
     wx.request({

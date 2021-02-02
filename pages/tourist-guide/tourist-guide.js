@@ -75,7 +75,7 @@ Page({
     return s;
   },
   /**
-   * 生命周期函数--监听页面显示
+   * 生命周 期函数--监听页面显示
    */
   list(){
     var pageNum = this.data.pageNum;

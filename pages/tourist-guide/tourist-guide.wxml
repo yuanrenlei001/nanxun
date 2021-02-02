@@ -9,7 +9,7 @@
   </view>
 
 
-  <!-- 景 点列表 -->
+  <!-- 景 点 列表 -->
   <view class="main">
   <view class="listUl">
     <navigator class="listLi" url="/pages/tourist-detail/tourist-detail?id={{item.id}}"  wx:for="{{showLists}}" wx:key='index' wx:for-index='bindex'>

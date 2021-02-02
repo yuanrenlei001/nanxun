@@ -25,7 +25,9 @@ Page({
     longitude:'',
     markers:[],
     play:true,
-    distance:''
+    distance:'',
+    isIphoneX:false,
+    isIphone:null,
   },
   distance: function (la1, lo1, la2, lo2) {
     var La1 = la1 * Math.PI / 180.0;
@@ -177,6 +179,16 @@ unfavorite:function(){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var value = wx.getStorageSync('cache_system_info_key');
+    if(value.model == 'iPhone X' || value.model == 'iPhone XS Max'|| value.model == 'iPhone XR'|| value.model == 'iPhone 11'
+    || value.model == 'iPhone 11 Pro'|| value.model == 'iPhone 11 Pro Max'|| value.model == 'iPhone 12'|| value.model == 'iPhone 12 Pro'
+    || value.model == 'iPhone 12 Pro Max' || value.model == 'iPhone 11<iPhone12,1>'
+    ){
+      this.setData({
+        isIphoneX:true
+      })
+    }
+    
     wx.setNavigationBarTitle({title: app.data.common_page_title.tourist_detail});
   },
   init(){

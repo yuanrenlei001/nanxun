@@ -2,6 +2,6 @@
   <view class="title"> <image src="/images/phonesss.png"></image> 常用电话</view>
 <view class="sort" bindtap="phone" data-phone="0572—3016999">咨询热线： 0572—3016999</view>
 <view class="sort" bindtap="phone" data-phone="0572—3018585">投诉电话： 0572—3018585</view>
-<view class="sort" bindtap="phone" data-phone="0572—30189120">医疗电话： 0572-3099120</view>
+<view class="sort" bindtap="phone" data-phone="0572—30189120">医疗电话： 0572—3099120</view>
 <view class="sort" bindtap="phone" data-phone="0572—3018111">紧急救援： 0572—3018111</view>
 </view>

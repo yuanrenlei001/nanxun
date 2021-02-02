@@ -29,6 +29,7 @@
   position: absolute;
     bottom: -10rpx;
     width: 100%;
+    font-size: 16rpx;
 }
 .text2{
   margin-top: 62rpx;

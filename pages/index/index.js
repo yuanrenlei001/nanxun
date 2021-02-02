@@ -47,7 +47,6 @@ Page({
     ],
   },
   onLoad:function(){
-    
     if(options.url){
  
       let url = decodeURIComponent(options.url);
@@ -73,6 +72,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    app.set_system_info();
     this.getWifiEnv();
     this.videoContext = wx.createVideoContext('myVideo')
     wx.setNavigationBarTitle({title: app.data.common_page_title.index});
