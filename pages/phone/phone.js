@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      list:''
   },
 
   /**
@@ -21,6 +21,7 @@ Page({
       phoneNumber: phone,
     })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -33,8 +34,28 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({title: app.data.common_page_title.phone});
+    this.init();
   },
-
+ init(){
+    var that =this;
+    wx.request({
+      url: app.data.request_url+'/api/com/comTel/getAll',
+      method: "get",
+      data: {},
+      dataType: "json",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: res => {
+        wx.stopPullDownRefresh();
+        this.setData({
+          list:res.data.data,
+        })
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

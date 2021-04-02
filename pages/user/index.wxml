@@ -5,7 +5,7 @@
   <view class="name">{{nickname}}</view>
 </view>
 <view class="main">
-  <navigator class='sort'><image src="/images/user/icon02.png" class="sortIcon"></image> 我的行程  <image class="sortRight" src="/images/index/iconRight.png"></image></navigator>
+  <navigator class='sort' url='/pages/my-stroke/my-stroke'><image src="/images/user/icon02.png" class="sortIcon"></image> 我的行程  <image class="sortRight" src="/images/index/iconRight.png"></image></navigator>
   <navigator class='sort' url="/pages/my-collection/my-collection"><image src="/images/user/icon03.png" class="sortIcon"></image> 我的收藏  <image class="sortRight" src="/images/index/iconRight.png"></image></navigator>
   <navigator class='sort' url="/pages/rg/rg"><image src="/images/user/icon04.png" class="sortIcon"></image> 咨询服务  <image class="sortRight" src="/images/index/iconRight.png"></image></navigator>
 </view>

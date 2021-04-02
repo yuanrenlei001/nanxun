@@ -2,7 +2,7 @@
 const app = getApp();
 var QQMapWX = require('../../utils/qqmap-wx-jssdk');
 var qqmapsdk;
-
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -52,6 +52,9 @@ Page({
     markers: [],
     polyline: '',
     url:app.data.request_img,
+    mapId:'',
+    fixed:false,
+    flag:1
   },
 
   /**
@@ -126,7 +129,111 @@ Page({
       }
     });
   },
+  favorite:function(){
+    var that = this;
+  var url = ''
+  var data={
+    dayNum:this.data.dayNum,
+    touristNum:this.data.touristNum,
+    label:this.data.label
+  }
+        wx.request({
+    url: app.data.request_url+'/api/xcx/xcxTravel/add',
+    method: "post",
+    data: data,
+    dataType: "json",
+    header: { 
+      'content-type': 'application/x-www-form-urlencoded',
+      'Authorization':'Bearer '+that.data.token
+     },
+    success: res => {
+      wx.stopPullDownRefresh();
+      let id = res.data.message;
+      let obj = that.data.showList;
+      obj['id'] = id;
+      console.log(obj)
+      that.setData({
+        fixed:true,
+        flag:1,
+        showList:obj
+      })
+      setTimeout(function(){
+        that.setData({
+          fixed:false
+        })
+      },2000)
+    },
+    fail: () => {
+      wx.stopPullDownRefresh();
+      app.showToast("服务器请求出错");
+    }
+  });
+  },
+  // 取消收藏
+  unfavorite:function(){
+    var that = this;
+    var token = wx.getStorageSync('user_token')
+    console.log(token)
+    var data = {
+      'contentFrom':'comRoute',
+      'contentId':that.data.showList.routeId,
+      'contentName':that.data.showList.name,
+      'type':'定制行程',
+      'id':that.data.showList.id,
+    }
 
+    console.log(data)
+
+    wx.request({
+      url: app.data.request_url+'/api/xcx/xcxTravel/delete',
+      method: "delete",
+      data: data,
+      dataType: "json",
+      header: { 
+        'content-type': 'application/x-www-form-urlencoded',
+        'Authorization':'Bearer '+token
+       },
+      success: res => {
+        wx.stopPullDownRefresh();
+        if(res.data.code == '200'){
+          wx.showToast({
+            title: '取消成功！',
+            icon: 'success',
+            duration: 1500
+          })
+          that.setData({
+            flag:0
+          })
+        }else if(res.data.code = '402'){
+          app.showToast("参数检验失败！");
+        }else if(res.data.code = '403'){
+          app.showToast("没有相关权限！");
+        }else if(res.data.code = '500'){
+          app.showToast("操作失败！");
+        }
+        else{
+          if(res.data.code =='401'){
+            app.user_login_copy(this, "favorite");
+          }
+        }
+        
+      },
+      fail: () => {
+        wx.stopPullDownRefresh();
+        app.showToast("服务器请求出错");
+      }
+    });
+  },
+  
+  share:function(){
+    let url = encodeURIComponent('/pages/customizedDetail2/customizedDetail2?id='+that.data.showList.id);
+   
+      return {
+        title: "路线攻略",
+        path:`/pages/customizedDetail2/customizedDetail2?url=${url}` 
+      }
+  
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -283,10 +390,11 @@ Page({
                   for (var i = 0; i < data.length; i++) {
                     var obj ={};
                     var name = data[i].name; //名称
-                    var lat = data[i].latitude; //经度
-                    var lon = data[i].longitude;//纬度
-                    obj['latitude'] = data[i].latitude;
-                    obj['longitude'] = data[i].longitude;
+                    var jwd = util.wgs84togcj02( data[i].longitude,data[i].latitude);
+                    var lat = jwd[1]; //经度
+                    var lon = jwd[0];//纬度
+                    obj['latitude'] = jwd[1];
+                    obj['longitude'] = jwd[0];
                     add.push(obj)
                     var info = {
                       id: 0,

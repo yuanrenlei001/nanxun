@@ -1,5 +1,6 @@
 // pages/tourist-detail/tourist-detail.js
 const app = getApp();
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -22,6 +23,8 @@ Page({
     distance:'',
     isIphoneX:false,
     isIphone:null,
+    latitude:'',
+    longitude:'',
   },
   audioPlay: function () {
     this.audioCtx.play()
@@ -108,8 +111,11 @@ Page({
              console.log(distance)
             }
           })
+          var jwd = util.wgs84togcj02(res.data.data.longitude,res.data.data.latitude);
           this.setData({
             detail:res.data.data,
+            latitude:jwd[1],
+          longitude:jwd[0],
             img:res.data.data.pictureUrl.split(',')
           })
         }else{
@@ -147,10 +153,10 @@ Page({
   },
   // 分享
 share:function(){
-  let url = encodeURIComponent('/pages/food-detail/food-detail?id='+this.data.id);
+  let url = encodeURIComponent('/pages/ticket-detail/ticket-detail?id='+this.data.id);
  
     return {
-      title: "美食餐饮",
+      title: "酒店民宿",
       path:`/pages/index/index?url=${url}` 
     }
 
@@ -158,17 +164,21 @@ share:function(){
 // 导航
 intoMap:function(){
   var that = this;
-  wx.getLocation({
-    type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-    success: function (res) {  //因为这里得到的是你当前位置的经纬度
-      wx.openLocation({        //所以这里会显示你当前的位置
-        latitude: parseFloat(that.data.detail.latitude),
-        longitude: parseFloat(that.data.detail.longitude),
-        name:that.data.detail.address,
-        scale: 18
-      });
-    }
+  app.globalData.mapDate = that.data.detail
+  wx.switchTab({
+    url: '../foryou/index',
   })
+  // wx.getLocation({
+  //   type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+  //   success: function (res) {  //因为这里得到的是你当前位置的经纬度
+  //     wx.openLocation({        //所以这里会显示你当前的位置
+  //       latitude: parseFloat(that.data.detail.latitude),
+  //       longitude: parseFloat(that.data.detail.longitude),
+  //       name:that.data.detail.address,
+  //       scale: 18
+  //     });
+  //   }
+  // })
 },
 // 收藏
 favorite:function(){
@@ -220,7 +230,7 @@ favorite:function(){
     }
   });
 },
-// 取消收藏
+// 取 消收藏
 unfavorite:function(){
   var that = this;
   var token = wx.getStorageSync('user_token')

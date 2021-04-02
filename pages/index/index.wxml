@@ -30,8 +30,6 @@
   <video 
       id="myVideo" 
       src="{{videoUrl}}" 
-      enable-danmu 
-      danmu-btn 
       controls 
       object-fit="cover"
     ></video>
@@ -41,26 +39,57 @@
 <view class="main">
   <!-- 最新公告 -->
   <view class="news" bindtap="goNotice">
-    <image src="/images/index/iconNews.png"></image> 最新公告：  <text>{{news[0].title}}</text>
+    <image src="/images/index/iconNews.png"></image> 最新公告： 
+    <view class="listNotice">
+      <view class="left-box">
+    <view class="left-text"></view>
+    <view class='content-box'>
+     <view class='content-text' animation="{{animationData}}"><text class="textss" id="text">{{news[0].title}}</text></view>
+    </view>
+    <view class="right-text"></view>
+   </view>
+ </view>
+        <!-- <swiper class="tab-right"  vertical="true" autoplay="true" circular="true" interval="4000" display-multiple-items='1'>
+    <view class="right-item">
+      <block wx:for-index="idx" wx:for='{{news}}' >
+      <swiper-item>
+        <view class='content-item'>
+        {{item.title}}
+        </view>
+      </swiper-item>
+      </block> 
+      
+    </view>
+    </swiper> -->
+    </view>
+
   </view>
+  <view class='notice'>
+ <view class="left">
+  <text class='iconfont icon-labagonggao voice'></text>
+  
+</view>
+
+
   <!-- 分类列表 -->
   <view class="indexSort">
     <view class="sortTop">
-      <text class="iconLeft"  style="left:12rpx;"></text><text class="sortTop01" style="margin-left: 30rpx;">乐游南浔</text>
-      <!-- <view class="sortTop02">查看全部 <image src="/images/index/iconRight.png"></image></view> -->
+      <text class="iconLeft"  style="left:34rpx;"></text><text class="sortTop01" style="margin-left: 50rpx;">乐游南浔</text>
+      <view class="sortTop02" bindtap="sortList" style="margin-right:24rpx;font-size:20rpx;color:#333;">更多</view>
     </view>
     <view class="sort">
       <view class="sortUl">
-        <view class="sortLi" bindtap="goUrls"><image src="/images/index/icon01.png"></image> <text>门票商城</text></view>
-        <navigator class="sortLi" url='/pages/tourist-guide/tourist-guide'><image src="/images/index/icon02.png"></image> <text>美景导游</text></navigator>
-        <navigator class="sortLi" url='/pages/food/food'><image src="/images/index/icon03.png"></image> <text>景区商铺</text></navigator>
+        <view class="sortLi" bindtap="goUrls"><image src="/images/index/icon01.png"></image> <text>门票预定</text></view>
+        <navigator class="sortLi" url='/pages/tourist-guide/tourist-guide'><image src="/images/index/icon02.png"></image> <text>景点介绍</text></navigator>
+        <navigator class="sortLi" url='/pages/food/food?active=美食餐饮'><image src="/images/index/food.png"></image> <text>美食餐饮</text></navigator>
         <navigator class="sortLi" url='/pages/specialty/specialty'><image src="/images/index/icon04.png"></image> <text>南浔特产</text></navigator>
         <navigator class="sortLi" url="/pages/ticket/ticket"><image src="/images/index/icon05.png"></image> <text>酒店民宿</text></navigator>
         <navigator class="sortLi" url='/pages/ar/ar'><image src="/images/index/icon06.png"></image> <text>AR看史</text></navigator>
         <navigator class="sortLi" url='/pages/vr/vr'><image src="/images/index/icon07.png"></image> <text>VR看景</text></navigator>
-        <navigator class="sortLi" url='/pages/yw/yw'><image src="/images/index/icon08.png"></image> <text>游玩攻略</text></navigator>
+        <navigator class="sortLi" url='/pages/for-strategy/index' open-type='switchTab'><image src="/images/index/icon08.png"></image> <text>游玩攻略</text></navigator>
         <navigator class="sortLi" url='/pages/show-list/show-list'><image src="/images/index/icon09.png"></image> <text>活动演出</text></navigator>
-        <navigator class="sortLi" url="/pages/index-more/index-more"><image src="/images/index/icon10.png"></image> <text>更多</text></navigator>
+        <navigator class="sortLi" url='/pages/food/food?active=休闲娱乐'><image src="/images/index/yule.png"></image> <text>休闲娱乐</text></navigator>
+        <!-- <navigator class="sortLi" url="/pages/index-more/index-more"><image src="/images/index/icon10.png"></image> <text>更多</text></navigator> -->
       </view>
     </view>  
   </view>
@@ -80,7 +109,7 @@
       <view class="sortTop02" bindtap="noticeList">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
     <view class="newImg" bindtap="goUrlNews">
-      <image src="{{url+newList[0].coverUrl}}"></image>
+      <image src="{{newList[0].coverUrl}}"></image>
       <text>{{newList[0].title}}</text>
     </view>
   </view>
@@ -91,14 +120,14 @@
       <view class="sortTop02" bindtap="goScenic">查看全部 <image src="/images/index/iconRight.png"></image></view>
     </view> 
     <!-- <swiper class="swiperContent" previous-margin='50px' next-margin='50px' bindchange="swiperChange"  autoplay circular>
-      <swiper-item wx:for='{{imgList}}' wx:for-index='bindex' wx:key='index'>
+      <swiper-item  wx:for='{{imgList}}' wx:for-index='bindex' wx:key='index'>
         <image bindtap="goscenic" data-index="{{bindex}}" data-id='{{item.id}}' class='le-img {{nowIdx==index?"le-active":""}}' src='{{url+imgss[bindex][0]}}'></image>
       </swiper-item>
     </swiper> -->
     <swiper style="display: flex;flex-direction: column;justify-content: center;align-items: center;overflow:unset;width:100%;height:210rpx;" bindchange="changeSwiper1" previous-margin="150rpx" next-margin="150rpx">
         <block wx:for="{{imgList}}" wx:key='index'>
           <swiper-item class=" {{currentIndex1 == index ? 'swiperItemActive1': 'swiperItem1'}}"  >
-            <image mode="aspectFill" src='{{url+imgss[index][0]}}' wx:for-index='bindex' wx:key='index' data-index="{{bindex}}" class="imageItem1 {{currentIndex1 == index ? 'active1': ''}}"> </image>
+            <image bindtap="gourl" data-imgId = "{{imgList[index]}}" mode="aspectFill" src='{{url+imgss[index][0]}}' wx:for-index='bindex' wx:key='index' data-index="{{bindex}}" class="imageItem1 {{currentIndex1 == index ? 'active1': ''}}"> </image>
           </swiper-item>
         </block>
       </swiper>

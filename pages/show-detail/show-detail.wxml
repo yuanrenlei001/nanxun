@@ -9,9 +9,9 @@
 
 <view class="main">
   <view class="title">
-    <view class="title01">{{detail.name}}</view>
+    <view class="title01">{{detail.name}} <text style="font-size:20rpx;color:#999;"> 距您 {{distance}}km</text></view>
   </view>
-  <view class="time">{{detail.startTime==null?'暂无演出时间':detail.startTime}}</view>
-  <view class="time">{{detail.address==null?'暂无演出地点':detail.address}}</view>
-  <rich-text class="content" nodes="{{detail.intro}}"></rich-text>
+  <view class="time">举办时间：{{detail.startTime==null?'暂无演出时间':detail.startTime}}</view>
+  <view class="time">举办地点：{{detail.address==null?'暂无演出地点':detail.address}} <view bindtap="intoMap" class="daohang"> <image src="/images/addressIcon.png"></image> 定位</view></view>
+  <rich-text class="content" nodes="{{detail.detailsText}}"></rich-text>
 </view>

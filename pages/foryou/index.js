@@ -64,7 +64,11 @@ Page({
       describe: '',
       run: '',
       star: ''
-    }
+    },
+    userToken:'',
+    islogin:null,
+    mapListDate:null,
+    bindUrl:null
   },
 
   /**
@@ -78,27 +82,65 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log(Math.round(Math.random() * 10000))
     wx.setNavigationBarTitle({title: app.data.common_page_title.for_you});
-    // const myMap = wx.createMapContext('map', this);
-    // myMap.getCenterLocation({
-    //   success: (res)=>{
-    //     console.log("zhongxindian", res);
-    //   }
+    this.init();
+    // this.setData ({
+    //   bindUrl:'https://leyou.chinananxun.com/drawing/?token={{userToken}}&mapList={{mapListDate}}'
     // })
-    // myMap.getScale({
-    //   success: (res)=>{
-    //     console.log(res)
-    //   }
-    // })
-    // this.getMarks();
-    // this.gooutUrl();
+  },
+  init(e){
+    var user = app.get_user_info(this, "init"),
+    self=this;
+    if(user){
+        this.setData({
+          islogin:true
+        })
+      var that =this;
+        wx.getStorage({
+ 
+      key: 'user_token',
+      
+      success: function(res) {
+        that.setData({
+          userToken:res.data
+        })
+        that.setData ({
+          bindUrl:null
+        })
+        var token = that.data.userToken;
+        // setTimeout(() => {
+
+          if(app.globalData.mapDate){
+            var mapList = JSON.stringify(app.globalData.mapDate);
+            var mapListId = JSON.stringify(app.globalData.mapDate.id);
+            var mapListType = JSON.stringify(app.globalData.mapDate.type);
+            var mapListName = JSON.stringify(app.globalData.mapDate.name);
+              console.log('https://leyou.chinananxun.com/drawing/?token='+token+'&mapListId='+mapListId+'&mapListType='+mapListType+'&mapListName='+mapListName+'&time='+Math.round(Math.random() * 10000))
+            that.setData ({
+              bindUrl:'https://leyou.chinananxun.com/drawing/?token='+token+'&mapListId='+mapListId+'&mapListType='+mapListType+'&mapListName='+mapListName+'&time='+Math.round(Math.random() * 10000)
+            })
+          }else{
+            that.setData ({
+              bindUrl:'https://leyou.chinananxun.com/drawing/?token='+token+'&time='+Math.round(Math.random() * 10000)
+            })
+          }
+          
+      
+        // }, 100);
+        
+      }
+      
+     })
+    }
+    console.log(user)
   },
   gooutUrl: function () {
     console.log('2321312wdsa')

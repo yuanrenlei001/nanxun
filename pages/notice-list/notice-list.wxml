@@ -5,11 +5,11 @@
 </view>
 </view>
 <view class="list">
-  <navigator class="list_News" url="/pages/web/web?url={{item.webUrl}}" wx:for="{{showLists}}">
-    <image src="{{url+item.coverUrl}}"></image>
+  <view class="list_News" bindtap="goUrlNews" data-type='{{item.webUrl}}' wx:for="{{showLists}}">
+    <image src="{{item.coverUrl}}"></image>
     <view class="list_text">
       <view class="list_text01">{{item.title}}</view>
-      <view class="list_text02">{{item.digest}}</view>
+      <view class="list_text02" wx:if="{{item.digest && item.digest!==''}}">{{item.digest}}</view>
     </view>
-  </navigator>
+  </view>
 </view>

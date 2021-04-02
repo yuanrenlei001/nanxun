@@ -1,4 +1,5 @@
 // pages/tourist-guide/tourist-guide.js
+
 const app = getApp();
 Page({
 
@@ -41,13 +42,17 @@ Page({
     distance:'',
     mylatitude:'',
     mylongitude:'',
+    isIphoneX:false,
+    isIphone:null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 120.42409837
+    // 30.87205649
+    
   },
 
   /**
@@ -62,7 +67,17 @@ Page({
     })
     this.list();
   },
-
+  onShow:function(){
+    var value = wx.getStorageSync('cache_system_info_key');
+    if(value.model == 'iPhone X' || value.model == 'iPhone XS Max'|| value.model == 'iPhone XR'|| value.model == 'iPhone 11'
+    || value.model == 'iPhone 11 Pro'|| value.model == 'iPhone 11 Pro Max'|| value.model == 'iPhone 12'|| value.model == 'iPhone 12 Pro'
+    || value.model == 'iPhone 12 Pro Max' || value.model == 'iPhone 11<iPhone12,1>'
+    ){
+      this.setData({
+        isIphoneX:true
+      })
+    }
+  },
   distance: function (la1, lo1, la2, lo2) {
     var La1 = la1 * Math.PI / 180.0;
     var La2 = la2 * Math.PI / 180.0;

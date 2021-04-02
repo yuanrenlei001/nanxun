@@ -1,10 +1,10 @@
-<view class="top">
+<!-- <view class="top">
   <view class="search">
     <input type="text" placeholder="搜索南浔活动演出" bindinput="inputTyping"/>
     <image src="/images/index/search.png"></image>
 </view>
-</view>
-<view class="main">
+</view> -->
+<view class="main" style="margin-top:30rpx;">
   <view class="listUl">
     <view class="listLis">
       <navigator class="listLi" url="/pages/show-detail/show-detail?id={{item.id}}" wx:for="{{showLists}}"  wx:for-index='bindex' wx:key='index'>

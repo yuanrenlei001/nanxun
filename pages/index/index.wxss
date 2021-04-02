@@ -18,22 +18,21 @@ page{
 .video {width: 100%;height:360rpx;}
 .video video {width: 100%;height:360rpx;}
 .main {padding: 0 16rpx;}
-.news {
-  width: 658rpx;
-height: 66rpx;
-background: linear-gradient(160deg, #56A9EB 0%, #5463DA 100%);
-border-radius: 12rpx;
-margin: 20rpx 0;
-font-size: 24rpx;color: #fff;line-height: 66rpx;
-padding-left: 60rpx;
-}
 
-.news text {font-size: 20rpx;
+
+/* .news text {font-size: 20rpx;
   white-space:nowrap; 
   text-overflow:ellipsis; 
   -o-text-overflow:ellipsis; 
   overflow: hidden;
   width: 60%;
+  display: block;
+  float:right;
+  margin-right: 100rpx;
+} */
+.news .textss {font-size: 20rpx;
+  width: 100%;
+  color: #fff;
   display: block;
   float:right;
   margin-right: 100rpx;
@@ -46,21 +45,22 @@ padding-left: 60rpx;
   border-radius: 12rpx;}
 
 .sortTop {height:94rpx;line-height: 94rpx;position: relative;}
-.sortTop01 {font-size: 32rpx;color: #333;font-weight: 500;}
-.iconLeft {width: 10rpx;height:30rpx;position: absolute;top:50%;left:-20rpx;display: block;background:#56A9EB;margin-top: -15rpx;}
+.sortTop01 {font-size: 32rpx;color: #333;font-weight: 500;margin-left: 20rpx;}
+.iconLeft {width: 6rpx;height:30rpx;position: absolute;top:50%;left:5rpx;display: block;background:#F7B500;margin-top: -15rpx;
+border-radius: 3px;
+}
 .sortTop02 {float:right;
 
   font-size: 20rpx;
   font-weight: 400;
   color: rgba(51, 51, 51, 0.42);
-  /* margin-right: 30rpx; */
 }
 .sortTop02 image {width: 32rpx; height: 32rpx;vertical-align: sub;}
 .sort {width: 100%;padding: 0 24rpx;font-size: 20rpx;color: #333;position: relative;overflow: hidden;}
 .sort image {width:100rpx;height:100rpx;}
 .sortUl {width: 110%;position: relative;overflow: hidden;}
-.sortLi {display: block;width:100rpx;margin-right: 46rpx;float:left;margin-bottom: 30rpx;text-align: center;}
-.indexMap {width: 100%;height:158rpx;position: relative;margin-top: 10rpx;}
+.sortLi {display: block;width:100rpx;margin-right: 41rpx;float:left;margin-bottom: 30rpx;text-align: center;}
+.indexMap {height:158rpx;position: relative;padding: 10rpx 4rpx;}
 .indexMap image {width: 100%;height: 100%;}
 .indexMap text {position: absolute;font-size: 32rpx;color: #333;top:54rpx;left:56rpx;font-weight: 600;}
 .indexNews {
@@ -227,3 +227,145 @@ padding-left: 60rpx;
   height: 100%;
   transform: rotateY(30deg);
 }
+
+.news {
+height: 66rpx;
+background: linear-gradient(160deg, #56A9EB 0%, #5463DA 100%);
+border-radius: 12rpx;
+margin: 20rpx 0;
+font-size: 24rpx;color: #fff;line-height: 66rpx;
+padding-left: 30rpx;
+position: relative;
+overflow: hidden;
+}
+.listNotice {position: absolute;
+  top:0;right:0;
+  width: 70%;height:66rpx;
+}
+/* 底部滚动列表 */
+.contentBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+ .BottomFirst {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  margin: 0 auto;
+ }
+ .BottomFirst text {
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #663a83;
+  line-height: 60rpx;
+  border-right: 1px solid #663a83;
+  box-sizing: border-box;
+ }
+ .BottomFirst text:nth-child(1){
+  border: none;
+ }
+ .tab-right {
+  width: 90%;
+ }
+ .right-item {
+  padding: 0 20rpx;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+ }
+ .content-item {
+  height: 66rpx;
+  width: 95%;
+ }
+ .avater {
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 100rpx;
+  margin-top: 25rpx;
+  float: left;
+ }
+ .name {
+  font-size: 26rpx;
+  float: left;
+  line-height: 100rpx;
+  color: #b0aaa9;
+  margin-left: 20rpx;
+  width: 40%;
+  height:100%;
+  overflow: hidden;
+ }
+ .wawa {
+  font-size: 26rpx;
+  float: right;
+  line-height: 100rpx;
+  color: #999;
+ }
+
+
+ .notice {
+  padding: 0 16rpx;
+  background: #f1f1f1;
+ }
+  
+ .left {
+  display: flex;
+  align-items: center;
+ }
+  
+ .voice {
+  margin-right: 5rpx;
+  margin-top: 2rpx;
+  color: #fa6016;
+ }
+  
+ .left-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+ }
+  
+ .left-text {
+  position: absolute;
+  left: 0;
+  width: 40rpx;
+  height: 100%;
+  z-index: 99;
+  color: #fff;
+ }
+  
+ .right-text {
+  position: absolute;
+  right: -1rpx;
+  width: 40rpx;
+  height: 100%;
+  z-index: 99;
+ }
+  
+ .content-box {
+  overflow: hidden;
+  width: 95%;
+ }
+  
+ .content-text {
+  color: #5e5e5e;
+  white-space: nowrap;
+  font-size: 28rpx;
+ }
+  
+ .right {
+  display: flex;
+  align-items: center;
+ }
+  
+ .app {
+  height: 48rpx;
+ }
+  
+ .more {
+  margin-left: 5rpx;
+  color: #aaa;
+  font-size: 32rpx;
+ }

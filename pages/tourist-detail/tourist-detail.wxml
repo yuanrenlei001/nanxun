@@ -10,7 +10,7 @@
 <view class="main">
   <view class="title">
     <view class="title01">{{detail.name}}</view>
-    <view class="title02" bindtap="goUrl"><image src="/images/tourist/vr.png"></image> VR看景</view>
+    <view class="title02" bindtap="goUrl" wx:if="{{detail.vrUrl !=='' && detail.vrUrl}}"><image src="/images/tourist/vr.png"></image> VR看景</view>
     <view class="title03" bindtap="intoMap"><image src="/images/tourist/address.png"></image> 导航</view>
   </view>
   <view class="text" >{{detail.address == null?'暂无地址':detail.address}} 距我 {{distance}}km</view>

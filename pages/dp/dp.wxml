@@ -7,10 +7,10 @@
 </view> -->
 
 
-  <!-- 景点列表 -->
+  <!-- 景点 列表 -->
   <view class="main">
   <view class="listUl">
-    <navigator class="listLi" url="/pages/dp-detail/index?id={{item.id}}" wx:for="{{showLists}}" wx:key='index' wx:for-index='bindex' >
+    <navigator class="listLi" url="/pages/food-detail/food-detail?id={{item.id}}" wx:for="{{showLists}}" wx:key='index' wx:for-index='bindex' >
       <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">

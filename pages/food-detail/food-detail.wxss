@@ -43,6 +43,19 @@ audio {
   margin: 36rpx 0;
 
 }
+.daohang {margin-left: 20rpx;
+  width: 108rpx;
+  height:34rpx;
+  padding: 1px 3px;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 34rpx;
+  background: #45ADDD;
+  color: #fff;
+  border-radius: 17rpx;
+  display: inline-block;
+}
+.daohang image {width: 24rpx;height:30rpx;vertical-align: middle;}
 .content {
 font-size: 24rpx;
 font-weight: 300;

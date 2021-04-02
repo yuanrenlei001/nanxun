@@ -1,10 +1,10 @@
-<view class="top">
+<!-- <view class="top">
   <view class="search">
     <input type="text" placeholder="搜索景点"  bindinput="inputTyping"/>
     <image src="/images/index/search.png"></image>
     
   </view>
-</view>
+</view> -->
 <view class="main">
   <navigator class="list" url="/pages/web/web?url={{item.vrUrl}}"   wx:for="{{showLists}}" wx:for-index='bindex' wx:key='index'>
     <view class="listLeft"><image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" ></image></view>

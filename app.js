@@ -24,7 +24,7 @@ App({
       'notice_list':'资讯列表',
       'scenic':'热门景点列表',
       'show_list':'演出列表',
-      'tourist_guide':'景点',
+      'tourist_guide':'景点介绍',
       'tourist_detail':'美景详情',
       'food':'景区商铺',
       'food_detail':'商铺详情',
@@ -42,12 +42,13 @@ App({
       'web':'乐游南浔',
       'my_collection':'我的收藏',
       'show_detail':'演出详情',
-      'ticket':'酒店名宿',
-      'ticket_detail':'酒店名宿详情',
+      'ticket':'酒店民宿',
+      'ticket_detail':'酒店民宿详情',
       'web_map':'地图',
       'dp':'店铺',
       'dp_detail':'店铺详情',
       'weather':'天气',
+      'my_stroke':'我的行程',
       'rg':'智能客服',
     },
     // tabbar页面
@@ -58,9 +59,9 @@ App({
         "/pages/user/index",
       ],
     // 请求地址
-    request_url: "https://nanxun.zjtoprs.com",
+    request_url: "https://leyou.chinananxun.com",
     // 文件类地址
-    request_img: "https://nanxun.zjtoprs.com/minio",
+    request_img: "https://leyou.chinananxun.com/minio",
   },
   onLaunch: function () {
     // wx.getSystemInfo({
@@ -333,6 +334,7 @@ App({
     return system_info;
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    mapDate:null
   }
 })

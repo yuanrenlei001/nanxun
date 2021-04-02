@@ -1,5 +1,6 @@
 // pages/tourist-detail/tourist-detail.js
 const app = getApp();
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -19,7 +20,9 @@ Page({
     id:null,
     detail:null,
     img:null,
-    distance:''
+    distance:'',
+    latitude:'',
+    longitude:'',
   },
   audioPlay: function () {
     this.audioCtx.play()
@@ -66,6 +69,17 @@ Page({
     wx.setNavigationBarTitle({title: app.data.common_page_title.show_detail});
     this.init()
   },
+  distance: function (la1, lo1, la2, lo2) {
+    var La1 = la1 * Math.PI / 180.0;
+    var La2 = la2 * Math.PI / 180.0;
+    var La3 = La1 - La2;
+    var Lb3 = lo1 * Math.PI / 180.0 - lo2 * Math.PI / 180.0;
+    var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(La3 / 2), 2) + Math.cos(La1) * Math.cos(La2) * Math.pow(Math.sin(Lb3 / 2), 2)));
+    s = s * 6378.137;
+    s = Math.round(s * 10000) / 10000;
+    s = s.toFixed(2);
+    return s;
+  },
   init(){
     var that =this;
     wx.request({
@@ -89,8 +103,11 @@ Page({
              console.log(distance)
             }
           })
+          var jwd = util.wgs84togcj02(res.data.data.longitude,res.data.data.latitude);
         this.setData({
           detail:res.data.data,
+          latitude:jwd[1],
+          longitude:jwd[0],
           img:res.data.data.pictureUrl.split(',')
         })
       },
@@ -100,6 +117,16 @@ Page({
       }
     });
   },
+  // 导航
+intoMap:function(){
+  var that = this;
+  let obj = that.data.detail;
+  obj['type'] = '演出点'
+  app.globalData.mapDate = obj
+  wx.switchTab({
+    url: '../foryou/index',
+  })
+},
   /**
    * 生命周期函数--监听页面隐藏
    */

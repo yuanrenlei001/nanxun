@@ -13,7 +13,7 @@
 }
 .title {position: relative;width: 100%;}
 .title image {width:40rpx;height:40rpx;margin-right: 8rpx;vertical-align: middle;}
-.title01 {font-size: 36rpx;color: #000;width: 50%;
+.title01 {font-size: 36rpx;color: #000;width: 80%;
   white-space:nowrap; 
   text-overflow:ellipsis; 
   -o-text-overflow:ellipsis; 
@@ -50,24 +50,22 @@ color: #333333;
 line-height: 38rpx;
 text-align: justify;
 }
-.bottom {position: absolute;top:0;right:0;width: 200rpx;}
+/* .bottom {position: absolute;top:0;right:0;width: 200rpx;}
 .bottom image {
   width:32rpx;height:32rpx;margin-right: 16rpx;vertical-align: sub;
 }
-.bottom01 {text-align: left;width: 200rpx;text-align: right;}
-.daohang {margin-left: 20rpx;
-  width: 108rpx;
+.bottom01 {text-align: left;width: 200rpx;text-align: right;} */
+.daohang {
   height:34rpx;
   padding: 1px 3px;
   font-size: 20rpx;
   text-align: center;
   line-height: 34rpx;
-  background: #45ADDD;
-  color: #fff;
+  color: #5476DF;
   border-radius: 17rpx;
   display: inline-block;
 }
-.daohang image {width: 24rpx;height:30rpx;vertical-align: middle;}
+.daohang image {width: 32rpx;height:32rpx;vertical-align: sub;}
 .footerBg{
   background-color: #fff;
   height: 100rpx;
@@ -87,4 +85,21 @@ float:right;
 margin: 8px 0;
 text-align: center;
 line-height: 68rpx;
+}
+.bottom image {
+  width:32rpx;height:32rpx;margin-right: 16rpx;vertical-align: sub;
+}
+.bottom view {float:right;}
+.bottom01 {margin-right: 56rpx;font-size: 20rpx;}
+
+.bottom02 {
+    background: transparent;
+    font-weight: normal;
+}
+.bottom {position: fixed;bottom:0;left:0;
+  width: 100%;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
 }

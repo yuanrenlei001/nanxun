@@ -2,6 +2,7 @@
 const app = getApp();
 var QQmap = require('../../utils/qqmap-wx-jssdk');
 var qqmapsdk;
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -217,15 +218,16 @@ unfavorite:function(){
            })
           }
         })
+        var jwd = util.wgs84togcj02(res.data.data.longitude,res.data.data.latitude);
         this.setData({
           detail:res.data.data,
           img:res.data.data.pictureUrl.split(','),
           location:res.data.data.address,
-          latitude:res.data.data.latitude,
-          longitude:res.data.data.longitude,
+          latitude:jwd[1],
+          longitude:jwd[0],
           markers:[{
-            latitude:res.data.data.latitude,
-          longitude:res.data.data.longitude,
+            latitude:jwd[1],
+          longitude:jwd[0]
           }],
         })
       },
@@ -239,18 +241,22 @@ unfavorite:function(){
 // 导航
 intoMap:function(){
   var that = this;
-  wx.getLocation({
-    type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-    success: function (res) {  //因为这里得到的是你当前位置的经纬度
-      console.log(res)
-      wx.openLocation({        //所以这里会显示你当前的位置
-        latitude: parseFloat(that.data.latitude),
-        longitude: parseFloat(that.data.longitude),
-        name:that.data.detail.address,
-        scale: 18
-      });
-    }
+  app.globalData.mapDate = that.data.detail
+  wx.switchTab({
+    url: '../foryou/index',
   })
+  // wx.getLocation({
+  //   type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+  //   success: function (res) {  //因为这里得到的是你当前位置的经纬度
+  //     console.log(res)
+  //     wx.openLocation({        //所以这里会显示你当前的位置
+  //       latitude: parseFloat(that.data.latitude),
+  //       longitude: parseFloat(that.data.longitude),
+  //       name:that.data.detail.address,
+  //       scale: 18
+  //     });
+  //   }
+  // })
 },
 
 

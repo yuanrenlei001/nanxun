@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/my-stroke/my-stroke",
     "pages/weather/index",
     "pages/for-strategy/index",
     "pages/phone/phone",
@@ -43,7 +44,9 @@
     "pages/Navigation/Navigation",
     "pages/webVr/webVr",
     "pages/share/share",
-    "pages/yw/yw"
+    "pages/yw/yw",
+    "pages/customizedDetail/customizedDetail",
+    "pages/customizedDetail2/customizedDetail2"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,4 +1,4 @@
-// pages/foryou/index.js
+// pages/foryou /index.js
 const app = getApp()
 Page({
 

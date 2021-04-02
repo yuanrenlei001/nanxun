@@ -149,6 +149,12 @@ addList(){
     }
   });
 },
+goDetail(e){
+  let id  = e.currentTarget.dataset.type;
+  wx.navigateTo({
+    url: '../customizedDetail/customizedDetail?id='+id,
+  })
+},
   /**
    * 生命周期函数--监听页面隐藏
    */

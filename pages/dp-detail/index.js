@@ -1,5 +1,6 @@
 // pages/tourist-detail/tourist-detail.js
 const app = getApp();
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -18,7 +19,9 @@ Page({
     id:null,
     detail:null,
     url:app.data.request_img,
-    sort:''
+    sort:'',
+    latitude:'',
+    longitude:'',
   },
   audioPlay: function () {
     this.audioCtx.play()
@@ -71,8 +74,11 @@ Page({
       success: res => {
         wx.stopPullDownRefresh();
         if(res.data.data.pictureUrl){
+          var jwd = util.wgs84togcj02(res.data.data.longitude,res.data.data.latitude);
           this.setData({
             detail:res.data.data,
+            latitude:jwd[1],
+          longitude:jwd[0],
             img:res.data.data.pictureUrl.split(',')
           })
         }else{

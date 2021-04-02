@@ -148,6 +148,16 @@ addList(){
       }
     });
   },
+  goUrlNews:function(e){
+    const url = e.currentTarget.dataset.type; 
+
+    var urls = encodeURIComponent(url);
+    // var teacherExamName = e.currentTarget.dataset.workname;
+    wx.navigateTo({
+      // 跳转到webview页面
+      url: '/pages/web/web?url='+urls
+    });
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

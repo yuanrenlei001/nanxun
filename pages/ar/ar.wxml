@@ -1,10 +1,10 @@
-<view class="top">
+<!-- <view class="top">
   <view class="search">
     <input type="text" placeholder="该功能只在APP开发" disabled="false"/>
     <image src="/images/index/search.png"></image>
     
   </view>
-</view>
+</view> -->
 <view class="main">
   <view class="list" wx:for="{{showLists}}" bindtap="goAr">
     <view class="listLeft"><image src="{{url+item.pictureUrl}}"></image></view>

@@ -29,9 +29,11 @@ Page({
 
   },
 goAr:function(){
+  console.log()
+  var type = wx.getSystemInfoSync().platform
   wx.showModal({
     title: '提示',
-    content: '为了增强体验效果，建议下载AR看南浔APP哦',
+    content: '为了增强体验效果，建议下载乐游南浔APP哦',
     success(res) {
       
     }

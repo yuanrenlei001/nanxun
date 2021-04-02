@@ -1,5 +1,6 @@
 // pages/tourist-detail/tourist-detail.js
 const app = getApp();
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -20,7 +21,9 @@ Page({
     url:app.data.request_img,
     sort:'',
     distance:'',
-    isIphoneX:false
+    isIphoneX:false,
+    latitude:'',
+    longitude:'',
   },
   audioPlay: function () {
     this.audioCtx.play()
@@ -107,8 +110,11 @@ Page({
            console.log(distance)
           }
         })
+        var jwd = util.wgs84togcj02(res.data.data.longitude,res.data.data.latitude);
           this.setData({
             detail:res.data.data,
+            latitude:jwd[1],
+          longitude:jwd[0],
             img:res.data.data.pictureUrl.split(',')
           })
         }else{
@@ -156,7 +162,7 @@ intoMap:function(){
     }
   })
 },
-// 收藏
+// 收 藏
 favorite:function(){
   var that = this;
   var token = wx.getStorageSync('user_token')
@@ -251,6 +257,26 @@ unfavorite:function(){
       app.showToast("服务器请求出错");
     }
   });
+},
+// 导航
+intoMap:function(){
+  var that = this;
+  app.globalData.mapDate = that.data.detail
+  wx.switchTab({
+    url: '../foryou/index',
+  })
+  // var that = this;
+  // wx.getLocation({
+  //   type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+  //   success: function (res) {  //因为这里得到的是你当前位置的经纬度
+  //     wx.openLocation({        //所以这里会显示你当前的位置
+  //       latitude: parseFloat(that.data.latitude),
+  //       longitude: parseFloat(that.data.longitude),
+  //       name:that.data.detail.address,
+  //       scale: 18
+  //     });
+  //   }
+  // })
 },
   /**
    * 生命周期函数--监听页面隐藏

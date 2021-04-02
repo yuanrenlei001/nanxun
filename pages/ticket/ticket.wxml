@@ -1,10 +1,9 @@
-  <view class="map">
+  <!-- <view class="map">
     <view class="sort">
       <view bindtap="sort" data-type='度假酒店'  class="{{active =='度假酒店' ? 'active':''}}">度假酒店</view>
       <view bindtap="sort" data-type='精品民宿' class="{{active =='精品民宿' ? 'active':''}}" >精品民宿</view>
     </view>
-    <!-- <view class="goMap" bindtap="goMap">进入地图</view> -->
-  </view>
+  </view> -->
 
   <!-- 景点列表 -->
   <view class="main">
@@ -13,9 +12,10 @@
       <image data-index="{{bindex}}" src="{{url+img[bindex][0]}}" class="bg"></image>
       <view class="listText">
         <view class="title">
-          <text class="titleNname">{{item.name}} <text style="font-size:16rpx;"> {{distance[bindex]}}km</text></text>
+          <text class="titleNname">{{item.name}}</text>
           
         </view>
+          <text style="font-size:20rpx;color:rgba(51, 51, 51, 0.42);line-height: 28px;position: relative;top: -16rpx;"> {{distance[bindex]}}km</text>
         <view class="type" wx:if="{{item.if}}"> {{item.label}}</view>
       <view class="bottom">
         <image wx:if="{{item.address !=='' && item.address !==null}}" src="/images/address.png" class="userImg"></image>

@@ -28,7 +28,7 @@ Page({
       longitude: 113.304520,
       iconPath: '/image/location.png'
     }],
-    active:'度假酒店',
+    active:'度假酒店,精品民宿',
     showLists:[],
     url:app.data.request_img,
     pageNum:1,

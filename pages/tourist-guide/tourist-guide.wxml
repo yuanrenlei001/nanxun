@@ -1,4 +1,4 @@
-<view class="map">
+<!-- <view class="map">
     <view class="top">
   <view class="search">
     <input type="text" placeholder="搜索景点" bindinput="inputTyping" />
@@ -6,7 +6,7 @@
     
 </view>
 </view>
-  </view>
+  </view> -->
 
 
   <!-- 景 点 列表 -->

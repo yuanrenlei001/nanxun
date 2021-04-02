@@ -18,7 +18,7 @@ Page({
     currentIndex: 0,
     currentIndex1: 0,
     currentIndex2: 0,
-    videoUrl:'https://nanxun.zjtoprs.com/minio/old-town/xcx/propaganda/南浔3分钟形象片.mp4',
+    videoUrl:'',
     imgList:[],
     swiperH: '',//swiper高度
     　　nowIdx: 0,//当前swiper索引
@@ -26,6 +26,7 @@ Page({
     titles:'',
     showLists:[],
     wea:'',
+    move:'',
     pageNum:1,
     pageSize:8,
     hasMoreData: false,
@@ -45,8 +46,30 @@ Page({
       {img: "/images/strategy/fj.jpg"},
       
     ],
+    aa:[
+      {
+       nickName:"wang",
+       reward:"2"
+      },
+      {
+        nickName:"wang",
+        reward:"2"
+       },
+       {
+         nickName:"wang",
+         reward:"2"
+        }
+     ],
+     text: "",
+     animation: null,
+     timer: null,
+     duration: 0,
+     textWidth: 0,
+     wrapWidth: 0
   },
+
   onLoad:function(){
+
     if(options.url){
  
       let url = decodeURIComponent(options.url);
@@ -72,6 +95,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.initAnimation(this.data.text)
     app.set_system_info();
     this.getWifiEnv();
     this.videoContext = wx.createVideoContext('myVideo')
@@ -80,6 +104,7 @@ Page({
       pageNum:1
     })
     this.list();
+    this.newsMove();
     this.news();
   //  查询热门景点
     this.scenic();
@@ -88,6 +113,69 @@ Page({
     // 最新资讯
     this.newss();
   },
+  onHide() {
+    this.destroyTimer()
+    this.setData({
+     timer: null
+    })
+   },
+   onUnload() {
+    this.destroyTimer()
+    this.setData({
+     timer: null
+    })
+   },
+   destroyTimer() {
+    if (this.data.timer) {
+     clearTimeout(this.data.timer);
+    }
+   },
+   /**
+    * 开启公告字幕滚动动画
+    * @param {String} text 公告内容
+    * @return {[type]} 
+    */
+   initAnimation(text) {
+    let that = this
+    this.data.duration = 15000
+    this.data.animation = wx.createAnimation({
+     duration: this.data.duration,
+     timingFunction: 'linear'  
+    })
+    let query = wx.createSelectorQuery()
+    query.select('.content-box').boundingClientRect()
+    query.select('#text').boundingClientRect()
+    query.exec((rect) => {
+     that.setData({
+      wrapWidth: rect[0].width,
+      textWidth: rect[1].width
+     }, () => {
+      this.startAnimation()
+     })
+    })
+   },
+   // 定时器动画
+   startAnimation() {
+    //reset
+    // this.data.animation.option.transition.duration = 0
+    const resetAnimation = this.data.animation.translateX(this.data.wrapWidth).step({ duration: 0 })
+    this.setData({
+     animationData: resetAnimation.export()
+    })
+    // this.data.animation.option.transition.duration = this.data.duration
+    const animationData = this.data.animation.translateX(-this.data.textWidth).step({ duration: this.data.duration })
+    setTimeout(() => {
+     this.setData({
+      animationData: animationData.export()
+     })
+    }, 100)
+    const timer = setTimeout(() => {
+     this.startAnimation()
+    }, this.data.duration)
+    this.setData({
+     timer
+    })
+   },
   changeSwiper1: function (e) {
     console.log(e.detail.current)
     this.setData({
@@ -269,6 +357,13 @@ scenic(){
     }
   });
 },
+gourl(e){
+  var id = e.currentTarget.dataset.imgid.id;
+  wx.navigateTo({
+    url: '../tourist-detail/tourist-detail?id='+id
+  })
+  console.log(id)
+},
 // 跳转景点详情
 goscenic(e){
   var id = e.target.dataset.id;
@@ -308,6 +403,29 @@ onReachBottom: function () {
       bgColor: getRandomColor()
     })
   },
+    // 最新公告
+    newsMove(){
+      var that = this;
+      wx.request({
+        url: app.data.request_url+'/api/xcx/xcxPropaganda/getByName?name=南浔宣传片',
+        method: "get",
+        data: {},
+        dataType: "json",
+        header: { 'content-type': 'application/x-www-form-urlencoded' },
+        success: res => {
+          wx.stopPullDownRefresh();
+        var list = res.data.data;
+        var url = that.data.url
+        that.setData({
+          videoUrl:url+list.videoUrl
+        })
+        },
+        fail: () => {
+          wx.stopPullDownRefresh();
+          app.showToast("服务器请求出错");
+        }
+      });
+    },
   // 最新公告
   news(){
     var pageNum = this.data.pageNum;
@@ -321,7 +439,7 @@ onReachBottom: function () {
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       success: res => {
         wx.stopPullDownRefresh();
-        var list = res.data.data.records;
+        var list = res.data.data;
         that.setData({
           news:list
         })
@@ -343,7 +461,11 @@ onReachBottom: function () {
       url: '../scenic/scenic',
     })
   },
-  
+  sortList:function(){
+    wx.navigateTo({
+      url: '../index-more/index-more',
+    })
+  },
   // 跳转资讯列表
   noticeList:function(){
     wx.navigateTo({
@@ -369,9 +491,16 @@ onReachBottom: function () {
   },
   // 最新资讯
   goUrlNews:function(){
+    const url = this.data.newList[0].webUrl; 
+    const navtitle =  this.data.newList[0].title;
+    console.log(`/pages/web/web?url=${url}&nav=${navtitle}`,)
+
+    var urls = encodeURIComponent(this.data.newList[0].webUrl);
+    // var teacherExamName = e.currentTarget.dataset.workname;
     wx.navigateTo({
-      url: '/pages/web/web?url='+this.data.newList[0].webUrl,
-    })
+      // 跳转到webview页面
+      url: '/pages/web/web?url='+urls
+    });
   },
   gowae:function(e){
     var data = JSON.stringify(e.currentTarget.dataset.type);

@@ -10,17 +10,13 @@
 <view class="main">
   <view class="title">
     <view class="title01">{{detail.name}}</view>
-    <view class="title03" bindtap="phone"><image src="/images/phone.png"></image> 电话</view>
+    <view class="title03" bindtap="phone" wx:if="{{detail.tel && detail.tel!==''}}"><image src="/images/phone.png"></image> 电话</view>
   </view>
-  <view class="text">{{detail.address == null?'暂无地址':detail.address}} 距我{{distance}}km</view>
+  <view class="text">{{detail.address == null?'暂无地址':detail.address}} 距我{{distance}}km <view bindtap="intoMap" class="daohang"> <image src="/images/nav.png"></image> 导航</view></view>
   <rich-text class="content"  nodes="{{(detail.intro == null || detail.intro == '') ?'暂无简介':detail.intro}}"></rich-text>
   
 </view>
 <view  style="width: 100%;height: 92rpx;z-index:9999;font-size: 20rpx;background: #FFFFFF;box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);position: fixed;bottom: 0px;line-height: 92rpx;padding-bottom:{{ isIphoneX ? 34 : 0 }}px;">
-  <!-- <button class="bottom02" open-type="share" bindtap="share" style="font-weight:normal;background: transparent;width: 33.333%;padding: 0;position: relative;float: left;left: 0;"><image src="/images/share.png"></image> 分享</button> -->
-  <!-- <view class="bottom01" wx:if="{{detail.ifFavorite == 0}}" bindtap="favorite"><image src="/images/un-collection.png"></image> 收藏</view> -->
-  <!-- <view class="bottom01" wx:if="{{detail.ifFavorite !== 0}}" bindtap="unfavorite"><image src="/images/collection.png"></image>取消收藏</view> -->
-  <!-- <view class="bottom03" bindtap="intoMap"><image src="/images/tourist/address.png"></image> 导航</view> -->
   <view style="width: 180rpx;height: 100%;float: right;background: #F7B500;">
     <button open-type="share" bindtap="share" style="font-weight: normal;background: transparent;line-height: 92rpx;width: 100%;font-size: 20rpx;padding: 0;position: relative;float: right;right: 0;"><image class="bottomImg" src="/images/share.png"></image> 分享</button>
   </view>
@@ -30,5 +26,4 @@
   <view wx:if="{{detail.ifFavorite !== 0}}" bindtap="unfavorite" style="text-align: center;width: 180rpx;height: 100%;float: right;">
     <image class="bottomImg" src="/images/collection.png"></image> 取消收藏
   </view>
-  <!-- <view style="width: 180rpx;height: 100%;background: #F7B500;float: right;">3</view> -->
 </view>
