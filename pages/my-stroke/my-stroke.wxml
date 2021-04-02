@@ -1,0 +1,19 @@
+<view class="map">
+    <view class="sort">
+      <view bindtap="sort" data-type='经典游线' class="{{active =='经典游线' ? 'active':''}}" >经典游线</view>
+      <view bindtap="sort" data-type='定制行程' class="{{active =='定制行程' ? 'active':''}}" >定制行程</view>
+    </view>
+</view>
+<view class="main">
+  <view class="list" wx:for="{{showLists}}" bindtap="goDetail" data-type="{{active == '经典游线'?item.contentId:item.id}}">
+    <view class="listLeft">
+      <view class="text01 jd" wx:if="{{active == '经典游线'}}">经典游线</view>
+      <view class="text01 dz" wx:if="{{active == '定制行程'}}">定制行程</view>
+      <view class="text02"  wx:if="{{active == '经典游线'}}">{{item.contentName}}</view>
+      <view class="text02" wx:if="{{active == '定制行程'}}">{{item.name}}</view>
+      <view class="text03">{{item.createTime}}</view>
+    </view>
+    <view class="listRight" wx:if="{{active == '经典游线'}}"><image src="{{url+item.contentCover}}"></image></view>
+    <view class="listRight" wx:if="{{active == '定制行程'}}"><image src="{{url+item.coverUrl}}"></image></view>
+  </view>
+  </view>

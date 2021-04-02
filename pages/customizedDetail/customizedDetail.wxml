@@ -1,0 +1,46 @@
+<view hidden="{{!mapShow}}">
+  <map latitude="{{latitude}}" longitude="{{longitude}}" show-location="true" show-compass="true" show-scale="true" 	 class="map" scale="15"
+  polyline="{{polyline}}"
+  markers="{{markers}}" />
+</view>
+<view class="footerBlock" hidden="{{!mapShow}}">
+  <view class="more" bindtap="goUrl">··· 更多</view>
+    <view style="margin-left: 52rpx;margin-top: 40rpx;">
+      <view class="map_top">{{address}}</view>
+      <view class="address">{{showList.pointList.length}}个景点|全程21公里</view>
+      <view class="route" style="width:93%;padding: 20rpx 0;">
+        <view style="display: flex;position: relative;height:134rpx;">
+          <view class="hr"></view>
+          <view class="ul" wx:for="{{showList.pointList}}" style="position: relative;" data-id="{{item.id}}" bindtap="goUrls">
+            <view><image src="{{url+item.pictureUrl}}"  class="imges"></image ></view>
+            <view class="namess">{{item.name}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="flex">
+        <view class="introduce">景点介绍</view>
+      </view>
+      <view class="footerText">{{showList.intro}}</view>
+    </view>
+  </view>
+  <view  style="width: 100%;height: 92rpx;z-index:9999;font-size: 20rpx;background: #FFFFFF;box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);position: fixed;bottom: 0px;line-height: 92rpx;padding-bottom:{{ isIphoneX ? 34 : 0 }}px;">
+  <view style="width: 180rpx;height: 100%;float: right;background: #F7B500;">
+    <button open-type="share" bindtap="share" style="font-weight: normal;background: transparent;line-height: 92rpx;width: 100%;font-size: 20rpx;padding: 0;position: relative;float: right;right: 0;"><image class="bottomImg" src="/images/share.png"></image> 分享</button>
+  </view>
+  <view wx:if="{{showList.ifFavorite == 0}}" bindtap="favorite" style="text-align: center;width: 180rpx;height: 100%;float: right;">
+    <image class="bottomImg" src="/images/un-collection.png"></image> 加入行程
+  </view>
+  <view wx:if="{{showList.ifFavorite !== 0}}" bindtap="unfavorite" style="text-align: center;width: 180rpx;height: 100%;float: right;">
+    <image class="bottomImg" src="/images/collection.png"></image> 已加入行程
+  </view>
+</view>
+<view class="xglFixed" wx:if="{{fixed}}">
+  <view class="xglFixedMain">
+    <view class="xglFixedBody">
+      <view>
+        <view style="font-size:30rpx;padding-top:20rpx;">已加入行程</view>
+      <view style="font-size:20rpx;">请前往我的-我的行程查看</view>
+      </view>
+    </view>
+  </view>
+</view>

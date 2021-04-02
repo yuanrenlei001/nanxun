@@ -1,0 +1,215 @@
+.bg{
+  background: #fff;
+  width: 100%;
+  height: 100vh;
+  padding-top: 106rpx;
+  padding-left: 148rpx;
+}
+.flex{
+  display: flex;
+}
+.text1{
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #000000;
+  line-height: 44rpx;
+}
+.ul { flex: 1;
+  align-items: center;
+  text-align: center;
+  justify-content: center;}
+.imges {width: 96rpx;height:96rpx;border-radius: 50%;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -48rpx;
+}
+.namess {
+  position: absolute;
+    bottom: -10rpx;
+    width: 100%;
+    font-size: 16rpx;
+}
+.text2{
+  margin-top: 62rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #000000;
+  line-height: 40rpx;
+}
+.hr {
+  width: 482rpx;
+height: 10rpx;
+background: #D8D8D8;
+position: absolute;
+left: 53px;
+top: 44rpx;
+z-index: -1;
+}
+.text3{
+  margin-top: 32rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #000000;
+  line-height: 40rpx;
+}
+.inputL{
+  width: 168rpx;
+  margin-left: 48rpx;
+  margin-right: 44rpx;
+}
+.text4{
+  margin-top: 44rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #000000;
+  line-height: 40rpx;
+}
+.likeD{
+  width: 500rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.selsctV{
+  margin-top: 18rpx;
+  width: 148rpx;
+  height: 46rpx;
+  margin-right: 12rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 46rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+.likeColor{
+  border: 2rpx solid rgba(51, 51, 51, 0.42);
+  color: rgba(51, 51, 51, 0.42);
+}
+.likeColorActive{
+  border: 2rpx solid #66AC5B;
+  color: #66AC5B;
+}
+.text5{
+  margin-top: 50rpx;
+
+}
+.btn{
+  margin-top: 72rpx;
+  width: 452rpx;
+  height: 74rpx;
+  background: #FFC645;
+  border-radius: 16rpx;
+  text-align: center;
+  line-height: 74rpx;
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+.loadingImg{
+  width: 156rpx;
+  height: 156rpx;
+}
+.maskColorText{
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+.map{
+  width: 100%;
+  height: 55vh;
+}
+.footerBlock{
+  height: 450rpx;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  bottom: 120rpx;
+  z-index: 999;
+}
+.map_top{
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333333;
+  line-height: 40rpx;
+}
+.address{
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #333333;
+  line-height: 34rpx;
+}
+.route{
+  height: 134rpx;
+}
+.introduce{
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #333333;
+  line-height: 34rpx;
+}
+.more{
+  min-width: 90rpx;
+border-radius: 2px;
+border: 1px solid #F7B500;
+font-size: 20rpx;
+  position: absolute;
+  bottom:0;
+  right: 38rpx;
+  text-align: center;
+  color: #F7B500;
+}
+.footerText{
+  margin-top: 14rpx;
+  width: 654rpx;
+  font-size: 20rpx;
+  font-weight: 300;
+  color: #333333;
+  line-height: 28rpx;
+  white-space: normal;
+}
+.bottomImg {
+  width:32rpx;height:32rpx;margin-right: 16rpx;vertical-align: sub;
+}
+.xglFixed {
+  position: fixed;
+  z-index: 9999999;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,0);
+  width:100%;
+  height:100%;
+}
+.xglFixedMain {
+  width:418rpx;
+  height:190rpx;
+  background: #fff;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.16);
+  position: relative;
+  margin:-95rpx auto 0;
+  top:50%;
+  background: #5F5F5F;
+box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+border-radius: 10rpx;
+opacity: 0.89;
+color: #fff;
+}
+.icon-small-wrp {
+  position: absolute;
+  top:22rpx;
+  right:22rpx;
+}
+.xglFixedBody {width: 100%;text-align: center;padding-top: 50rpx;}
